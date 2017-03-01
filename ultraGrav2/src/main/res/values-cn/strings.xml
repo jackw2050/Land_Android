@@ -1,0 +1,797 @@
+<resources>
+
+    <!-- Help Text -->
+    <string name="cant_find_help_text">没有关于此方面的帮助信息。</string>
+
+    <!--   Activities Help Text -->
+    <!--     Activities W/O Fragments -->
+    
+    <string name="DashboardActivity"><![CDATA[<p><b>UltraGrav2 帮助</b><br>
+        在主屏幕上点击相应的按钮，选择一个观测模式或者其他选项。</p>
+        <p><b>单点观测</b>: 单点观测模式可用于在一个点进行单点观测。 详情请查看单点观测模式帮助。</p>
+        <p><b>连续观测</b>: 连续观测模式可用于固体潮的连续观测，具有滤波功能。详情请查看连续观测模式帮助。</p>
+        <p><b>设置</b>: 包括以下选项卡 - 系统,仪器，水平参数，观测站点。可查看各界面的帮助信息。</p>
+        <p><b>仪器设置</b>: 包括以下选项卡 - 仪器状态/设置占空比，设置停靠点/读数线，计算横梁系数，可查看各界面的帮助信息。</p>
+        <p><b>选项</b>: 包括以下选项卡 -输出观测数据，查看观测数据，固体潮。可查看各界面的帮助信息。</p>
+        <p><b>退出</b>: 退出UltraGrav2。</p>
+
+        <p><u>错误日志文件</u>: 此应用的错误日志文件存储在SD卡上，路径为：<br>
+        <i>&lt;sdcard&gt;/Android/data/com.zlscorp.ultrgrav/files/errors.log</i>.</p>
+
+        <p><b>单点观测模式帮助</b><br>
+        单点观测模式可用于在一个点进行单点观测。下面是单点观测模式的界面介绍。</p> 
+        <p><u>读数时间</u>: 读数消耗的时间，单位为秒</p>
+        <p><u>占空比</u>: 当前的占空比，代表反馈力的大小。0 \%% 和 100\%% 分别代表最小和最大反馈力。</p>
+        <p><u>表盘读数</u>: 未做格值修正的实际表盘读数。</p>
+        <p><u>观测重力值</u>: 等于格值修正重力值+反馈校正+水平校正+温度校正+ 固体潮校正 (允许时).</p>
+        <p><u>标准偏差</u>: 当前观测值的标准偏差(SD) 。每隔5秒更新一次。</p> 
+        <p><u>横梁误差</u>: 横梁偏离零位的位移，单位为mGal。每隔5秒更新一次。</p>
+        <p><u>反馈校正</u>: 反馈力的大小，单位为mGal。</p>
+        <p><u>固体潮校正</u>: 固体潮校正值的大小，单位为mGal。</p>
+        <p><u>水平校正</u>: 对水平误差的校正，单位为mGal。</p>
+        <p><u>温度校正</u>: 对温度误差的校正，单位为mGal。</p>
+        <p><u>时间</u>: 观测读数时的时间。</p>
+        <p><u>报警信息</u>:<br>
+        仪器未达到水平: 仪器偏离水平位置的程度超出了电子系统可以补偿的范围。</p>
+        <p>温度错误: 仪器未达到读数时所允许的温度范围。</p>
+
+        <p>当标准偏差和横梁误差都小于系统参数中设置的精度时，可获得有效的观测重力值，即可正常读数。如果180秒内未获得达到所设精度的读数，
+        	仪器会强制读数。超过读数时间180秒不能读数的原因，通常是观测站点的噪声过大，你可以尝试减小精度（增大精度值），或者降低反馈增益
+        	（减小增益值）。在噪声大的站点观测，操作手册中描述了其他方法。</p>
+
+        <p>单点观测模式影响因素:<br>
+        <p>1) 系统参数中的精度设置。 精度越高（值越小），获得有效读数的时间会越长。</p>
+        <p>2) 系统参数中的反馈增益。一个较低的增益将导致较大的横梁噪声，光滑的反馈校正，并增加反馈回路的时间常数。这个参数的选取要采用折中的方案，并且需要丰富的经验。降低反馈增益与增加滤波时间常数的效果类似。</p>
+        <p>3) 如果纬度和经度均设为零或空白，则固体潮校正为零。纬度为0时，Hunt程序将不能计算大盘预设值。</p>
+        <p>4) 站点参数设置中的允许固体潮校正复选框，如果被勾选，观测重力值中将包含固体潮校正。</p>
+        <p>5) Android 系统时钟必须设为GMT时间，固体潮校正才是准确的。</p>
+        <p><b>连续观测模式帮助</b>
+        <br>连续观测模式可在同一个点进行连续观测，用于观测固体潮的变化或者长周期研究。下面是连续观测模式的界面介绍。</p>
+        <p><u>读数时间</u>: 读数消耗的时间，单位为秒</p>
+        <p><u>占空比</u>: 当前的占空比，代表反馈力的大小。0 \%% 和 100\%% 分别代表最小和最大反馈力。</p>
+        <p><u>表盘读数</u>: 未做格值修正的实际表盘读数。</p>
+        <p><u>观测重力值</u>: 等于格值修正重力值+反馈校正+水平校正+温度校正。</p>
+        <p><u>反馈校正</u>: 反馈力的大小，单位为mGal。/p>
+        <p><u>固体潮值</u>: 固体潮的大小，单位为mGal。</p>
+        <p><u>水平校正</u>: 对水平误差的校正，单位为mGal。</p>
+        <p><u>温度校正</u>: 对温度误差的校正，单位为mGal。</p>
+        <p><u>数据输出速率</u>: 在连续观测模式设置时输入的值。</p>
+        <p><u>滤波时间常数</u>: 在连续观测模式设置时输入的值。。</p>
+        <p><u>时间</u>: 观测读数时的时间。</p>
+
+        <p>每隔1秒进行连续观测，屏幕和数据文件会按照指定时间间隔更新，此时间间隔是在连续观测模式参数设置界面设置的数据输出速率。数据会按照指定时间常数进行级联三级滤波，此时间常数是在连续观测模式参数设置界面设置的滤波时间常数。</p>
+
+        <p>连续观测模式影响因素:<br>
+        <p>1) 数据输出速率和滤波时间常数。这些必须满足Nyquist准则来防止数据失真。即，数据输出速率至少是滤波时间常数的两倍。进行连续观测之前，要先进行连续观测参数设置。</p>
+        <p>2) 系统参数中的反馈增益。一个较低的增益将导致较大的横梁噪声，光滑的反馈校正，并增加反馈回路的时间常数。这个参数的选取要采用折中的方案，并且需要丰富的经验。降低反馈增益与增加滤波时间常数的效果类似。</p>
+        <p>3) 如果纬度和经度均设为零或空白，则固体潮校正为零。</p>
+        <p>4) Android系统时钟必须设置为GMT时间，固体潮校正才是准确的。</p>]]></string>
+
+    <string name="DialReadingActivity"><![CDATA[<p><b>表盘读数帮助</b></p>
+        <p>按照屏幕指示进行操作。</p>]]></string>
+
+    <string name="ContinousSetupActivity"><![CDATA[<p><b>连续观测参数设置帮助</b></p>
+        <p><u>数据输出速率</u>: 设置数据和屏幕更新速率，单位为秒。</p>
+        <p><u>滤波时间常数</u>: 设置三级RC滤波器的时间常数，单位为秒。</p>
+        <p><u>数据输出速率和滤波时间常数，必须满足Nyquist准则来防止数据失真。即，数据输出速率至少是滤波时间常数的两倍。</p>]]></string>
+        
+    <string name="NoteActivity"><![CDATA[<p><b>注释帮助</b></p>
+        <p>在屏幕上输入观测注释，作为备注，将保存到SD卡，与观测数据一同导出。</p>]]></string>
+
+    <string name="StationDetailsActivity"><![CDATA[<p><b>观测站点信息</b></p>
+        <p>这个界面可以编辑或删除所选择的观测站点。要编辑站点信息，点击屏幕右上角的铅笔图标。删除站点，点击垃圾桶图标。</p>
+        <p><u>观测点ID</u>:观测站点的名称。</p> 
+        <p><u>观测者ID</u>:观测者的姓名或任何其他信息。</p>
+        <p><u>纬度</u>: 十进制度数，北为正。如果没有信息保持空白或零。</p>
+        <p><u>经度</u>: 十进制度数，东为正。如果没有信息保持空白或零。</p>
+        <p><u>海拔</u>: 观测点的海拔，单位为米。如果没有信息保持空白或零。</p>
+        <p><u>仪器高度</u>: 重力仪距离观测点的高度，单位为米。如果没有信息保持空白或零。</p>
+        <p><u>允许固体潮校正</u>:指示是否对观测点进行固体潮校正。若允许校正，单点观测模式中，校正值将增加到观测重力值中。</p>]]></string>
+    
+    <!--     Activities W/ Fragments -->
+    <string name="FileSelectActivity"><![CDATA[<p>选择文件</p><p></p>]]></string>
+    <string name="StationListActivity"><![CDATA[<p>观测站点</p><p></p>]]></string>
+    
+    <!--   Fragments Help Text -->
+    <string name="FileSelectFragment"><![CDATA[<p><b>选择文件帮助</b></p>
+        <p>选择用于当前操作的文件。如果文件路径不正确，使用上一级按钮返回上级目录，或点击目录的名字进入下一级目录。当你找到你要找的文件，点击它。</p>
+        <p>如果你正在创建一个新的文件，点击创建新文件按钮。</p>]]></string>
+
+    <!--     Settings Fragments -->
+    <string name="SystemParamsFragment"><![CDATA[<p><b>系统参数帮助</b></p>
+        <p><u>使用非校准点</u>: 当该复选框被选中时，表盘读数可以设置为非校准点，即非50倍数的读数。当它未被选中，只有50倍数的读数可以使用。</p>
+        <p><u>新的表盘读数</u>:同步重力仪表盘读数到应用程序。只能输入250到6850之间的整数值。</p>
+        <p><u>反馈增益</u>: 调节反馈的灵敏度。降低增益可以提高精度，同时增加读数时间，反之亦然。</p>
+        <p><u>观测精度</u>: 调节所需的观测精度。精度低，读数时间短，反之亦然。</p>
+        <p><u>允许站点选择</u>: 当该复选框被选中时，用户可以选择一个观测站点。当它未被选中，将使用默认站点的参数。不选中此选项，观测时将省去站点选择的步骤。</p>
+        <p><u>仪器连接</u>: 显示连接类型，设备名称，连接状态。</p>]]></string>
+        
+    <string name="MeterParamsFragment"><![CDATA[<p><b>仪器参数帮助</b></p>
+        <p><u>读数线</u>: 占空比设置为50%时，横梁居中，仪器的频率值。</p>
+        <p><u>横梁系数</u>: 这是一个比例因子，用于将横梁位置转换为mGal。</p>
+        <p><u>反馈系数</u>: 这是一个比例因子，用于将反馈信号转换为mGal。.</p>
+        <p><u>最小频率</u>: 横梁在底部时仪器的频率值。</p>
+        <p><u>最大频率</u>: 横梁在顶部时仪器的频率值。</p>
+        <p>这些参数需要定期维护和更新。操作手册中有详细描述。</p>]]></string>
+        
+    <string name="LevelParamsFragment"><![CDATA[<p><b>水平参数帮助</b></p><p>这些参数是建立水平校正所必需的，也需要定期更新。请参阅操作手册。</p>]]></string>
+
+    <string name="StationListFragment"><![CDATA[<p><b>站点帮助</b></p><p>这个界面允许添加，或选择一个特定的站点用于观测。</p>
+        <p>在系统参数界面，如果允许站点选择的复选框未选中，将使用默认站点。默认站点可以进行编辑，但是不能删除。</p>]]></string>
+
+    <string name="StationEditFragment"><![CDATA[<p><b>站点编辑帮助</b></p>
+        <p><u>观测点ID</u>: 观测站点的名称。</p> 
+        <p><u>观测者ID</u>: 观测者的姓名或任何其他信息。</p>
+        <p><u>纬度</u>: 十进制度数，北为正。如果没有信息保持空白或零。</p>
+        <p><u>经度</u>: 十进制度数，东为正。如果没有信息保持空白或零。</p>
+        <p><u>海拔</u>: 观测点的海拔，单位为米。如果没有信息保持空白或零。</p>
+        <p><u>仪器高度</u>: 重力仪距离观测点的高度，单位为米。如果没有信息保持空白或零。</p>
+        <p><u>允许固体潮校正</u>: 如果选中，校正值将增加到观测重力值中。这只适用于单点观测模式。如果纬度和经度都为零或空白，则不进行固体潮计算。需要注意的是，纬度和经度必须都为零，才表示没有可用的坐标。</p>
+        <p><u>从GPS获得经纬度</u>: 从Android设备的内置GPS接收机获得纬度和经度数据。</p>]]></string>
+        
+    <!--     Setup Fragments -->
+    <string name="ReadMeterFragment"><![CDATA[<p><b>仪器状态和设置占空比的帮助</b></p>
+        <p>这个界面可以将反馈力设置为一个固定的值，并显示重力传感器的各种输出参数。在程序校准时会使用这些参数。开始读数后会看到新的占空比的影响。你可以根据需要设置新的占空比。</p>
+
+        <p><b>新的占空比</b>: 输入一个新的占空比的值，5和98之间，然后点击设置按钮。</p>
+        <p><b>设置</b>: 将新的占空比的值设置到仪器。</p>
+        <p><b>开始读数</b>: 这个按钮控制仪器开始以一秒钟的时间间隔来读取重力数据。这个数据将显示在屏幕顶部区域。离开这个标签时，读数将终止。</p>]]></string>
+        
+    
+<!--     >>Further instructions to be supplied by Keisuke.<< </p> -->
+    <string name="StopsReadingLineFragment"><![CDATA[<p><b>设置停靠点和读数线帮助</b></p>
+        <p>这个界面设置仪器的最大、最小停靠点和读数线。参考说明书第五章，调整横梁停靠点。</p>
+
+        <p><b>10\%%</b>: 设置仪器的占空比为10\%%。</p>
+        <p><b>50\%%</b>: 设置仪器的占空比为50\%%。</p>
+        <p><b>90\%%</b>: 设置仪器的占空比为90\%%。</p>
+        <p><b>新的占空比</b>: 输入一个新的占空比的值，5和98之间，然后点击设置按钮。</p>
+        <p><b>开始读数</b>: 这个按钮控制仪器开始以一秒钟的时间间隔来读取重力数据。横梁频率数据将显示在屏幕上。离开这个标签时，读数将终止。</p>
+        <p><b>确定</b>: 存储最大和最小的频率和读数线到数据库，并可以在仪表参数界面查看。</p>]]></string>
+        
+    <string name="CalculateBeamScaleFragment"><![CDATA[<p><b>计算横梁系数帮助</b></p>
+        <p>这个界面可以确定仪器的的横梁系数值。参考操作手册第五章，计算横梁系数。 </p>
+
+        <p><b>50\%%</b>: 设置仪器的占空比为50\%%。</p>
+        <p><b>基础表盘读数DR</b>: 。</p>
+        <p><b>基础DR-0.250mGal</b>: 。</p>
+        <p><b>基础DR+0.250mGal</b>: 。</p>
+        <p><b>-0.250横梁频率</b>: 。</p>
+        <p><b>+0.250横梁频率</b>: 。</p>
+        <p><b>频率差值</b>: 。</p>
+        <p><b>横梁系数</b>: 计算的横梁系数。</p>
+        <p><b>开始读数</b>: 这个按钮控制仪器开始以一秒钟的时间间隔来读取重力数据。横梁频率数据将显示在屏幕上。离开这个标签时，读数将终止。</p>
+        <p><b>确定</b>: 存储横梁系数到数据库。并可以在仪表参数界面查看。</p>]]></string>
+    
+    <!--     Options Fragments -->
+    <string name="OutputObsDataFragment"><![CDATA[<p><b>输出数据帮助</b></p>
+        <p>这个界面可以管理观测数据。使用保存按钮可将数据保存到内部SD卡上，并上传到电脑。使用删除按钮可以将数据从数据库中删除。</p>
+        <p>上传的数据为CSV格式。这种格式可直接输入到EXcel或其他程序。数据上传后不会自动删除，必须使用删除按钮来删除不需要的数据。新的数据总是追加到现有数据的后面。数据库中记录数据的总个数将显示在屏幕顶部。</p>
+        <p><b>单点模式数据文件</b>: 单点模式的观测数据记录，包括20个标题。它们是按照下面的标题顺序保存的：站点号，观测者，仪器编号，日期，时间，重力值，表盘读数，反馈校正，固体潮校正，水平校正，温度校正，横梁误差，仪器高度，海拔，纬度，经度，读数时间，标准偏差，温度频率，注释。</p>
+        <p><b>连续模式数据文件</b>: 连续模式的观测数据可以被保存为长记录或短记录。短记录包括9个标题。标题顺序：日期，时间，重力值，表盘读数，反馈校正，固体潮校正，水平校正，温度校正，注释。</p>
+        <p>长记录包括23个标题。标题顺序：日期，时间，重力值，表盘读数，反馈校正，固体潮校正，水平校正，温度校正，站点号，观测者，仪器编号，仪器高度，海拔，纬度，经度，读数时间，数据输出速率，滤波器时间常数，温度频率，横梁频率，横轴频率，纵轴频率，注释。</p>
+        <p>记录数据的单位如下表所示。</p>
+        <p><table>
+             <tr> 
+               <td style="width:100px"><b>名称</b></td>
+               <td style="width:200px"><b>单位</b></td>
+             </tr>
+             <tr>
+               <td>重力</td>
+               <td>mGal</td>
+             </tr>
+             <tr>
+               <td>海拔</td>
+               <td>米</td>
+             </tr>
+             <tr>
+               <td>仪器高度</td>
+               <td>米</td>
+             </tr>
+             <tr>
+               <td>纬度</td>
+               <td>度（十进制）北为正</td>
+             </tr>
+             <tr>
+               <td>经度</td>
+               <td>度（十进制）东为正</td>
+             </tr>
+             <tr>
+               <td>日期</td>
+               <td>年/月/日</td>
+             </tr>
+             <tr>
+               <td>时间</td>
+               <td>时：分：秒</td>
+             </tr>
+           </table></p>]]></string>
+    
+    <string name="ViewObsDataFragment"><![CDATA[<p><b>查看数据帮助</b></p>
+        <p>这个界面可以查看存储内部SD卡的数据。点击三个查看按钮来查看数据。这个屏幕可以沿水平和垂直方向滚动，方便查看所有数据。大的数据文件可能需要一些时间来加载。输出选项卡将显示单点和连续模式的数据个数。</p>
+
+        <p><b>查看单点数据文件</b>: 显示单点模式的观测数据。</p>
+        <p><b>查看连续模式短记录数据文件</b>: 显示连续观测模式的短记录数据。</p>
+        <p><b>查看连续模式长记录数据文件</b>: 显示连续观测模式的长记录数据。</p>]]></string>
+        
+    <string name="EarthtideFragment"><![CDATA[<p><b>查看固体潮帮助</b></p>
+        <p>这个界面可以计算并显示固体潮数据，对于指定日期的一天，10分钟为一个增量进行固体潮的计算和显示。当前日期、纬度和经度可以自动填充。你也可以输入想要的日期、纬度和经度。</p>
+        <p><b>年</b>: 请输入4位数字的年份，如2014。</p>
+        <p><b>月</b>: 输入1 - 12的数字。</p>
+        <p><b>日</b>: 输入1 - 31的数字。</p>
+        <p><b>纬度</b>: 输入纬度值，十进制，北为正。</p>
+        <p><b>经度</b>: 输入经度值，十进制，东为正。</p>
+        <p><b>海拔</b>: 输入海拔，单位为米。</p>
+        <p><b>计算</b>: 计算并显示固体潮数据。</p>
+        <p><b>从GPS获得经纬度</b>: 从Android设备内部的GPS获得纬度和经度。</p>
+        <p><b>保存数据</b>: 目前未实现。</p>]]></string>
+    
+    <!--     Private Fragments -->
+    <string name="PrivateParamsFragment"><![CDATA[<p><b>自定义参数帮助</b></p>
+        <p><b>校准的</b>: 如果仪器是校准型的勾选这个复选框。</p>
+        <p><b>基盘反转</b>: 如果基盘是翻转的勾选中这个复选框。</p>
+        <p><b>保存频率</b>: 如果你想保存横梁、水平、温度的频率，使其与其它观测数据一起保存下来，勾选此复选框。</p>
+        <p><b>测试模式</b>: 如果你想要显示单次或连续模式的观测数据的以下信息：横梁频率，横轴频率，纵轴频率，温度频率，Temp0和TempB因子，勾选此复选框。</p>
+        <p><b>下载校准表</b>: 下载格值表。</p>
+        <p><b>创建出厂参数文件</b>: 创建一个出厂参数文件。这个文件可以用来恢复出厂参数。这个文件不是对所有人都可见的；它只能被创建和用来恢复参数。文件存储下列参数：反馈增益，观测精度，数据输出速率，滤波器的时间常数，读数线，横梁系数，反馈系数，最小频率，最大频率，纵轴水平0, 纵轴水平A, 纵轴水平B, 纵轴水平C, 横轴水平0, 纵轴水平A, 纵轴水平B, 纵轴水平C。</p>
+        <p><b>取消</b>:退出此界面而不保存任何更改。</p>]]></string>
+
+    <string name="CCJRCalculateBeamScaleFragment"><![CDATA[<p><b>计算横梁系数帮助</b></p>
+        <p>这个界面可以确定并保存横梁系数。 </p>
+
+        <p><b>50\%%</b>: 设置仪器的占空比为50\%%。</p>
+        <p><b>基础表盘读数</b>: 。</p>
+        <p><b>基础DR-0.500mGal</b>: 。</p>
+        <p><b>基地DR+0.500mGal</b>: 。</p>
+        <p><b>-0.500横梁频率</b>: 。</p>
+        <p><b>+0.500横梁频率</b>: 。</p>
+        <p><b>频率差值</b>: 。</p>
+        <p><b>横梁系数</b>: 计算的横梁系数。</p>
+        <p><b>开始读数</b>: 这个按钮控制仪器开始以一秒钟的时间间隔来读取重力数据。横梁频率数据将显示在屏幕上。离开这个标签时，读数将终止。</p>
+        <p><b>确定</b>: 存储横梁系数到数据库。并可以在仪表参数界面查看。</p>]]></string>
+    
+    <string name="CalculateFeedbackScaleFragment"><![CDATA[<p><b>计算反馈系数帮助</b></p>
+        <p>这个界面可以确定并保存仪器的反馈系数。 <br></p>
+
+        <p><b>10\%%</b>: 设置仪器的占空比为10\%%。</p>
+        <p><b>50\%%</b>: 设置仪器的占空比为50\%%。</p>
+        <p><b>90\%%</b>: 设置仪器的占空比为90\%%。</p>
+        <p><b>当前占空比</b>: 最新一次设置到仪器的占空比。</p>
+        <p><b>新的占空比</b>: 输入一个新的占空比的值，5和98之间，然后点击设置按钮。</p>
+        <p><b>设置</b>: 将新的占空比设置到仪器。</p>
+
+        <p><b>频率</b>: 输入一个值。</p>
+        <p><b>5\%% </b>: 输入一个值。</p>
+        <p><b>98\%% </b>: 输入一个值。</p>
+        <p><b>差值</b>: 这些值是相同的列中5\%%对应的值 - 98\%%对应的值。</p>
+
+        <p><b>C/.93</b>: 0位置的差值除以93。</p>
+        <p><b>FDK系数</b>: 根据以上的值计算得到的FDK系数。</p>
+        <p><b>CCNM系数</b>: 通过野外实验得到的系数。</p>
+        <p><b>最终的FDK系数</b>: 通过CCNM系数得到的FDK系数。</p>
+
+        <p><b>开始读数</b>: 这个按钮控制仪器开始以一秒钟的时间间隔来读取重力数据。频率数据将显示在屏幕上。离开这个标签时，读数将终止。</p>
+        <p><b>全部清除</b>: 点击这个按钮来清除屏幕上的所有内容。</p>
+        <p><b>确定</b>: 点击这个按钮将反馈系数和应用到程序数据库中的所有其他数据保存下来。反馈系数可在仪器参数界面查看。下次打开此界面时，所有其他数据将被恢复。</p>]]></string>
+        
+    <string name="app_name">UltraGrav2</string>
+    <string name="title_activity_dashboard">UltraGrav2</string>
+    <string name="title_activity_dial_reading">表盘读数</string>
+    <string name="title_activity_note">注释</string>
+    <string name="title_activity_station_list">观测站点</string>
+    <string name="title_activity_observation">观测</string>
+    <string name="title_activity_single_observation">单点观测</string>
+    <string name="title_activity_continuous_observation">连续观测</string>
+    <string name="title_activity_station_details">站点详情</string>
+    <string name="title_activity_options">选项</string>
+    <string name="title_activity_private">自定义</string>
+    <string name="title_activity_continous_setup">连续观测参数</string>
+    <string name="title_activity_settings">设置</string>
+    <string name="title_activity_setup">设置</string>
+    <string name="title_activity_select_file">选择文件</string>
+    <string name="title_activity_select_or_create_file">选择或创建文件</string>
+    <string name="title_activity_help">帮助</string>
+    <string name="title_activity_station_edit">站点编辑</string>
+    <string name="title_activity_station_create">站点创建</string>
+    <string name="title_activity_station_series_edit">站点列表编辑</string>
+     <string name="station_name">站点名称</string>
+    <!--<string name="dial">表盘读数</string>-->
+    <string name="duty_cycle_title">占空比</string>
+    <string name="elapsed_time_title">读数时间</string>
+    <string name="company_name">ZLS Corp.</string>
+    <string name="zls_logo">ZLS Logo</string>
+    <string name="company_loc1">开发制造商</string>
+    <string name="company_loc2">Austin, Texas, USA</string>
+    <string name="meter_type_calibrated">校准型, S/N %1$s</string>
+    <string name="meter_type_noncalibrated">基础型, S/N %1$s</string>
+    <string name="temp_title">温度:</string>
+    <string name="battery_title">电池:</string>
+    <string name="single_obs">单点\n观测</string>
+    <string name="continuous_obs">连续\n观测</string>
+    <string name="settings">设置</string>
+    <string name="meter_setup">仪器设置</string>
+    <string name="options">选项</string>
+    <string name="help">帮助</string>
+    <string name="exit">退出</string>
+    <string name="about">关于</string>
+    <string name="version_number">版本号</string>
+    <string name="dial_reading_instr">如有需要请更新表盘读数，然后点击“确定”按钮。 该值必须是250和6850之间，校准点为50的倍数。\n如果你想使用非校准点，点击下面的复选框。</string>
+
+    <string name="note">注释</string>
+    <string name="cancel">取消</string>
+    <string name="clear">清除</string>
+    <string name="enter">输入</string>
+    <string name="next">下一个</string>
+    <string name="save">保存</string>
+    <string name="edit">编辑</string>
+    <string name="delete">删除</string>
+    <string name="ok">OK</string>
+    <string name="more">再次</string>
+    <string name="accept">确定</string>
+<!--     <string name="new_station">New Station</string> -->
+<!--     <string name="new_series">New Series</string> -->
+    <string name="new_text">新的</string>
+    <string name="create">创建</string>
+    <string name="continue_text">继续</string>
+    <string name="station_instr_for_obs">观测站选择。可以选择或编辑现有的站或创建一个新的。</string>
+    <string name="station_instr_settings">观测站设置，可以选择或编辑现有的站或创建一个新的。</string>
+    <string name="done">完成</string>
+    <string name="yes">是</string>
+    <string name="no">否</string>
+    <string name="none">不</string>
+    <string name="disk_space_warning_title">警报-磁盘空间不足</string>
+    <string name="disk_space_warning_message">设备内存将满。可能会导致数据丢失。</string>
+    
+    <string name="activity_fatal_setup_title">警报-无法加载</string>
+    <string name="activity_fatal_setup_message">未知错误阻止了此界面加载.</string>
+    
+    <string name="can_not_read_app_version_title">警报-无法读取程序版本</string>
+    <string name="can_not_read_app_version_message">无法读取应用程序的版本号。</string>
+    
+    <string name="set_duty_cycle_success">设置占空比成功</string>
+    
+    <string name="get_duty_cycle_failed_title">警报-获得占空比失败</string>
+    <string name="get_duty_cycle_failed_message">从仪器中获得占空比时遇到了一个错误。</string>
+    
+    <string name="set_duty_cycle_failed_title">警报-设置占空比失败</string>
+    <string name="set_duty_cycle_failed_message">设置占空比时遇到了一个错误。</string>
+    
+    <string name="activity_fatal_persist_title">警报-无法保存</string>
+    <string name="activity_fatal_persist_message">未知错误阻止了这个界面保存。</string>
+    
+    <string name="invalidStringNotEmpty">不能为空</string>
+    <string name="invalidStringWithMaxLength">必须是1和 %1$d 字符之间</string>
+    <string name="invalidInteger">必须是整数</string>
+    <string name="invalidIntegerRange">必须是%1$d 和 %2$d之间的整数。</string>
+    <string name="invalidIntegerRangeAndMultiple">必须是%1$d 和 %2$d之间的整数，并且为 %3$d 的倍数。</string>
+    <string name="invalidDecimal">必须是十进制</string>
+    <string name="invalidDecimalRange">必须是%1$f 和 %2$f之间的十进制 </string>
+    <string name="invalidDateRange">必须是%1$d 和 %2$d之间的整数</string>
+    <string name="invalid_fields_title">警告-无效数据</string>
+    <string name="invalid_fields_message">至少含有一个无效的字符，请输入一个有效值后重试。</string>
+    <string name="unable_to_validate_field">警报-无法确认。</string>
+    <string name="unable_to_validate_message">无法确认。</string>
+    
+    <!-- Station List -->
+    <string name="create_station_for_series">添加站点到列表</string>
+    <string name="edit_series">编辑站点列表</string>
+    <string name="read_stations_from_file">站点文件\n读取</string>
+    <string name="write_stations_to_file">站点文件\n写入</string>
+    <string name="station_file_read_error_title">警报 - 站点文件读取错误</string>
+    <string name="station_file_read_error_message">读取站点文件时遇到错误。</string>
+    <string name="station_file_update_error_title">警报 － 站点文件保存错误</string>
+    <string name="station_file_update_error_message">保存站点文件时遇到错误。</string>
+    <string name="station_file_create_error_title">警报 － 站文件创建错误</string>
+    <string name="station_file_create_error_message">创建站点文件时遇到错误。</string>
+    <string name="station_file_delete_error_title">警报 － 站文件删除错误</string>
+    <string name="station_file_delete_error_message">删除站点文件时遇到错误。</string>
+    
+    <!-- Meter Service -->
+    <string name="meterCommandTimeout">超时响应。</string>
+    <string name="meterCommandUnknownError">产生了一个未知的通信错误。</string>
+    <string name="malformed_response">错误响应</string>
+    <string name="transmit_failed">通讯失败</string>
+    <string name="unexpected_response">意外的响应</string>
+    <string name="unknown_response">未知的响应</string>
+    <string name="meter_not_responding_title">警报-仪器未响应</string>
+    <string name="meter_not_responding_message">仪器没有响应。请确认仪器开关打开，串行电缆插入仪器或使用蓝牙连接。</string>
+    <string name="meter_already_connected">仪器已连接。</string>
+    <string name="reconnecting_to_device">重新连接到仪器。</string>
+    <string name="ended_unrequested_reading">结束观测。</string>
+    <string name="failed_to_end_unrequested_reading">结束观测失败。</string>
+    <string name="failed_to_end_reading_title">警报-结束观测失败</string>
+    <string name="failed_to_end_reading_message">结束观测时遇到一个错误。</string>
+
+    <string name="failed_to_start_reading_title">警报-开始观测失败</string>
+    <string name="failed_to_start_reading_message">开始观测时遇到一个错误。</string>
+
+    <string name="interrupted_reading_title">警报-中断观测</string>
+    <string name="interrupted_reading_message">观测中被意外中断。</string>
+
+    <string name="obs_processing_error">处理仪器观测数据时发生错误。</string>
+    
+    <!-- Observation Strings -->
+    <string name="meter_out_of_level_warning">仪器未调平。</string>
+    <string name="observation_timed_out_title">警报-观测超时</string>
+    <string name="observation_timed_out_message">观测已超时。请确认数据是否是好的.</string>
+    <string name="bad_temperature">温度不合格</string>
+    <string name="elapsed_time">读数时间(秒)</string>
+    <string name="duty_cycle">占空比(%)</string>
+    <string name="dial_reading">表盘读数</string>
+    <string name="obs_gravity">重力值</string>
+    <string name="standard_dev">标准偏差</string>
+    <string name="beam_error">横梁误差</string>
+    <string name="feedback_correction">反馈校正</string>
+    <string name="earthtide">固体潮 (ET)</string>
+    <string name="earthtide_correction">固体潮校正 (ET-COR)</string>
+    <string name="level_correction">水平校正</string>
+    <string name="temp_correction">温度校正</string>
+    <string name="data_output_rate">数据输出速率</string>
+    <string name="filter_time_constant">滤波器时间常数</string>
+    <string name="time">时间</string>
+    <string name="filter_10">10 采样过滤器</string>
+    <string name="filter_15">15 采样过滤器</string>
+    <string name="ended_reading_success">停止读数</string>
+    <string name="observation_ended">观测结束</string>
+    <string name="observation_in_progress">观测进行中</string>
+    <string name="observation_saved">观测保存</string>
+    <string name="press_done">点击完成</string>
+    
+    
+    <string name="station_series_name">站点列表</string>
+
+    <!-- Edit Station Strings -->
+    <string name="station_id">站点ID</string>
+    <string name="observer_id">观测者ID</string>
+    <string name="latitude">纬度\nN(+)/S(-)</string>
+    <string name="longitude">经度\nE(+)/W(-)</string>
+    <string name="elevation">海拔\n(米)</string>
+    <string name="meter_height">仪器高度（米）</string>
+    <string name="obtain_gps">从GPS获得经纬度</string>
+    <string name="enable_earthtide">固体潮校正</string>
+    <string name="autoincrement_station_id">自动增加站点ID</string>
+    <string name="series_start_no">起始站点编号</string>
+    <string name="copy_station_info">复制站点信息</string>
+    <string name="default_name">默认</string>
+    <string name="gps_disabled_title">警报-GPS被禁用</string>
+    <string name="gps_disabled_message">显示坐标设置菜单？</string>
+    <string name="bad_gps_location_title">警报-没有GPS定位</string>
+    <string name="bad_gps_location_message">GPS无法提供位置。</string>
+    <string name="austin">Austin</string>
+    <string name="belton">Belton</string>
+    <string name="ccnm">CCNM</string>
+    <string name="zls">ZLS</string>
+        
+    <!-- Settings -->
+    <!--   Settings Tabs -->
+    <string name="system">系统 \n参数</string>
+    <string name="meter">仪器 \n参数</string>
+    <string name="level">水平 \n参数</string>
+    <string name="stations">站点</string>
+    
+    <!--  System Parameters -->
+    <string name="new_dial_reading">新的表盘读数</string>
+    <string name="dial_reading_instructions">表盘读数必须是250和6850之间的整数，校准点是50的倍数。使用非校准点时，勾选下面的复选框。</string>
+    <string name="use_noncalibrated_points">使用非校准点</string>
+    <string name="feedback_gain">反馈增益</string>
+    <string name="feedback_limits">(0.2到2.0)</string>
+    <string name="observation_precision">观测精度</string>
+    <string name="obs_precision_limits">(0.003到0.010)</string>
+    <string name="enable_station_select">允许选择站点</string>
+    <string name="temperature_units">温度单位</string>
+    <string name="degrees_celsius">\u2103</string>
+    <string name="degrees_fahrenheit">\u2109</string>
+    <string name="generic_error_title">警报-未知错误</string>
+    <string name="generic_error_message">发生未知错误。请联系ZLS技术支持，并将errors.log文件发送给他们。</string>
+    
+    <!--   Meter Parameters -->
+    <string name="reading_line">读线线</string>
+    <string name="beam_scale">横梁系数</string>
+    <string name="feedback_scale">反馈系数</string>
+    <string name="restore_factory_params">恢复出厂参数</string>
+    <string name="factory_params_restored">工厂参数已经恢复</string>
+    
+	<!-- Meter Params Alerts -->
+<!-- 	<string name="backup_failed_title">Backup Failed</string> -->
+<!-- 	<string name="backup_failed_message">The backup operation failed for some arbitrary reason. Your guess is 
+        as good as ours.</string> -->
+<!-- 	<string name="backup_successful_title">Alert - Backup Successful</string> -->
+<!-- 	<string name="backup_successful_message">The backup operation was successful.</string> -->
+	
+    <!--   Level Corrections Params -->
+    <string name="long_level_0">纵向水平 0</string>
+    <string name="long_level_a">纵向水平 A</string>
+    <string name="long_level_b">纵向水平 B</string>
+    <string name="long_level_c">纵向水平 C</string>
+    <string name="cross_level_0">横向水平 0</string>
+    <string name="cross_level_a">横向水平 A</string>
+    <string name="cross_level_b">横向水平 B</string>
+    <string name="cross_level_c">横向水平 C</string>
+    <string name="level_correction_params_file_open_error_title">水平校正参数文件打开错误</string>
+    <string name="level_correction_params_file_open_error_message">水平校正参数文件打开时遇到错误。</string>
+    <string name="level_correction_params_file_update_error_title">水平校正参数文件更新错误</string>
+    <string name="level_correction_params_file_update_error_message">水平校正参数文件更新时遇到错误。</string>
+    
+    <!-- Station Series Alert -->
+<!--     <string name="station_alert_title">Alert - Series Station</string> -->
+<!--     <string name="station_alert_message">You have chosen a series station. Do you want to continue 
+             adding stations to those already created or rerun the series?</string> -->
+<!--     <string name="rerun">Rerun</string> -->
+
+    <!-- Observation Alerts -->
+    <string name="no_meter_connected_title">警报-无仪器连接</string>
+    <string name="no_meter_connected_message">采集程序没有连接到仪器，连接到仪器后重试。</string>
+    <string name="clamp_alert_title">警报-锁摆</string>
+    <string name="clamp_alert_message">移动仪器前请锁摆。</string>
+    <string name="data_not_saved_alert_title">警报，数据未保存</string>
+    <string name="data_not_saved_alert_message">数据没有保存。你想保存它吗？</string>
+    <string name="duty_cycle_range_alert_title">警报-反馈范围</string>
+    <string name="duty_cycle_low_calibrated_message">目前反馈为5%或更低，这是反馈的下限。调节仪器到下一个较低的大盘校准点。</string>
+    <string name="duty_cycle_low_non_calibrated_message">目前反馈为5%或更低，这是反馈的下限。调节仪器到下一个较低的大盘整数点。</string>
+    <string name="duty_cycle_high_calibrated_message">目前反馈为98%或更高，这是反馈的上限。调节仪器到下一个较高的大盘校准点。</string>
+    <string name="duty_cycle_high_non_calibrated_message">目前反馈为98%或更高，这是反馈的上限。调节仪器到下一个较高的大盘整数点。</string>
+    <string name="before_next_reading_alert_title">警报-进行下一读数前</string>
+    <string name="before_next_reading_alert_message"><![CDATA[进行下一读数前，<br/>&#8226; 锁摆，<br/>&#8226; 选择站点,<br/>&#8226; 调节仪器水平,<br/>&#8226; 松摆，<br/>&#8226; 准备好后按下继续按钮.]]></string>
+    <string name="configuration_load_failed_title">警报-配置失败</string>
+    <string name="configuration_load_failed_message">配置数据加载失败。</string>
+    <string name="dont_show_this_warning_again">读数期间不再显示此警报.</string>
+	
+	<!-- Station Info Alerts -->
+	<string name="delete_station_title">删除站点</string>
+	<string name="delete_station_message">您要删除站点%1$s吗？此站点不可删除。要继续吗？</string>
+	
+	<!-- Continuous Observation Params -->
+	<string name="continuous_observation_prompt">输入连续观测模式滤波参数。这些必须满足Nyquist准则来防止数据失真。即，数据输出速率必须至少为滤波时间常数的两倍。</string>
+	<string name="data_output_rate_prompt">数据输出速率（秒，> = 1）</string>
+	<string name="filter_time_constant_prompt">滤波时间常数（秒，> = 1）</string>
+	
+    <!-- Communications -->
+    <string name="meter_connecting">连接到仪器...</string>
+    <string name="meter_connected">连接仪器成功</string>
+    <string name="meter_disconnected">未连接到仪器</string>
+    <string name="meter_comm_failed">连接仪器失败</string>
+    <string name="meter_connection">仪器连接</string>
+    <string name="scan_new_meter_connection">扫描新设备</string>
+    <string name="bluetooth_scan">蓝牙</string>
+    <string name="usb_scan">USB</string>
+    <string name="connection_type">连接类型</string>
+    <string name="device_name">设备名称</string>
+    <string name="connection_status">连接状态</string>
+    <string name="connected">连接</string>
+    <string name="disconnected">中断</string>
+    <string name="attempting_to_reconnect">尝试重新连接</string>
+    <string name="select_device">选择设备</string>
+    <string name="paired">配对的</string>
+    <string name="not_paired">未配对</string>
+    <string name="no_bluetooth_support_title">警报-不支持蓝牙</string>
+    <string name="no_bluetooth_support_message">此设备不支持蓝牙</string>
+    <string name="enable_bluetooth_title">警报-蓝牙未启用</string>
+    <string name="enable_bluetooth_message">当前蓝牙未启用。请在设置中启用蓝牙。</string>
+    <string name="bluetooth_adapter_error_title">警报-蓝牙适配器错误.</string>
+    <string name="bluetooth_adapter_error_message">此设备的蓝牙适配器发生错误。</string>
+    <string name="usb_cable_attached">USB电缆已连接。</string>
+    <string name="usb_cable_detached">USB电缆被移除。</string>
+    <string name="error_opening_usb_cable">打开USB电缆错误。</string>
+    <string name="connected_to_usb_cable">连接USB电缆。</string>
+    <string name="usb_cable_not_connected">USB电缆未连接</string>
+    <string name="communication_type_error_title">通信类型错误</string>
+    <string name="communication_type_error_message">选择了一个未知的通信类型。请选择蓝牙或USB。</string>
+    <string name="communication_params_file_open_error_title">警报-通信参数打开错误</string>
+    <string name="communication_params_file_open_error_message">打开通信参数文件时发生错误。</string>
+    <string name="communication_params_file_update_error_title">警报-通信参数更新错误. </string>
+    <string name="communication_params_file_update_error_message">更新通信参数文件时发生错误。</string>
+    
+    <!-- Options -->
+    <!--   Options Tabs -->
+    <string name="output_data_tab">输出数据</string>
+    <string name="view_data_tab">查看数据</string>
+    <string name="earthtide_tab">固体潮</string>
+    
+    <!--   Output Observations -->
+    <!--     Output Observations TextViews -->
+    <string name="data_file_sizes">数据文件的大小（记录）</string>
+    <string name="single">单点</string>
+    <string name="continuous">连续</string>
+    <string name="record_count">数据个数</string>
+    <!--     Output Observations Buttons -->
+    <string name="save_single_mode">保存单点模式数据文件</string>
+    <string name="save_continuous_mode_short">保存连续模式短记录数据文件</string>
+    <string name="save_continuous_mode_long">保存连续模式长记录数据文件</string>
+    <string name="delete_single_mode">删除单点模式数据文件</string>
+    <string name="delete_continuous_mode">删除连续模式数据文件</string>
+    <!--     Output Observations Alerts -->
+    <string name="delete_single_mode_title">警报-删除单点模式数据文件</string>
+    <string name="delete_single_mode_file_message">您要删除单点观测数据文件。所有的数据都将丢失。此操作无法撤消。</string>
+    <string name="delete_continuous_mode_title">警报-删除连续模式数据文件</string>
+    <string name="delete_continuous_mode_file_message">您要删除连续观测数据文件。所有的数据都将丢失。此操作无法撤消。</string>
+    <string name="no_single_obs_to_save_title">警报-没有单点数据保存</string>
+    <string name="no_single_obs_to_save_message">没有单点数据可以用来保存。</string>
+    <string name="no_continuous_obs_to_save_title">警报-没有连续数据保存</string>
+    <string name="no_continuous_obs_to_save_message">没有连续数据可以用来保存。</string>
+    <string name="no_single_obs_to_delete_title">警报-没有单点数据删除</string>
+    <string name="no_single_obs_to_delete_message">没有单点数据可以用来删除。</string>
+    <string name="no_continuous_obs_to_delete_title">警告-没有连续数据删除</string>
+    <string name="no_continuous_obs_to_delete_message">没有连续数据可以用来删除。</string>
+    
+    <!--   View Observations -->
+    <!--     View Observations Buttons -->
+    <string name="view_single_mode">查看单点数据文件</string>
+    <string name="view_continuous_mode_short">查看连续模式短记录数据文件</string>
+    <string name="view_continuous_mode_long">查看连续模式长记录数据文件</string>
+    <!--     View Observations Alerts -->
+    <string name="no_single_obs_to_view_title">警报-没有单点数据查看</string>
+    <string name="no_single_obs_to_view_message">没有单点模式数据可以用来查看。</string>
+    <string name="no_cont_obs_to_view_title">警告-没有连续数据查看</string>
+    <string name="no_cont_obs_to_view_message">没有连续模式数据可以用来查看。</string>
+    <string name="obs_counts_not_valid_title">警报-数据计数不可用</string>
+    <string name="obs_counts_not_valid_message">单点和连续数据的计数功能不可用。</string>
+
+    <!--   Earthtide -->
+    <string name="calculate">计算</string>
+    <string name="save_data">保存数据</string>
+    <string name="year">年</string>
+    <string name="month">月</string>
+    <string name="day">日</string>
+    
+    <!-- ZLS Private -->
+    <string name="calculate_feedback_scale">计算反馈系数</string>
+    <string name="enter_password">输入密码</string>
+    <string name="incorrect_password_title">警告-密码不正确</string>
+    <string name="incorrect_password_message">密码不正确，请重新输入。</string>
+    <string name="serial_number">序列号</string>
+    <string name="gain">增益</string>
+    <string name="stop_boost">停靠点提升</string>
+    <string name="boost_factor">提升因子</string>
+    <string name="temp_0">温度 0 因子</string>
+    <string name="temp_a">温度 A 因子</string>
+    <string name="temp_b">温度 B 因子</string>
+    <string name="temp_c">温度 C 因子</string>
+    <string name="calibrated">校准</string>
+    <string name="plates_reversed">基盘反转</string>
+    <string name="save_frequencies">保存频率</string>
+    <string name="test_mode">测试模式</string>
+    <string name="load_calibration_table">加载校准表</string>
+    <string name="beam_k">横梁系数K</string>
+    <string name="ccjr_beam_k">CCJR 横梁系数 K</string>
+    <string name="confirm_clear_all_alert_title">警报-确认清除所有数据</string>
+    <string name="confirm_clear_all_alert_message">你确定你想清楚所有数据吗？不可恢复！</string>
+    <string name="create_factory_params">创建出厂参数文件</string>
+    <string name="factory_parameter_file_created">出厂参数文件创建成功。</string>
+    <string name="factory_params_file_open_error_title">出厂参数文件打开错误</string>
+    <string name="factory_params_file_open_error_message">打开出厂参数文件时发生错误。</string>
+    <string name="factory_params_file_create_error_title">出厂参数文件创建错误</string>
+    <string name="factory_params_file_create_error_message">创建出厂参数文件时发生错误。</string>
+    <string name="factory_param_null_error_title">警报-出厂参数值错误</string>
+    <string name="factory_param_null_error_message">其中一个出厂参数值是无效的。请检查所有的值，重试。</string>
+    <string name="factory_params_file_does_not_exist_title">警报-出厂参数文件不存在</string>
+    <string name="factory_params_file_does_not_exist_message">出厂参数文件不存在。</string>
+    <string name="feedback_scale_value_cleared">清楚反馈系数值</string>
+    <string name="feedback_scale_params_cleared">清楚反馈系数参数</string>
+    <string name="feedback_scale_value_saved">反馈系数值保存</string>
+    <string name="feedback_scale_params_saved">反馈参数保存</string>
+    <string name="feedback_scale_params_file_open_error_title">反馈参数文件打开错误</string>
+    <string name="feedback_scale_params_file_open_error_message">打开反馈参数文件时出错。</string>
+    <string name="feedback_scale_params_file_read_error_title">反馈参数文件读取错误</string>
+    <string name="feedback_scale_params_file_read_error_message">读取反馈参数文件时出错。</string>
+    <string name="feedback_scale_params_file_update_error_title">反馈参数文件更新错误</string>
+    <string name="feedback_scale_params_file_update_error_message">更新反馈参数文件时出错。</string>
+    <string name="bad_gain_value_title">无效增益值</string>
+    <string name="bad_gain_value_message">增益值必须是数字。</string>
+    <string name="system_params_file_open_error_title">系统参数文件打开错误</string>
+    <string name="system_params_file_open_error_message">打开系统参数文件时出错。</string>
+    <string name="system_params_file_update_error_title">系统参数文件更新错误</string>
+    <string name="system_params_file_update_error_message">更新系统参数文件时出错。</string>
+
+    <string name="calibration_import_complete">校准导入完成。</string>
+    <string name="calibration_import_expected_count">校准导入文件不包含预期的133个值。</string>
+    <string name="calibration_table_import_error_title">警报-校准表导入错误</string>
+    <string name="no_calib_Table_title">校准表加载失败</string>
+    <string name="calib_table_db_read_error_title">警报-校准表读取错误</string>
+    <string name="calib_table_db_read_error_message">读取校准表时出错。</string>
+    <string name="calib_table_size_error_title">警报-校准表尺寸错误。</string>
+    <string name="calib_table_size_error_message">校准表的尺寸错误。</string>
+    
+    <!-- Meter Setup -->
+    <!--   Meter Setup Tabs -->
+    <string name="read_meter_tab">仪器状态/\n设置占空比</string>
+    <string name="set_stops_reading_line">设置停靠点/\n读数线</string>
+    <string name="calculate_beam_scale">计算横梁系数</string>
+    <string name="beam_scale_saved">横梁系数保存</string>
+    <string name="beam_scale_save_error_title">横梁系数保存错误</string>
+    <string name="params_file_open_error_title">参数文件打开错误</string>
+    <string name="params_file_open_error_message">打开参数文件时出错。</string>
+    <string name="params_file_update_error_title">参数文件更新错误</string>
+    <string name="params_file_update_error_message">更新仪器、系统、水平参数文件时出错。</string>
+    <string name="meter_params_file_open_error_title">仪器参数文件打开错误</string>
+    <string name="meter_params_file_open_error_message">打开仪器参数文件时出错。</string>
+    <string name="meter_params_file_update_error_title">仪器参数文件更新错误</string>
+    <string name="meter_params_file_update_error_message">更新仪器参数文件时出错。</string>
+    
+    <string name="cross_level_frequency">横轴水平频率</string>
+    <string name="long_level_frequency">纵轴水平频率</string>
+    <string name="temperature_frequency">温度频率</string>
+    <string name="current_duty_cycle">当前占空比 (%)</string>
+    <string name="new_duty_cycle_instr">输入一个新的占空比的值，5和98之间。</string>
+    <string name="set">设置</string>
+    <string name="start_reading">开始读数</string>
+
+    <string name="duty_cycle_presets">预置占空比</string>
+    <string name="current_duty_cycle_prompt">当前占空比(%)</string>
+    <string name="new_duty_cycle_prompt">新的占空比(%)</string>
+    <string name="beam_frequency">横梁频率</string>
+    <string name="max_stop">最大频率</string>
+    <string name="min_stop">最小频率</string>
+    <string name="duty_value_preset_10_percent">10%</string>
+    <string name="duty_value_preset_50_percent">50%</string>
+    <string name="duty_value_preset_90_percent">90%</string>
+    <string name="base_dial_reading">基础表盘读数DR</string>
+    <string name="base_dr_minus_250">基础DR -0.250 mGal</string>
+    <string name="base_dr_plus_250">基础DR +0.250 mGal</string>
+    <string name="minus_250_beam_freq">-0.250 横梁频率</string>
+    <string name="plus_250_beam_freq">+0.250 横梁频率</string>
+    <string name="base_dr_minus_500">基础DR -0.500 mGal</string>
+    <string name="base_dr_plus_500">基础DR +0.500 mGal</string>
+    <string name="minus_500_beam_freq">-0.500 横梁频率</string>
+    <string name="plus_500_beam_freq">+0.500 横梁频率</string>
+    <string name="delta_freq">频率差值</string>
+    <string name="stops_accept_button_prompt">点击“确定”按钮保存最大频率、最小频率和读数线。</string>
+    <string name="beam_scale_accept_button_prompt">点击“确定”按钮保存横梁系数。</string>
+    <string name="feedback_accept_button_prompt">点击“确定”按钮保存反馈系数和所有其他的数据。</string>
+    <string name="stops_reading_line_saved">保存最大频率、最小频率和读数线</string>
+    
+    <string name="duty_value_preset_5_percent">5%</string>
+    <string name="duty_value_preset_98_percent">98%</string>
+    <string name="freq">频率</string>
+    <string name="delta">差值</string>
+    <string name="c_93">C/.93</string>
+    <string name="ccnm_factor">CCNM 因子</string>
+    <string name="final_fdk_scale">最终反馈系数</string>
+    <string name="clear_all">全部清除</string>
+    
+    <!-- File operations -->
+    <string name="directory_up">上一级</string>
+    <string name="create_new_file">新建文件</string>
+
+    <!-- File operation alerts -->
+    <string name="file_write_failed_title">警报-写入文件失败</string>
+    <string name="file_write_failed_message">无法写入选择的文件。</string>
+    <string name="path_not_file_title">警报-选择的路径不是文件</string>
+    <string name="path_not_file_message">你所选的路径不是文件。</string>
+    <string name="path_insufficient_write_permissions_title">警报-没有权限</string>
+    <string name="path_insufficient_write_permissions_message">您没有权限写入所选择的路径。</string>
+    <string name="allow_file_overwrite_title">警报-确认文件覆盖</string>
+    <string name="allow_file_overwrite_message">你确定要覆盖所选路径的现有文件？</string>
+    <string name="no_file_write_permissions">没有足够的权限来写入文件，尝试另一个路径。</string>
+    <string name="no_file_read_permissions">没有足够的权限来读取文件。尝试另一个路径。</string>
+    <string name="file_read_failed">文件第%1$d行读取失败。</string>
+    <string name="file_write_complete">文件写入完成。</string>
+    <string name="file_write_cancelled">文件写入取消。</string>
+    <string name="file_read_complete">文件读取完成。</string>
+    <string name="single_obs_delete_complete">单点观测数据删除完成。</string>
+    <string name="continuous_obs_delete_complete">连续观测数据删除完成。</string>
+    <string name="single_obs_delete_error_title">单点观测数据删除错误</string>
+    <string name="single_obs_delete_error_message">删除单点观测数据文件时出错。</string>
+    <string name="continuous_obs_delete_error_title">连续观测数据删除错误</string>
+    <string name="continuous_obs_delete_error_message">删除连续观测数据文件时出错。</string>
+    <string name="observation_count_read_error_title">观测数据计数读取错误。</string>
+    <string name="observation_count_read_error_message">读取观测数据计数时出错。</string>
+    <string name="observation_file_read_error_title">观测数据读取错误</string>
+    <string name="observation_file_read_error_message">读取观测数据文件时出错。</string>
+    <string name="observation_file_write_error_title">写入观测数据错误</string>
+    <string name="observation_file_write_error_message">写入观测数据文件时出错。</string>
+
+    <string name="did_not_create_observation_object_message">创建观测对象时出错。</string>
+    <string name="did_not_create_observation_record_message">创建观测记录时出错。</string>
+
+    <string name="sd_card_error_title">SD卡错误</string>
+    <string name="sd_card_error_message">打开log文件时SD卡发生错误。</string>
+    <string name="error_log_file_error_title">警报-错误log文件报错</string>
+    <string name="error_log_file_error_message">打开错误log文件时报错。</string>
+    
+    <string name="enter_file_name">输入文件名称</string>
+    <string name="file_name">文件名称</string>
+    <string name="out_of_range">超出范围 !</string>
+    <string name="near_end">近端</string>
+    <string name="of_range">范围！</string>
+    <string name="dial">表盘</string>
+    
+</resources>

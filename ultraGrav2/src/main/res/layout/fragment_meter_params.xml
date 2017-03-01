@@ -1,0 +1,132 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:fadeScrollbars="false" >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/dummyLinearLayout"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:layout_width="0px"
+                android:layout_height="0px"
+                android:orientation="horizontal" />
+            
+            <TextView
+                android:id="@+id/readingLinePrompt"
+                style="@style/SettingsTextView"
+                android:layout_width="200dp"
+                android:gravity="center_vertical"
+                android:paddingTop="15dp"
+                android:text="@string/reading_line" />
+
+            <EditText
+                android:id="@+id/readingLineText"
+                style="@style/SettingsEditText"
+                android:layout_alignBaseline="@id/readingLinePrompt"
+                android:layout_alignTop="@id/readingLinePrompt"
+                android:layout_toRightOf="@id/readingLinePrompt" />
+
+            <TextView
+                android:id="@+id/beamScalePrompt"
+                style="@style/SettingsTextView"
+                android:layout_width="200dp"
+                android:layout_below="@id/readingLinePrompt"
+                android:gravity="center_vertical"
+                android:paddingTop="20dp"
+                android:text="@string/beam_scale" />
+
+            <com.zlscorp.ultragrav.activity.widget.NumberPadEditText
+                android:id="@+id/beamScaleText"
+                style="@style/SettingsEditText"
+                android:layout_alignBaseline="@id/beamScalePrompt"
+                android:layout_alignTop="@id/beamScalePrompt"
+                android:layout_toRightOf="@id/beamScalePrompt" />
+
+            <TextView
+                android:id="@+id/feedbackScalePrompt"
+                style="@style/SettingsTextView"
+                android:layout_width="200dp"
+                android:layout_below="@id/beamScalePrompt"
+                android:gravity="center_vertical"
+                android:paddingTop="20dp"
+                android:text="@string/feedback_scale" />
+
+            <com.zlscorp.ultragrav.activity.widget.NumberPadEditText
+                android:id="@+id/feedbackScaleText"
+                style="@style/SettingsEditText"
+                android:layout_alignBaseline="@id/feedbackScalePrompt"
+                android:layout_alignTop="@id/feedbackScalePrompt"
+                android:layout_toRightOf="@id/feedbackScalePrompt" />
+
+            <TextView
+                android:id="@+id/minimumStopPrompt"
+                style="@style/SettingsTextView"
+                android:layout_width="200dp"
+                android:layout_below="@id/feedbackScalePrompt"
+                android:gravity="center_vertical"
+                android:paddingTop="20dp"
+                android:text="@string/min_stop" />
+
+            <EditText
+                android:id="@+id/minimumStopText"
+                style="@style/SettingsEditText"
+                android:layout_alignBaseline="@id/minimumStopPrompt"
+                android:layout_alignTop="@id/minimumStopPrompt"
+                android:layout_toRightOf="@id/minimumStopPrompt" />
+
+            <TextView
+                android:id="@+id/maximumStopPrompt"
+                style="@style/SettingsTextView"
+                android:layout_width="200dp"
+                android:layout_below="@id/minimumStopPrompt"
+                android:gravity="center_vertical"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:text="@string/max_stop" />
+
+            <EditText
+                android:id="@+id/maximumStopText"
+                style="@style/SettingsEditText"
+                android:layout_alignBaseline="@id/maximumStopPrompt"
+                android:layout_alignTop="@id/maximumStopPrompt"
+                android:layout_toRightOf="@id/maximumStopPrompt" />
+        </RelativeLayout>
+
+    </ScrollView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="10dp" >
+
+        <Button
+            android:id="@+id/cancelButton"
+            style="@style/AppButton2"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="20dp"
+            android:lines="2"
+            android:text="@string/cancel" />
+
+        <Button
+            android:id="@+id/restoreButton"
+            style="@style/AppButton2"
+            android:layout_gravity="center_vertical"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="@string/restore_factory_params" />
+    </LinearLayout>
+
+</LinearLayout>

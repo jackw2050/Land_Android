@@ -1,0 +1,322 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fadeScrollbars="false" >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:id="@+id/dummyLinearLayout"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:layout_width="0px"
+                android:layout_height="0px"
+                android:orientation="horizontal" />
+
+            <TextView
+                style="@style/LabelColumnLeft"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/duty_cycle_presets" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp">
+
+                <Button
+                    android:id="@+id/dutyValPreset5Percent"
+                    style="@style/AppButton2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="15dp"
+                    android:text="@string/duty_value_preset_5_percent" />
+
+                <Button
+                    android:id="@+id/dutyValPreset50Percent"
+                    style="@style/AppButton2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="15dp"
+                    android:text="@string/duty_value_preset_50_percent" />
+
+                <Button
+                    android:id="@+id/dutyValPreset98Percent"
+                    style="@style/AppButton2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/duty_value_preset_98_percent" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    style="@style/LabelText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/current_duty_cycle_prompt" />
+
+                <TextView
+                    android:id="@+id/currentDutyCycleText"
+                    style="@style/LabelColumnRight" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/LabelTextPlus"
+                    android:layout_width="0dip"
+                    android:layout_weight="2"
+                    android:text="@string/new_duty_cycle_prompt"
+                    android:textSize="24sp" />
+
+                <EditText
+                    android:id="@+id/newDutyCycleText"
+                    style="@style/LabelColumnRight"
+                    android:text="50" />
+
+                <Button
+                    android:id="@+id/setDutyCycleButton"
+                    style="@style/AppButton2"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1.2"
+                    android:text="@string/set" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    style="@style/LabelColumnLeft"
+                    android:text="@string/beam_frequency" />
+                <TextView
+                    android:id="@+id/beamFrequencyText"
+                    style="@style/LabelColumnRight" />
+            </LinearLayout>
+            <HorizontalScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fadeScrollbars="false"
+                android:layout_marginTop="10dp" >
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+                        <TextView
+                            style="@style/FeedbackTableRowLabel" />
+                        <TextView
+                            style="@style/FeedbackTableHeader"
+                            android:text="-10" />
+                        <TextView
+                            style="@style/FeedbackTableHeader"
+                            android:text="-5" />
+                        <TextView
+                            style="@style/FeedbackTableHeader"
+                            android:text="0" />
+                        <TextView
+                            style="@style/FeedbackTableHeader"
+                            android:text="+5" />
+                        <TextView
+                            style="@style/FeedbackTableHeader"
+                            android:text="+10" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+                        <TextView
+                            style="@style/FeedbackTableRowLabel"
+                            android:text="@string/freq" />
+                        <EditText
+                            android:id="@+id/freqMinus10Text"
+                            style="@style/FeedbackTableBody" 
+                            android:nextFocusDown="@+id/freqMinus5Text" />
+                        <EditText
+                            android:id="@+id/freqMinus5Text"
+                            style="@style/FeedbackTableBody"
+                            android:nextFocusDown="@+id/freq0Text" />
+                        <EditText
+                            android:id="@+id/freq0Text"
+                            style="@style/FeedbackTableBody"
+                            android:nextFocusDown="@+id/freqPlus5Text" />
+                        <EditText
+                            android:id="@+id/freqPlus5Text"
+                            style="@style/FeedbackTableBody"
+                            android:nextFocusDown="@+id/freqPlus10Text" />
+                        <EditText
+                            android:id="@+id/freqPlus10Text"
+                            style="@style/FeedbackTableBody"
+                            android:nextFocusDown="@+id/fivePercentMinus10Text" />
+                        </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+                        <TextView
+                            style="@style/FeedbackTableRowLabel"
+                            android:text="5%" />
+                        <EditText
+                            android:id="@+id/fivePercentMinus10Text"
+                            style="@style/FeedbackTableBody"
+                            android:nextFocusDown="@+id/fivePercentMinus5Text" />
+                        <EditText
+                            android:id="@+id/fivePercentMinus5Text"
+                            style="@style/FeedbackTableBody"
+                            android:nextFocusDown="@+id/fivePercent0Text" />
+                        <EditText
+                            android:id="@+id/fivePercent0Text"
+                            style="@style/FeedbackTableBody"
+                            android:nextFocusDown="@+id/fivePercentPlus5Text" />
+                        <EditText
+                            android:id="@+id/fivePercentPlus5Text"
+                            style="@style/FeedbackTableBody"
+                            android:nextFocusDown="@+id/fivePercentPlus10Text" />
+                        <EditText
+                            android:id="@+id/fivePercentPlus10Text"
+                            style="@style/FeedbackTableBody"
+                            android:nextFocusDown="@+id/nintyEightPercentMinus10Text" />
+                        </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+                        <TextView
+                            style="@style/FeedbackTableRowLabel"
+                            android:text="98%" />
+                        <EditText
+                            android:id="@+id/nintyEightPercentMinus10Text"
+                            style="@style/FeedbackTableBody"
+                            android:nextFocusDown="@+id/nintyEightPercentMinus5Text" />
+                        <EditText
+                            android:id="@+id/nintyEightPercentMinus5Text"
+                            style="@style/FeedbackTableBody"
+                            android:nextFocusDown="@+id/nintyEightPercent0Text" />
+                        <EditText
+                            android:id="@+id/nintyEightPercent0Text"
+                            style="@style/FeedbackTableBody"
+                            android:nextFocusDown="@+id/nintyEightPercentPlus5Text" />
+                        <EditText
+                            android:id="@+id/nintyEightPercentPlus5Text"
+                            style="@style/FeedbackTableBody"
+                            android:nextFocusDown="@+id/nintyEightPercentPlus10Text" />
+                        <EditText
+                            android:id="@+id/nintyEightPercentPlus10Text"
+                            style="@style/FeedbackTableBody" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+                        <TextView
+                            style="@style/FeedbackTableRowLabel"
+                            android:text="@string/delta" />
+                        <TextView
+                            android:id="@+id/deltaMinus10Text"
+                            style="@style/FeedbackTableHeader" />
+                        <TextView
+                            android:id="@+id/deltaMinus5Text"
+                            style="@style/FeedbackTableHeader" />
+                        <TextView
+                            android:id="@+id/delta0Text"
+                            style="@style/FeedbackTableHeader" />
+                        <TextView
+                            android:id="@+id/deltaPlus5Text"
+                            style="@style/FeedbackTableHeader" />
+                        <TextView
+                            android:id="@+id/deltaPlus10Text"
+                            style="@style/FeedbackTableHeader" />
+                    </LinearLayout>
+                </LinearLayout>
+            </HorizontalScrollView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp">
+                <TextView
+                    style="@style/LabelColumnLeft"
+                    android:text="@string/c_93" />
+                <TextView
+                    android:id="@+id/c93Text"
+                    style="@style/LabelColumnRight" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    style="@style/LabelColumnLeft"
+                    android:text="@string/feedback_scale" />
+                <TextView
+                    android:id="@+id/feedbackScaleText"
+                    style="@style/LabelColumnRight" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    style="@style/LabelColumnLeft"
+                    android:text="@string/ccnm_factor" />
+                <EditText
+                    android:id="@+id/ccnmFactorText"
+                    style="@style/LabelColumnRight"
+                    android:text="1.0" />
+                </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    style="@style/LabelColumnLeft"
+                    android:text="@string/final_fdk_scale" />
+                <TextView
+                    android:id="@+id/finalFdkScaleText"
+                    style="@style/LabelColumnRight" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="15dp">
+                <TextView
+                    style="@style/LabelColumnLeft"
+                    android:singleLine="false"
+                    android:text="@string/feedback_accept_button_prompt" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/startButton"
+            style="@style/AppButton2"
+            android:text="@string/start_reading" />
+        <Button
+            android:id="@+id/clearAllButton"
+            style="@style/AppButton2"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:text="@string/clear_all" />
+        <Button
+            android:id="@+id/acceptButton"
+            style="@style/AppButton2"
+            android:text="@string/accept" />
+    </LinearLayout>
+</LinearLayout>

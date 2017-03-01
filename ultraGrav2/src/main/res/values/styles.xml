@@ -1,0 +1,238 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="TitleText">
+        <item name="android:textSize">32sp</item>
+        <item name="android:textColor">#FF000000</item>
+        <item name="android:paddingBottom">0dp</item>
+    </style>
+
+    <style name="NumberPadButton">
+        <item name="android:textSize">32sp</item>
+        <item name="android:paddingTop">10sp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:textColor">#FF000000</item>
+    </style>
+
+    <style name="NumberPadTopRow">
+        <item name="android:textSize">32sp</item>
+        <item name="android:paddingTop">5sp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">15dp</item>
+        <item name="android:layout_marginRight">15dp</item>
+    </style>
+
+    <style name="NumberPadButtonLeft" parent="NumberPadButton">
+        <item name="android:layout_marginLeft">10dp</item>
+    </style>
+
+    <style name="NumberPadButtonMiddle" parent="NumberPadButton">
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:layout_marginLeft">10dp</item>
+    </style>
+
+    <style name="NumberPadButtonRight" parent="NumberPadButton">
+        <item name="android:layout_marginRight">10dp</item>
+    </style>
+
+    <style name="NumPadBottomRowButton" parent="NumberPadButton">
+        <item name="android:layout_width">0px</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <style name="NumPadBottomRowButtonLeft" parent="NumPadBottomRowButton">
+        <item name="android:layout_marginRight">5dp</item>
+    </style>
+
+    <style name="NumPadBottomRowButtonMiddle" parent="NumPadBottomRowButton">
+        <item name="android:layout_marginLeft">5dp</item>
+        <item name="android:layout_marginRight">5dp</item>
+    </style>
+
+    <style name="NumPadBottomRowButtonRight" parent="NumPadBottomRowButton">
+        <item name="android:layout_marginLeft">5dp</item>
+    </style>
+
+    <style name="AboutTitle" parent="TitleText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_alignParentLeft">true</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="AboutBody">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="EarthtideInputLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="EarthtideText" parent="LabelText">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">5dp</item>
+        <item name="android:gravity">center_horizontal</item>
+    </style>
+
+    <style name="EarthtideInput" parent="LabelText">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">5dp</item>
+        <item name="android:inputType">textPersonName</item>
+        <item name="android:gravity">center</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="LabelText">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">#FF000000</item>
+    </style>
+
+    <style name="LabelTextPlus" parent="LabelText">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <style name="GravityText">
+        <item name="android:textSize">28sp</item>
+        <item name="android:textColor">#FF000000</item>
+    </style>
+
+    <style name="GravityTextPlus" parent="GravityText">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <style name="LabelColumnLeft" parent="LabelTextPlus">
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="LabelColumnLeft01" parent="LabelTextPlus">
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:layout_weight">0.95</item>
+    </style>
+
+    <style name="LabelColumnRight" parent="LabelTextPlus">
+        <item name="android:layout_marginRight">20dp</item>
+    </style>
+
+    <style name="LabelColumnRight01" parent="LabelTextPlus">
+        <item name="android:layout_marginRight">20dp</item>
+        <item name="android:layout_weight">1.05</item>
+    </style>
+
+    <style name="WarningText" parent="LabelText">
+        <item name="android:textColor">#FFFF0000</item>
+    </style>
+
+    <style name="WarningTextPlus" parent="LabelTextPlus">
+        <item name="android:textColor">#FFFF0000</item>
+    </style>
+
+    <style name="WarningTextRight" parent="LabelColumnRight">
+        <item name="android:textColor">#FFFF0000</item>
+    </style>
+
+    <style name="AppButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingLeft">25sp</item>
+        <item name="android:paddingRight">25sp</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:layout_marginBottom">6dp</item>
+    </style>
+
+    <style name="AppButton2">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingTop">15dp</item>
+        <item name="android:paddingBottom">15dp</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <style name="AppButton2A">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingTop">15dp</item>
+        <item name="android:paddingBottom">15dp</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <style name="DashButton" parent="AppButton">
+        <item name="android:layout_width">140dp</item>
+        <item name="android:layout_height">75dp</item>
+        <item name="android:layout_marginLeft">5dp</item>
+        <item name="android:layout_marginRight">5dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+    </style>
+
+    <style name="DashButton3" parent="AppButton">
+        <item name="android:layout_width">125dp</item>
+        <item name="android:layout_height">75dp</item>
+        <item name="android:layout_marginBottom">6dp</item>
+    </style>
+
+    <style name="AppListRow" parent="LabelText">
+        <item name="android:layout_height">40dp</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+<!--             <item name="android:layout_width">150dp</item> -->
+    <style name="SettingsTextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <style name="SettingsEditText">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:ems">10</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <style name="FeedbackTableHeader">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">125dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <style name="FeedbackTableBody">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">125dp</item>
+        <item name="android:maxLength">8</item>
+        <item name="android:ems">100</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <style name="FeedbackTableRowLabel">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">75dp</item>
+        <item name="android:gravity">right</item>
+        <item name="android:paddingLeft">5dp</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+
+</resources>

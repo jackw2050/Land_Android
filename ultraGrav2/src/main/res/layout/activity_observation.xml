@@ -1,0 +1,694 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:padding="10dp" >
+
+    <LinearLayout
+        android:id="@+id/tempWarningLayoutTest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#EFEFEF"
+        android:orientation="vertical"
+        android:visibility="visible" >
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fadeScrollbars="false"
+        android:fillViewport="true" >
+
+        <!--
+             <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="top"
+            android:orientation="vertical">
+        -->
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:gravity="top"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="145dp" >
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.4"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/textView1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight=".55"
+                        android:text="@string/station_name"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight=".60"
+                        android:hint="station"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/view1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.1" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.4"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/dial"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight=".55"
+                        android:text="@string/dial"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:id="@+id/dialReadingText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight=".60"
+                        android:hint="Dial"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.4"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/dutyCycleLabel"
+                        style="android:textViewStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight=".55"
+                        android:text="@string/duty_cycle_title"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:id="@+id/dutyCycleText"
+                        style="android:textViewStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight=".62"
+                        android:hint="duty"
+                        android:singleLine="false"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.4"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        style="android:textViewStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight=".55"
+                        android:text="@string/elapsed_time_title"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:id="@+id/elapsedTimeText"
+                        style="android:textViewStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight=".60"
+                        android:hint="Elapse"
+                        android:textSize="20sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="50dp"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/obs_gravity"
+                    android:textSize="28sp" />
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="(OBS-G)"
+                    android:textSize="20sp" />
+
+                <View
+                    android:id="@+id/view2"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="0.3" />
+
+                <TextView
+                    android:id="@+id/observedGravityText"
+                    style="@style/GravityTextPlus"
+                    android:gravity="right"
+                    android:paddingRight="20dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/standardDeviationLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/standard_dev"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/TextView01"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="@string/std_dev"
+                    android:textSize="20sp" />
+
+                <View
+                    android:id="@+id/View01"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="0.3" />
+
+                <TextView
+                    android:id="@+id/standardDeviationText"
+                    style="@style/LabelTextPlus"
+                    android:gravity="right"
+                    android:paddingRight="20dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/beamErrorLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/beam_error"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/TextView02"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="@string/beam_err"
+                    android:textSize="20sp" />
+
+                <View
+                    android:id="@+id/View02"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="0.3" />
+
+                <TextView
+                    android:id="@+id/beamErrorText"
+                    style="@style/LabelTextPlus"
+                    android:gravity="right"
+                    android:paddingRight="20dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="false"
+                    android:text="@string/feedback_correction"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/TextView03"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="(FBK-COR)"
+                    android:textSize="20sp" />
+
+                <View
+                    android:id="@+id/View03"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="0.3" />
+
+                <TextView
+                    android:id="@+id/feedbackCorrectionText"
+                    style="@style/LabelTextPlus"
+                    android:gravity="right"
+                    android:paddingRight="20dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/earthtideView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/earthtide_correction"
+                    android:textSize="20sp" />
+
+                <!--<TextView-->
+                    <!--android:id="@+id/TextView04"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginLeft="10dp"-->
+                    <!--android:text="(ET-COR)"-->
+                    <!--android:textSize="20sp" />-->
+
+                <View
+                    android:id="@+id/View04"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="0.3" />
+
+                <TextView
+                    android:id="@+id/earthtideText"
+                    style="@style/LabelTextPlus"
+                    android:gravity="right"
+                    android:paddingRight="20dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/level_correction"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/TextView05"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="(LVL-COR)"
+                    android:textSize="20sp" />
+
+                <View
+                    android:id="@+id/View05"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="0.3" />
+
+                <TextView
+                    android:id="@+id/levelCorrectionText"
+                    style="@style/LabelTextPlus"
+                    android:gravity="right"
+                    android:paddingRight="20dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/temp_correction"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/TextView06"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="(TMP-COR)"
+                    android:textSize="20sp" />
+
+                <View
+                    android:id="@+id/View06"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="0.3" />
+
+                <TextView
+                    android:id="@+id/tempCorrectionText"
+                    style="@style/LabelTextPlus"
+                    android:gravity="right"
+                    android:paddingRight="20dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    style="@style/LabelTextPlus"
+                    android:text="@string/time"
+                    android:textSize="20sp" />
+
+                <View
+                    android:id="@+id/View09"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="0.3" />
+
+                <TextView
+                    android:id="@+id/timeText"
+                    style="@style/LabelTextPlus"
+                    android:gravity="right"
+                    android:paddingRight="20dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/dataOutputRateLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/data_output_rate"
+                    android:textSize="20sp" />
+
+                <View
+                    android:id="@+id/View07"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="0.3" />
+
+                <TextView
+                    android:id="@+id/dataOutputRateText"
+                    style="@style/LabelTextPlus"
+                    android:gravity="right"
+                    android:paddingRight="20dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/filterTimeConstantLabel"
+                    style="@style/LabelTextPlus"
+                    android:text="@string/filter_time_constant"
+                    android:textSize="20sp" />
+
+                <View
+                    android:id="@+id/View08"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="0.3" />
+
+                <TextView
+                    android:id="@+id/filterTimeConstantText"
+                    style="@style/LabelTextPlus"
+                    android:gravity="right"
+                    android:paddingRight="20dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/beamFrequencyLabel"
+                    style="@style/LabelTextPlus"
+                    android:text="@string/beam_frequency"
+                    android:textSize="20sp" />
+
+                <View
+                    android:id="@+id/View10"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="0.3" />
+
+                <TextView
+                    android:id="@+id/beamFrequencyText"
+                    style="@style/LabelTextPlus"
+                    android:gravity="right"
+                    android:paddingRight="20dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/crossLevelFrequencyLabel"
+                    style="@style/LabelTextPlus"
+                    android:text="@string/cross_level_frequency"
+                    android:textSize="20sp" />
+
+                <View
+                    android:id="@+id/View11"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="0.3" />
+
+                <TextView
+                    android:id="@+id/crossLevelFrequencyText"
+                    style="@style/LabelTextPlus"
+                    android:gravity="right"
+                    android:paddingRight="20dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/longLevelFrequencyLabel"
+                    style="@style/LabelTextPlus"
+                    android:text="@string/long_level_frequency"
+                    android:textSize="20sp" />
+
+                <View
+                    android:id="@+id/View12"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="0.3" />
+
+                <TextView
+                    android:id="@+id/longLevelFrequencyText"
+                    style="@style/LabelTextPlus"
+                    android:gravity="right"
+                    android:paddingRight="20dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/temperatureFrequencyLabel"
+                    style="@style/LabelTextPlus"
+                    android:text="@string/temperature_frequency"
+                    android:textSize="20sp" />
+
+                <View
+                    android:id="@+id/View13"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="0.1" />
+
+                <TextView
+                    android:id="@+id/temperatureFrequencyText"
+                    style="@style/LabelTextPlus"
+                    android:gravity="right"
+                    android:paddingRight="20dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/temp0Label"
+                    style="@style/LabelTextPlus"
+                    android:text="@string/temp_0"
+                    android:textSize="20sp" />
+
+                <View
+                    android:id="@+id/View14"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="0.3" />
+
+                <TextView
+                    android:id="@+id/temp0Text"
+                    style="@style/LabelTextPlus"
+                    android:gravity="right"
+                    android:paddingRight="20dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/tempBLabel"
+                    style="@style/LabelTextPlus"
+                    android:text="@string/temp_b"
+                    android:textSize="20sp" />
+
+                <View
+                    android:id="@+id/View15"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="0.3" />
+
+                <TextView
+                    android:id="@+id/tempBText"
+                    style="@style/LabelTextPlus"
+                    android:gravity="right"
+                    android:paddingRight="20dp" />
+            </LinearLayout>
+            <!--
+                 From LL below
+                android:id="@+id/tempWarningLayout"
+                android:background="#EFEFEF"
+                android:visibility="visible">
+            -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/levelWarningText"
+                    style="@style/WarningText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/meter_out_of_level_warning" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <TextView
+                        android:id="@+id/tempWarningLabel"
+                        style="@style/WarningTextPlus"
+                        android:text="@string/bad_temperature" />
+
+                    <TextView
+                        android:id="@+id/tempWarningText"
+                        style="@style/WarningTextPlus"
+                        android:gravity="right"
+                        android:paddingRight="50dp" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+        <!-- </LinearLayout> -->
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/filter10Button"
+            style="@style/DashButton"
+            android:layout_weight="1"
+            android:text="@string/filter_10" />
+
+        <Button
+            android:id="@+id/filter15Button"
+            style="@style/DashButton"
+            android:layout_weight="1"
+            android:text="@string/filter_15" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/continueButton"
+            style="@style/DashButton"
+            android:layout_weight="1"
+            android:enabled="false"
+            android:text="@string/continue_text" />
+
+        <Button
+            android:id="@+id/saveButton"
+            style="@style/DashButton"
+            android:layout_weight="1"
+            android:enabled="false"
+            android:text="@string/save" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/doneButton"
+            style="@style/DashButton"
+            android:layout_weight="1"
+            android:text="@string/done" />
+
+        <Button
+            android:id="@+id/moreButton"
+            style="@style/DashButton"
+            android:layout_weight="1"
+            android:enabled="false"
+            android:text="@string/more" />
+    </LinearLayout>
+
+</LinearLayout>

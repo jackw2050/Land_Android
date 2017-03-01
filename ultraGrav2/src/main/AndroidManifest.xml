@@ -1,0 +1,118 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.zlscorp.ultragrav" >
+
+    <!-- versionCode and versionName are now in the module build.gradle file -->
+    <!--android:versionCode="2"-->
+    <!--android:versionName="2.0" >-->
+
+    <uses-feature android:name="android.hardware.usb.host" />
+    <!--<uses-sdk-->
+        <!--android:minSdkVersion="14"-->
+        <!--android:targetSdkVersion="19" />-->
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+
+    <application
+        android:name=".MyApplication"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme"
+        android:allowBackup="true" >
+        <service
+            android:name=".meter.MeterService"
+            android:label="MeterService" />
+
+        <activity
+            android:name=".activity.DashboardActivity"
+            android:label="@string/title_activity_dashboard"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <intent-filter>
+                <action android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" />
+            </intent-filter>
+  
+            <meta-data
+                android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED"
+                android:resource="@xml/device_filter" />
+
+        </activity>
+
+        <activity
+            android:name=".activity.DialReadingActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/title_activity_dial_reading"
+            android:windowSoftInputMode="stateHidden"/>
+        <activity
+            android:name=".activity.NoteActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/title_activity_note" />
+        <activity
+            android:name=".activity.StationListActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/title_activity_station_list" />
+        <activity
+            android:name=".activity.ObservationActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/title_activity_observation" />
+        <activity
+            android:name=".activity.HelpActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/title_activity_help" />
+        <activity
+            android:name=".activity.AboutActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/about" />
+        <activity
+            android:name=".activity.ContinousSetupActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/title_activity_continous_setup"
+            android:windowSoftInputMode="stateHidden"/>
+        <activity 
+            android:name=".activity.SettingsActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/title_activity_settings" 
+            android:windowSoftInputMode="stateHidden"/>
+        <activity
+            android:name=".activity.StationDetailsActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/title_activity_station_details" />
+        <activity
+            android:name=".activity.StationEditActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/title_activity_station_edit" />
+        <activity
+            android:name=".activity.StationSeriesEditActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/title_activity_station_series_edit" />
+        <activity
+            android:name=".activity.OptionsActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/title_activity_options" />
+        <activity
+            android:name=".activity.PrivateActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/title_activity_private"
+            android:windowSoftInputMode="stateHidden"/>
+        <activity
+            android:name=".activity.SetupActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/title_activity_setup"
+            android:windowSoftInputMode="stateHidden"/>
+        <activity
+            android:name=".activity.FileSelectActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/title_activity_select_file" />
+    </application>
+
+</manifest>

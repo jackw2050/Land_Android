@@ -1,0 +1,165 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFFFF"
+    android:orientation="vertical"
+    android:padding="10dp" >
+    
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/companyNameView"
+            style="@style/TitleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/company_name" />
+        <ImageView
+            android:id="@+id/logoView"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:contentDescription="@string/zls_logo"
+            android:onClick="onLogoClicked"
+            android:scaleType="fitCenter"
+            android:src="@drawable/zls_logo" />
+
+        <TextView
+            android:id="@+id/locationNameView"
+            style="@style/LabelText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/companyNameView"
+            android:text="@string/company_loc1"
+            android:textSize="16dp" />
+
+        <TextView
+            android:id="@+id/locationName2View"
+            style="@style/LabelText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/locationNameView"
+            android:layout_alignParentLeft="true"
+            android:text="@string/company_loc2" />
+
+        <TextView
+            android:id="@+id/meterNameView"
+            style="@style/LabelText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/locationName2View" />
+
+        <TextView
+            android:id="@+id/calibTableView"
+            style="@style/WarningText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/meterNameView"
+            android:text="@string/no_calib_Table_title"
+            android:textSize="16dp" />
+
+        <TextView
+            android:id="@+id/dateAndTimeView"
+            style="@style/LabelText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/calibTableView" />
+
+        <TextView
+            android:id="@+id/tempView"
+            style="@style/LabelText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/dateAndTimeView"
+            android:text="@string/temp_title"
+            android:textSize="16dp" />
+
+        <TextView
+            android:id="@+id/batteryView"
+            style="@style/LabelText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/tempView"
+            android:text="@string/battery_title"
+            android:textSize="16dp" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:layout_marginTop="20dp" >
+
+        <Button
+            android:id="@+id/singleButton"
+            style="@style/DashButton"
+            
+            
+            android:singleLine="false"
+            android:layout_weight="1"
+            android:onClick="onSingleButtonClicked"
+            android:text="@string/single_obs" />
+
+        <Button
+            android:id="@+id/continuousButton"
+            style="@style/DashButton"
+            android:layout_weight="1"
+             android:singleLine="false"
+            android:onClick="onContinuousButtonClicked"
+            android:text="@string/continuous_obs" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/settingsButton"
+            style="@style/DashButton"
+            android:layout_weight="1"
+            android:onClick="onSettingsButtonClicked"
+            android:text="@string/settings" />
+
+        <Button
+            android:id="@+id/setupButton"
+            style="@style/DashButton"
+            android:layout_weight="1"
+            android:onClick="onSetupButtonClicked"
+            android:text="@string/meter_setup" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/optionsButton"
+            style="@style/DashButton"
+            android:layout_weight="1"
+            android:onClick="onOptionsButtonClicked"
+            android:text="@string/options" />
+
+        <Button
+            android:id="@+id/exitButton"
+            style="@style/DashButton"
+            android:layout_weight="1"
+            android:onClick="onExitButtonClicked"
+            android:text="@string/exit" />
+    </LinearLayout>
+
+</LinearLayout>

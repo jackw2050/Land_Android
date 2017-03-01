@@ -1,0 +1,36 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <EditText
+        android:id="@+id/noteText"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="10dp"
+        android:layout_weight="5"
+        android:gravity="top|left"
+        android:inputType="textCapSentences|textMultiLine"
+        android:padding="@dimen/padding_medium"
+        tools:context=".NoteActivity" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="horizontal" >
+        <Button
+            android:id="@+id/cancelButton"
+            style="@style/AppButton"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="50dp"
+            android:onClick="onCancelButtonClicked"
+            android:text="@string/cancel" />
+        <Button
+            android:id="@+id/saveButton"
+            style="@style/AppButton"
+            android:layout_height="wrap_content"
+            android:onClick="onSaveButtonClicked"
+            android:text="@string/save" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,100 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp" >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fadeScrollbars="false" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/SettingsTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:text="@string/dial_reading_instr" />
+
+            <LinearLayout
+                android:id="@+id/dummyLinearLayout"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:layout_width="0px"
+                android:layout_height="0px"
+                android:orientation="horizontal" />
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/CheckboxInstructionsText"
+                    style="@style/SettingsTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_weight="1"
+                    android:text="@string/use_noncalibrated_points" />
+
+                <CheckBox
+                    android:id="@+id/useNonCalibratedPointsCheckBox"
+                    style="@style/LabelText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/dialReadingPrompt"
+                    style="@style/SettingsTextView"
+                    android:layout_width="0dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:text="@string/dial_reading" />
+
+                <EditText
+                    android:id="@+id/dialReadingText"
+                    style="@style/LabelText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="0.8"
+                    android:ems="4"
+                    android:maxLength="4" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/acceptButton"
+            style="@style/DashButton"
+            android:layout_weight="1"
+            android:enabled="false"
+            android:onClick="onAcceptButtonClicked"
+            android:text="@string/accept" />
+
+        <Button
+            android:id="@+id/noteButton"
+            style="@style/DashButton"
+            android:layout_weight="1"
+            android:onClick="onNoteButtonClicked"
+            android:text="@string/note" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,211 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fadeScrollbars="false" >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:id="@+id/dummyLinearLayout"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:layout_width="0px"
+                android:layout_height="0px"
+                android:orientation="horizontal" />
+
+            <TextView
+                style="@style/LabelColumnLeft"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/duty_cycle_presets"
+                android:textSize="24sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp" 
+                android:layout_marginRight="20dp" 
+                android:layout_marginBottom="10dp" 
+                android:layout_marginTop="10dp" >
+                <Button
+                    android:id="@+id/dutyValPreset50Percent"
+                    style="@style/AppButton2"
+                    android:layout_marginRight="15dp"
+                    android:text="@string/duty_value_preset_50_percent" />
+                <Button
+                    android:id="@+id/dutyValPreset10Percent"
+                    style="@style/AppButton2"
+                    android:layout_marginRight="15dp"
+                    android:text="@string/duty_value_preset_10_percent" />
+                <Button
+                    android:id="@+id/dutyValPreset90Percent"
+                    style="@style/AppButton2"
+                    android:text="@string/duty_value_preset_90_percent" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    style="@style/LabelColumnLeft"
+                    android:text="@string/duty_cycle"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/dutyCycleText"
+                    style="@style/LabelColumnRight" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    style="@style/LabelColumnLeft"
+                    android:text="@string/beam_frequency"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/beamFrequencyText"
+                    style="@style/LabelColumnRight" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    style="@style/LabelColumnLeft"
+                    android:text="@string/base_dial_reading"
+                    android:textSize="24sp" />
+
+                <EditText
+                    android:id="@+id/baseDialReadingValue"
+                    style="@style/LabelColumnRight" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/baseDrMinus250Label"
+                    style="@style/LabelColumnLeft"
+                    android:text="@string/base_dr_minus_250"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/baseDrMinus250Text"
+                    style="@style/LabelColumnRight" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/baseDrPlus250Label"
+                    style="@style/LabelColumnLeft"
+                    android:text="@string/base_dr_plus_250"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/baseDrPlus250Text"
+                    style="@style/LabelColumnRight" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/minus250BeamFreqLabel"
+                    style="@style/LabelColumnLeft"
+                    android:text="@string/minus_250_beam_freq"
+                    android:textSize="24sp" />
+
+                <EditText
+                    android:id="@+id/minus250BeamFreqValue"
+                    style="@style/LabelColumnRight" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/plus250BeamFreqLabel"
+                    style="@style/LabelColumnLeft"
+                    android:text="@string/plus_250_beam_freq"
+                    android:textSize="24sp" />
+
+                <EditText
+                    android:id="@+id/plus250BeamFreqValue"
+                    style="@style/LabelColumnRight" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    style="@style/LabelColumnLeft"
+                    android:text="@string/delta_freq"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/deltaFreqText"
+                    style="@style/LabelColumnRight"
+                    android:textSize="24sp" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    style="@style/LabelColumnLeft"
+                    android:text="@string/beam_scale"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/beamScaleText"
+                    style="@style/LabelColumnRight"
+                    android:textSize="24sp" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp" > 
+
+                <TextView
+                    style="@style/LabelColumnLeft"
+                    android:singleLine="false"
+                    android:text="@string/beam_scale_accept_button_prompt"
+                    android:textSize="24sp" />
+
+                </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/startButton"
+            style="@style/AppButton2"
+            android:layout_marginRight="20dp"
+            android:text="@string/start_reading" />
+        <Button
+            android:id="@+id/acceptButton"
+            style="@style/AppButton2"
+            android:text="@string/accept" />
+    </LinearLayout>
+</LinearLayout>

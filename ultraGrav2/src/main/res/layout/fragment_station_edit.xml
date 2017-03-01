@@ -1,0 +1,169 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:fadeScrollbars="false" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:id="@+id/dummyLinearLayout"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:layout_width="0px"
+                android:layout_height="0px"
+                android:orientation="horizontal" />
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp" >
+
+                <TextView
+                    style="@style/LabelColumnLeft"
+                    android:text="@string/station_id"
+                    android:textSize="24sp" />
+
+                <EditText
+                    android:id="@+id/stationIdText"
+                    style="@style/LabelColumnRight" />
+                </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp" >
+
+                <TextView
+                    style="@style/LabelColumnLeft"
+                    android:text="@string/observer_id"
+                    android:textSize="24sp" />
+
+                <EditText
+                    android:id="@+id/observerIdText"
+                    style="@style/LabelColumnRight" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp" >
+
+                <TextView
+                    style="@style/LabelColumnLeft"
+                    android:text="@string/latitude"
+                    android:textSize="24sp" />
+
+                <EditText
+                    android:id="@+id/latitudeText"
+                    style="@style/LabelColumnRight" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp" >
+
+                <TextView
+                    style="@style/LabelColumnLeft"
+                    android:text="@string/longitude"
+                    android:textSize="24sp" />
+
+                <EditText
+                    android:id="@+id/longitudeText"
+                    style="@style/LabelColumnRight" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp" >
+
+                <TextView
+                    style="@style/LabelColumnLeft"
+                    android:text="@string/elevation"
+                    android:textSize="24sp" />
+
+                <EditText
+                    android:id="@+id/elevationText"
+                    style="@style/LabelColumnRight" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp" >
+
+                <TextView
+                    style="@style/LabelColumnLeft"
+                    android:layout_weight="1.1"
+                    android:text="@string/meter_height"
+                    android:textSize="24sp" />
+
+                <EditText
+                    android:id="@+id/meterHeightText"
+                    style="@style/LabelColumnRight" />
+            </LinearLayout>
+
+<!-- 
+                This was removed from the button below
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+-->            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_marginTop="10dp" >
+                
+                <TextView
+                    style="@style/LabelColumnLeft"
+                    android:text="@string/enable_earthtide"
+                    android:textSize="24sp" />
+
+               <CheckBox
+                   android:id="@+id/earthTideCheckBox"
+                   style="@style/LabelColumnRight" />
+            </LinearLayout>
+            <Button
+                android:id="@+id/gpsButton"
+                style="@style/DashButton3"
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="left|center_vertical"
+                android:text="@string/obtain_gps" />
+            </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/cancelButton"
+            style="@style/AppButton2"
+            android:layout_marginLeft="10dp"
+            android:text="@string/cancel" />
+        
+        <Button
+            android:id="@+id/saveButton"
+            style="@style/AppButton2"
+            android:layout_marginRight="10dp"
+            android:text="@string/save" />
+    </LinearLayout>
+
+</LinearLayout>

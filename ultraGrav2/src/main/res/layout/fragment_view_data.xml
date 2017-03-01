@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:baselineAligned="false">
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp" >
+        <Button
+            android:id="@+id/viewSingleModeButton"
+            style="@style/AppButton2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="@string/view_single_mode" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Button
+                android:id="@+id/viewContinuousModeShortButton"
+                style="@style/AppButton2"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:text="@string/view_continuous_mode_short" />
+            <Button
+                android:id="@+id/viewContinuousModeLongButton"
+                style="@style/AppButton2"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:text="@string/view_continuous_mode_long" />
+        </LinearLayout>
+    </LinearLayout>
+<!--         android:layout_weight="25" -->
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:fadeScrollbars="false">
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="5dp"
+            android:fadeScrollbars="false" >
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:baselineAligned="false">
+                <!-- android:lines="26" do this programmatically -->
+                <TextView
+                    android:id="@+id/obsData"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="top|left"
+                    android:padding="@dimen/padding_medium"
+                    android:typeface="monospace" />
+            </LinearLayout>
+        </HorizontalScrollView>
+    </ScrollView>
+</LinearLayout>

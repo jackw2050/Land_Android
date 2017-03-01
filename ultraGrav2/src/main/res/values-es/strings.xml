@@ -1,0 +1,817 @@
+<resources>
+
+    <!-- Help Text -->
+    <string name="cant_find_help_text">No hay ayuda para este tema.</string>
+
+    <!-- Activities Help Text -->
+    <!-- Activities W/O Fragments -->
+
+    <string name="DashboardActivity">
+<![CDATA[<p><b>UltraGrav2 Ayuda</b><br>
+        Seleccione un procedimiento de observación o otra opción pulsando uno de los botones de la principal
+        pantalla.</p>
+        <p><b>Observación individual</b>: Realiza una sola observación en un sitio. Vea a continuación el modo de ayuda individual.</p>
+        <p><b>Observación continua</b>: Realiza observaciones con el filtrado de forma continua durante las observaciones de marea tierra. Véase más abajo para ayuda en modo continuo.</p>
+        <p><b>Ajustes</b>: Consta de las siguientes fichas - Parámetros del sistema, Meter y nivel, y las estaciones. Ver cada pantalla para que su respectivo ayuda.</p>
+        <p><b>Preparar</b>: Consta de las siguientes fichas - Leer Medidor / Set ciclo de trabajo, Set Paradas / Línea de lectura, Calcular brazo de la balanza. Ver cada pantalla para que su respectivo ayuda.</p>
+        <p><b>Opciones</b>: Consta de las siguientes fichas - Los datos de observación de salida, datos Ver Observación, la marea de la Tierra. Ver cada pantalla para que su respectivo ayuda.</p>
+        <p><b>Salida</b>: Finaliza UltraGrav2.</p>
+
+        <p><u>Archivo de registro de error</u>: Archivo de registro de errores de la aplicación se encuentra en la tarjeta SD, en ubicación siguiente:<br>
+        <i>&lt;sdcard&gt;/Android/data/com.zlscorp.ultrgrav/files/errors.log</i>.</p>
+
+        <p><b>Modo Observación individual</b><br>
+        El modo de un solo Observación hace una sola observación en una estación. La siguiente es una descripción de los campos de la pantalla de modo individual Observación.</p> 
+        <p><u>Tiempo transcurrido</u>: Tiempo transcurrido en segundos.</p>
+        <p><u>Ciclo de servicio</u>: La retroalimentación de fuerza actual en el ciclo de trabajo\%%. Cero y 100\%% representa la fuerza de respuesta mínimo y máximo.</p>
+        <p><u>Dial Reading</u>: La lectura de línea efectiva sin corregir por el factor de escala.</p>
+        <p><u>La gravedad observada</u>: Esto es igual a la marcación + Comentarios Corrección Corregido + nivel de corrección + Temperatura Corrección + Corrección Tierra Tide (cuando está activado).</p>
+        <p><u>Desviación Estándar</u>: La desviación estándar (SD) de la observación actual. Una observación se realiza en intervalos de cinco segundos.</p> 
+        <p><u>Viga de error</u>: El desplazamiento de la viga gravímetro de \'Null\' en mGal. Este campo se actualiza a intervalos de 5 segundos.</p>
+        <p><u>Corrección de la retroalimentación</u>: La magnitud de la fuerza de respuesta en mGal.</p>
+        <p><u>Corrección Tierra Marea</u>: La magnitud de la corrección de la Tierra Marea en mGal.</p>
+        <p><u>Corrección del nivel</u>: La magnitud de la corrección para la nivelación de errores en mGal.</p>
+        <p><u>Temperatura corrección</u>: La magnitud de la corrección de la temperatura en mGal.</p>
+        <p><u>Tiempo</u>: Tiempo de una observación válida.</p>
+        <p><u>Mensajes de advertencia</u>:<br>
+        El metro está fuera de nivel: Esto indica que el medidor está más nivel fuera de la electrónica tienen capacidad para.</p>
+        <p>Mala Temperatura xxx: Esto indica que el medidor está fuera de su rango de temperatura permitida.</p>
+
+        <p>Se obtiene una observación válida cuando la desviación estándar y la viga de error son a la vez igual o menor que la precisión establecido en los parámetros del sistema. Si la precisión deseada no se logra dentro de 180 seg, una observación válida es forzada. La razón habitual para un tiempo de espera es que el sitio es demasiado ruidoso para obtener la precisión deseada. Usted puede disminuir la precisión (número mayor) o disminuir la ganancia de realimentación (número menor) en la configuración de los parámetros del sistema. Otros métodos para hacer frente a un sitio ruidoso se detallan en el manual.</p>
+
+        <p>Factores que influyen en el modo de Observación individual:<br>
+        1) El ajuste de precisión en los parámetros del sistema. Cuanto mayor es la precisión (número menor) cuanto más tiempo se requiere para obtener una observación válida. </p> 
+        <p> 2) El ajuste de los parámetros del sistema de ganancia comentarios. A los menores resultados de ganancia en mayor ruido haz, más suave Corrección Comentarios y aumento constante de tiempo del circuito de retroalimentación. Esta configuración es un compromiso y su uso requiere experiencia. </p> 
+        <p> 3) Si Latitud y Longitud son cero o en blanco de la corrección de la Tierra Marea será cero. Un Latitud cero desactivará el preset de línea calculado en el procedimiento de Hunt. </p> 
+        <p> 4) Habilitar casilla Tierra Marea en Parámetros de la estación, cuando está marcada, hace que la corrección de la Tierra de mareas que se incluirán en osCommerce osCommerce (la gravedad observada). </p> 
+        <p> 5) El reloj del sistema Android se debe establecer en GMT para un cálculo Tierra Marea correcta. </p>
+        
+        <p><b>Modo de Observación Continua Ayuda</b><br>
+        Modo de Observación Continua hace observaciones continuas en una estación con el fin de observar las mareas terrestres o estudios seculares. La siguiente es una descripción de los campos de la pantalla continuo Modo de Observación.</p>
+        <p><u>Tiempo transcurrido</u>: Tiempo transcurrido en segundos.</p>
+        <p><u>Ciclo de servicio</u>: La retroalimentación de fuerza actual en el ciclo de trabajo\%%. Cero y 100\%% representa la fuerza de respuesta mínimo y máximo.</p>
+        <p><u>Dial Reading</u>: La lectura de línea efectiva sin corregir por el factor de escala.</p>
+        <p><u>La gravedad observada</u>: Esto es igual a la marcación Corregido + Filtrado Corrección Comentarios + nivel de corrección + Corrección de temperatura.</p>
+        <p><u>Puntuación Corrección</u>: La magnitud de la fuerza de respuesta en mGal. </p>
+        <p><u>Tierra Marea</u>: La magnitud de la marea de la Tierra en mGal. </p>
+        <p><u>Corrección del nivel</u>: La magnitud de la corrección de errores de nivel en mGal. </p>
+        <p><u>Corrección de temperatura</u>: La magnitud de la corrección de la temperatura en mGal. </p>
+        <p><u>Salida de datos Tasa</u>: Muestra el valor introducido en la pantalla de configuración de Observación Continua. </p>
+        <p><u>Filtro Constante de tiempo</u>: Muestra el valor introducido en la pantalla de configuración de Observación Continua. </p>
+        <p><u>Tiempo</u>: Tiempo de una observación. </p>
+
+        <p> Las observaciones se realizan de forma continua a intervalos de un seg, y la pantalla y archivo de datos se actualizan a intervalos especificados en la tasa de salida de datos, que se fija en la pantalla de parámetros de observación continua. Los datos también se filtra con un filtro de 3 etapas en cascada, cuya constante de tiempo también se fija en la pantalla de parámetros de observación continua.</p>
+
+        <p>Los factores que afectan el modo de Observación Continua:<br>       
+		1) Tasa de salida de datos y filtro Constante de tiempo en Parámetros observación continua. Estos deben ser elegidos para satisfacer el criterio de Nyquist para evitar aliasing. Es decir, la constante de tiempo del filtro debe ser de al menos el doble del periodo de salida de datos (1 / Rate). La pantalla continua Parámetro Observación se presenta antes de iniciar el procedimiento de observación continua.</p>
+		<p> 2) El ajuste de los parámetros del sistema de ganancia comentarios. A los menores resultados de ganancia en mayor ruido haz, más suave Corrección Comentarios y aumento constante de tiempo del circuito de retroalimentación. Esta configuración es un compromiso y su uso requiere experiencia. La disminución de la ganancia de realimentación tiene un efecto similar al aumentar el tiempo de filtrado constante.</p>
+		<p> 3) Si Latitud y Longitud son cero o en blanco de la corrección de la Tierra Marea será cero.</p>
+		<p> 4) El reloj del sistema Android se debe establecer en GMT para corregir los cálculos de la Tierra de mareas.</p>]]>
+    </string>
+    <string name="DialReadingActivity">
+<![CDATA[<p><b>Marcar Lectura Ayuda</b></p>
+		 <p>Siga las instrucciones en la pantalla de marcación de lectura.</p>]]>
+    </string>
+    <string name="ContinousSetupActivity">
+<![CDATA[<p><b>Observación Continua Configuración Ayuda </b></p>
+		<p><u> Salida de datos Tasa </u>: Establece la velocidad a la que los datos se archivan y la pantalla se actualiza. </p>
+		<p><u> Filtro Constante de tiempo </u>: Define la constante de tiempo de un filtro RC en tres etapas en segundos. </p>
+		<p> Velocidad de datos de salida y filtro Constante de tiempo debe ser elegido para satisfacer el criterio de Nyquist para evitar aliasing. Es decir, la constante de tiempo de filtro debe ser de al menos el doble del periodo de salida de datos (1 / Rate). </p>]]>
+    </string>
+    <string name="NoteActivity">
+<![CDATA[<p><b> Nota Ayuda </b></p>
+	<p> Introduzca sus notas de observación en esta pantalla. Ellos serán incluidos con los datos de observación cuando se exporta a la tarjeta SD. </p>]]>
+    </string>
+    <string name="StationDetailsActivity">
+<![CDATA[<p><b>Detalles de la estación</b></p>
+	<p>Esta pantalla permite editar o borrar la estación seleted. Para editar los datos de la estación, toque en el icono de lápiz en la esquina superior derecha de la pantalla. Para borrarlo, toque en el icono de papelera </p>
+	<p><u>ID de la estación</u>: Nombre de la estación.</p>
+	<p><u>Observador ID</u>: Nombre del observador o cualquier otra información que desee que se incluye con los datos. </p>
+	<p><u>Latitude</u>: Grados decimales, Norte positivo. Dejar en blanco o cero si no está disponible.</p>
+	<p><u>Longitud</u>: Grados decimales, East positivo. Dejar en blanco o cero si no está disponible.</p>
+	<p><u>Elevación</u>: Elevación de la estación, en metros. Dejar en blanco o cero si no está disponible.</p>
+	<p><u>Medidor de Altura</u>: Altura del gravímetro encima de la estación, en metros. Dejar en blanco o cero si no está disponible.</p>
+	<P><u>Activar Tierra Marea</u>: Indica si correcciones Tierra de mareas están habilitados para esta estación. Cuando están habilitados, que se añadirán a la gravedad observada lectura durante las observaciones individuales.</p>]]>
+    </string>
+
+    <!-- Activities W/ Fragments -->
+    <string name="FileSelectActivity"><![CDATA[<p>Seleccione archivo</p><p></p>]]></string>
+    <string name="StationListActivity"><![CDATA[<p>Estaciones</p><p></p>]]></string>
+
+    <!-- Fragments Help Text -->
+    <string name="FileSelectFragment">
+<![CDATA[<p><b> Archivo Seleccione Ayuda </b></p>
+		<p> Seleccione un archivo para la operación curent. Si no está en el directorio correcto, utilice el botón Arriba para subir en el árbol de directorios, o puntee en un nombre de directorio que bajar en ella. Cuando encuentre el archivo que busca, pulse sobre él. </P>
+		<p> Si va a crear un nuevo archivo, pulse sobre el botón Crear archivo nuevo. </p>]]>
+    </string>
+
+    <!-- Settings Fragments -->
+    <string name="SystemParamsFragment">
+<![CDATA[<p><b>Parámetros del sistema de Ayuda</b></p>
+        <P><u> Utilice puntos no calibrados </u>: Cuando esta casilla está marcada, el valor de línea se puede establecer en un punto no calibrado, lo que significa que no sea un múltiplo de 50 unidades. Cuando no está marcada, sólo puedan utilizarse dichos múltiplos de 50 unidades. </P>
+		<P><u> Nueva lectura en el dial </u>: Permite sincronizar la lectura del dial gravímetro y esta aplicación. Sólo se aceptan valores enteros entre 250 y 6850. </P>
+		<P><u> Retroactúe Gain </u>: Permite ajustar la sensibilidad de las votaciones. La reducción de la ganancia aumenta la precisión a costa de tiempo y viceversa lectura. </P>
+		<P><u> Observacion Precisión </u>: Ajusta la precisión deseada en que se aceptará una lectura. Un menor precisión disminuye el tiempo de lectura y viceversa. </P>
+		<P><u> Activar Selección de Estación </u>: Cuando esta casilla está marcada, el usuario es capaz de seleccionar una estación para una observación. Cuando no está marcada, se utilizan los parámetros de la estación \"por defecto\". Dejando esta selección desmarcado simplificará observaciones al eliminar la pantalla de selección de estación. </P>
+		<P><u> Connection Meter </u>: Muestra el tipo de conexión, el nombre del dispositivo y la conexión de estado. </p>]]>
+    </string>
+    <string name="MeterParamsFragment">
+<![CDATA[<p><b>Meter Parámetros Ayuda</b></p>
+        <p><u>Línea de lectura </u>: El valor de la lectura de línea en el que el haz es nula cuando el ciclo de trabajo se establece en 50%. </p>
+		<p><u> Transferir Escala </u>: Este es un factor de escala utilizado para convertir la posición del haz de mGal. </p>
+		<p><u> Puntuación Escala </u>: Este es un factor de escala utilizado para convertir la señal de realimentación a mGal. </p>
+		<p><u> Detener mínimo </u>: El ajuste en el que el haz está en el tope inferior de línea. </p>
+		<p><u> Detener máxima </u>: El ajuste en el que el haz está en el tope superior de línea. </p>
+		<p> Estos parámetros deben ser verificados y actualizados de vez en cuando. Las instrucciones para hacerlo se detallan en el manual.</P>]]>
+    </string>
+    <string name="LevelParamsFragment">
+<![CDATA[<p><b> Parámetros Nivel Ayuda </b></p>
+		<p> Estos son los parámetros necesarios para modelar la corrección de nivel. Ellos pueden determinar y actualizar en cualquier momento. Consulte el manual para más detalles. </P>]]>
+    </string>
+    <string name="StationListFragment">
+<![CDATA[<p><b> Estaciones Ayuda </b></p>
+		<p> Esta pantalla permite añadir o seleccionar una estación en particular cuyos parámetros se utilizarán para la observación. </p>
+		<p> La estación defecto se utiliza en todos los casos cuando el equipo Seleccione la casilla de verificación en la pantalla de parámetros del sistema de habilitación está sin marcar. Esta estación se puede editar, pero no se puede eliminar. </P>]]>
+    </string>
+    <string name="StationEditFragment">
+<![CDATA[<p><b>Estación de redacción Ayuda</b></p>
+        <P><u> ID de la estación </u>: nombre de la estación </p>.
+		<P><u> Observador ID </u>: Nombre del observador o cualquier otra información que desee que se incluye con los datos </p>
+		<P><u> Latitude </u>: Grados decimales, Norte positivo. Dejar en blanco o cero si no está disponible. </P>
+		<P><u> Longitud </u>: Grados decimales, East positivo. Dejar en blanco o cero si no está disponible. </P>
+		<P><u> Elevación </u>: Elevación de la estación, en metros. Dejar en blanco o cero si no está disponible. </P>
+		<P><u> Medidor de Altura </u>: Altura del gravímetro encima de la estación, en metros </p>
+		<P><u> Habilitar Tierra Tide (Casilla de verificación) </u>: Cuando se selecciona el valor de la corrección de la Tierra Tide (Longman) se añadirá a la gravedad observada. Esto se aplica a modo de observación individual solamente. Si ambos latitud y longitud son cero o se calculará en blanco sin Tierra Marea. Tenga en cuenta que tanto Latitud y Longitud debe ser cero para indicar que no hay coordenadas están disponibles.</p>
+		<P><u> Obtener Lat / Long de GPS (Button) </u>: Recupera los datos de latitud y longitud del receptor GPS interno del dispositivo Android </p>]]>
+    </string>
+
+    <!-- Setup Fragments -->
+    <string name="ReadMeterFragment">
+<![CDATA[<p><b>Leer Meter y Set Ciclo de Trabajo Ayuda</b></p>
+        <p> Esta pantalla le permite ajustar la fuerza de respuesta a un valor fijo y muestra las distintas salidas del sensor de gravedad. Esto es útil para ciertos procedimientos de calibración. Usted verá el efecto de un nuevo valor del ciclo de trabajo sólo después de haber iniciado una lectura. Puede enviar nuevos valores del ciclo de trabajo al medidor según sea necesario. </ P>
+		<p> <b> Nuevo Ciclo de trabajo </ b>: Introduzca un nuevo valor del ciclo de trabajo, entre el 5 y el 98, a continuación, toque el botón Configurar. </ p>
+		<p> <b> Set </ b>: Envía el valor Nuevo Ciclo de servicio al medidor. </ p>
+		<p> <b> Inicio lectura </ b>: Este botón le dice al metro para empezar a enviar datos de gravedad en intervalos de un segundo. Estos datos se muestran en los campos en la parte superior de la pantalla. La lectura se dará por terminado cuando salga de esta ficha. </ P>]]>
+    </string>
+
+    <!-- >>Further instructions to be supplied by Keisuke.<<</p> -->
+    <string name="StopsReadingLineFragment">
+<![CDATA[<p><b>Establecer Paradas y lectura Línea Ayuda</b></p>
+        <p>Esta pantalla le permite determinar la línea máxima y mínimas paradas y la lectura del medidor. Consulte el Capítulo Cinco, Ajuste haz paradas en el manual.</p>
+
+        <p><b>10\%%</b>: Ajusta el ciclo de trabajo del metro a 10\%%.</p>
+        <p><b>50\%%</b>: Ajusta el ciclo de trabajo del metro a 50\%%.</p>
+        <p><b>90\%%</b>: Ajusta el ciclo de trabajo del metro a 90\%%.</p>
+        <p><b>Nuevo Ciclo de trabajo</b>: Introduzca un nuevo valor del ciclo de trabajo, entre el 5 y el 98, a continuación, toque el botón Configurar.</p>
+        <p><b>Set</b>: Envía el valor Nuevo Ciclo de servicio al medidor.</p>
+        <p><b>Empieza a leer</b>: Este botón le dice al metro para empezar a enviar datos de gravedad en intervalos de un segundo, que se mostrarán en el campo Frecuencia Beam. La lectura se dará por terminado cuando salga de esta ficha. </P>
+		<p><b Aceptar</b>: Almacena los valores máximos y mínimos de Paradas y Línea de lectura en la base de datos de la aplicación. Se pueden ver en la pantalla Parámetros del medidor.</p>]]>
+    </string>
+    <string name="CalculateBeamScaleFragment">
+<![CDATA[<p> <b> Calcular haz Escala Ayuda </ b> </ p>
+         <p> Esta pantalla le permite determinar valor de la escala del haz del medidor. Consulte el Capítulo Cinco, Calcular haz Factor de Escala en el manual. </ p>
+         <p> <b> 50\%% </ b>: Establece ciclo de trabajo del metro a 50\%%. </ p>
+         <p> <b> Marque Base de lectura </ b>: . </ p>
+         <p> <b> Base DR -0.250 mGal </ b>: . </ p>
+         <p> <b> Base DR 0.250 mGal </ b>: . </ p>
+         <p> <b> -0.250 haz Freq </ b>: . < / p>
+         <p> <b> 0.250 haz Freq </ b>: . </ p>
+         <p> <b> Delta Freq </ b>: . </ p>
+         <p> <b> Transferir Escala </ b>: El valor de la escala haz calculado.</ p>
+		<p> <b> Inicio lectura </ b>: Este botón le dice al metro para empezar a enviar datos de gravedad en un segundo
+         intervalos, que se mostrarán en el campo Frecuencia Beam. La lectura se dará por terminado cuando salga de esta ficha. </ P>
+		<p> <b> Aceptar </ b>: almacena el valor de haz escala en la base de datos de la aplicación. Se puede ver en la pantalla Parámetros del medidor. </ P>]]>
+    </string>
+
+    <!-- Options Fragments -->
+    <string name="OutputObsDataFragment">
+<![CDATA[<P> <b> Salida de Observación de datos Ayuda </ b> </ p>
+	<P> Esta pantalla le permite gestionar los datos de observación. Los datos se pueden guardar en la tarjeta SD interna del dispositivo Android para subir a un ordenador mediante los botones Guardar, o se suprimirán de la base de datos interna de la aplicación con los botones Eliminar. </ P>
+	<P> Los datos se envían en formato CSV (valores separados por comas). Este formato es adecuado para la entrada directa en hojas de cálculo y otros programas. Los datos no se eliminan automáticamente después de un proceso de carga; debe utilizar los botones Eliminar para eliminar los datos no deseados. Nuevos datos siempre se añade al final de los datos existentes. El número de registros almacenados en la base de datos interna de la aplicación se muestra en la parte superior de la pantalla. </ P>
+	<P> <b> Archivo del solo modo de datos </ b>: los registros de datos de observación de modo único consisten en 20 campos. Se guardan en el orden siguiente: ID de la estación, ObserverID, Meter número de serie, fecha, hora, la gravedad observada, Dial lectura, corrección de la retroalimentación, corrección Tierra Marea, Nivel de corrección, corrección de temperatura, haz error, Medidor de Altura, Elevación, Latitude, Longitud, Tiempo transcurrido, Desviación Estándar, Temperatura Frecuencia, Nota. </ p>
+	<P> <b> Modo continua de datos de archivos </ b>: datos de observación de modo continuo se pueden guardar como cualquiera de los registros cortos o largos. Registros cortos consisten en 9 campos. Se guardan en el siguiente orden:. Fecha, Hora, observado por gravedad, Dial lectura, corrección de la retroalimentación, la Tierra Marea del valor, el nivel de corrección, corrección de temperatura y Nota </ p>
+	<P> Discos de largas consisten en 23 campos. Se guardan en el siguiente orden: fecha, hora, observado por gravedad, Dial, Corrección Feedback, Corrección Tierra Marea, Nivel de corrección, corrección de temperatura, la estación ID, ID Observer, medidor Número de serie, Altura, Elevación, Latitud, Longitud, Tiempo transcurrido , velocidad de datos de salida, filtro de constante de tiempo, Temperatura Frecuencia, haz Frecuencia, Cruz Nivel Frecuencia, Nivel Frecuencia Long, Nota. </ p>
+        <p> Las unidades para los datos se muestran en la siguiente tabla. </ p>
+         <p> <table>
+              <tr>
+                <td style = "width: 100px"> <b> El campo </ b> </ td>
+                <td style = "width: 200px"> <b> Unidades </ b> </ td>
+              </ tr>
+              <tr>
+                <td> Gravedad </ td>
+                <td> mGals </ td>
+              </ tr>
+              <tr>
+                <td> Elevación </ td>
+                <td> m </ td>
+              </ tr>
+              <tr>
+                <td> Altura </ td>
+                <td> m </ td>
+              </ tr>
+              <tr>
+                <td> Latitude </ td>
+                <td> grados (decimal) positiva del Norte </ td>
+              </ tr>
+              <tr>
+                <td> Longitud </ td>
+                <td> grados (decimal) positivo Oriente </ td>
+              </ tr>
+              <tr>
+                <td> Fecha </ td>
+                <td> yyyy/mm/ss </ td>
+              </ tr>
+              <tr>
+                <td>Tiempo</ td>
+                <td>hh:mm:ss</ td>
+              </ tr>
+           </table></p>]]>
+    </string>
+    <string name="ViewObsDataFragment">
+<![CDATA[<p><b>Ver Observación Datos Ayuda</b></p>
+        <p>Esta pantalla le permite ver los datos de observación almacenados en la tarjeta SD interna de la aplicación. Toque uno de los tres botones para ver los datos. La pantalla scolls tanto horizonally y verticalmente para permitir la visualización de todos los datos. Archivos de datos de gran tamaño pueden tomar algún tiempo para cargar. La ficha Observaciones Salida muestra el número de registros de modo único y continuo almacenados en el dispositivo.</p>
+
+        <p><b>Archivo modo de vista individual de datos</b>: Muestra los datos individuales de observación modo.</p>
+        <p><b>Ver Corto continua de archivos Modo de datos</b>: Muestra los registros cortos de datos de observación de modo continuo.</p>
+        <p><b>Visión a largo plazo continua de archivos Modo de datos</b>: Muestra los largos registros de datos de observación de modo continuo.</p>]]>
+    </string>
+    <string name="EarthtideFragment">
+<![CDATA[<p><b>Tierra Marea Ayuda</b></p>
+        <p>La pantalla de la Tierra Marea le permite calcular y los datos de mareas pantalla tierra por un día determinado, en incrementos de 10 minutos. La fecha actual, la latitud y la longitud se rellenarán automáticamente. Puede introducir una fecha, latitud o longitud diferente si así lo desea.</p>
+        <p><b>año</b>: Introduzca el año de 4 dígitos, como 2014.</p>
+        <p><b>mes</b>: Introduzca un número de 1 a 12.</p>
+        <p><b>día</b>: Introduzca un número de 1 a 31 (dependiendo del mes y año).</p>
+        <p><b>latitud</b>: Introduzca el valor de latitud, en decimal, con el norte siendo pos</p>
+        <p><b>longitud</b>: Introduzca el valor de longitud, en decimal, con este ser positivo.</p>
+        <p><b>elevación</b>: Introduzca la elevación de la ubicación, en metros.</p>
+        <p><b>calcular</b>: Calcula y muestra los datos de mareas tierra.</p>
+        <p><b>Obtener Lat / Long de GPS</b>: Recupera los valores de latitud y longitud del GPS interno del dispositivo Android.</p>
+        <p><b>Guardar datos</b>: No implementado actualmente.</p>]]>
+    </string>
+
+    <!-- Private Fragments -->
+    <string name="PrivateParamsFragment">
+<![CDATA[<p><b>Privado Parámetros Ayuda</b></p>
+        <p><b>calibrado</b>: Marque esta casilla si el medidor está calibrado.</p>
+        <p><b>Placas Invertida</b>: Marque esta casilla si las placas se invierten.</p>
+        <p><b>Guardar Frecuencias</b>: Marque esta casilla si desea que las vigas, los niveles y frecuencias de temperatura guardados con los demás datos de observación en la pantalla de Observación de salida.</p>
+        <p><b>Modo de prueba</b>: Marque esta casilla para mostrar los siguientes campos durante las observaciones individuales y continuas modo: Viga de frecuencia, Cruz nivel de frecuencia, nivel de frecuencia Long, Temperatura de frecuencia, Temporal 0 y Temperatura Factor B.</p>
+        <p><b>Tabla de calibración de carga</b>: Carga una tabla de calibración.</p>
+        <p><b>Crear fábrica Parámetros Archivo</b>: Crea un archivo de parámetros de fábrica. Este archivo se puede utilizar para restaurar a partir de si un cliente realiza cambios en uno o más parámetros de fábrica y luego quiere volver a los parámetros de fábrica. Este archivo no es visible para cualquier persona; sólo puede ser creado y restaurado a partir. Los almacenes de archivos los siguientes parámetros: Comentarios de ganancia, Observación de Precisión, Velocidad de datos de salida, tiempo de filtro Constante, Línea de lectura, Beam Scale, Escala de Evaluación, parada mínima, máxima de parada, Long level0, Long Levela, Long ruidob, Long Nivel del, Cruz level0 , Cruz Levela, Cruz ruidob, Cruz Nivel del.</p>
+        <p><b>cancelar</b>: Sale de esta pantalla sin guardar los cambios.</p>]]>
+    </string>
+
+    <!-- HERE -->
+    <string name="CCJRCalculateBeamScaleFragment">
+<![CDATA[<p><b>Calcular haz Escala Ayuda</b></p>
+        <p>Esta pantalla le permite determinar y guardar valor de la escala de haz del medidor.</p>
+
+        <p><b>50\%%</b>: Establece el ciclo de trabajo del medidor para 50\%%.</p>
+        <p><b>Dial Lectura Base</b>: .</p>
+        <p><b>Base DR -0.500 mGal</b>: .</p>
+        <p><b>Base DR 0.500 mGal</b>: .</p>
+        <p><b>-0.500 Haz Freq</b>: .</p>
+        <p><b>0.500 Viga Freq</b>: .</p>
+        <p><b>Delta Freq</b>: .</p>
+        <p><b>haz Escala</b>: El valor calculado escala viga.</p>
+        <p><b>Empieza a leer</b>: Este botón le dice al metro para empezar a enviar datos de gravedad en intervalos de un segundo, que se mostrarán en el campo Frecuencia Beam. La lectura se dará por terminado cuando salga de esta ficha.</p>
+        <p><b>aceptar</b>: Almacena el valor de Escala de haz en la base de datos de la aplicación. Se puede ver en la pantalla Parámetros del medidor.</p>]]>
+    </string>
+    <string name="CalculateFeedbackScaleFragment">
+<![CDATA[<p><b>Calcular Feedback Escala Ayuda</b></p>
+        <p>Esta pantalla le permite determinar y guardar escala retroalimentación del medidor. <br></p>
+
+        <p><b>10\%%</b>: Establece ciclo de trabajo del metro a 10\%%.</p>
+        <p><b>50\%%</b>: Establece ciclo de trabajo del metro a 50\%%.</p>
+        <p><b>90\%%</b>: Establece ciclo de trabajo del metro a 90\%%.</p>
+        <p><b>Ciclo de trabajo actual</b>: El valor del ciclo de trabajo más recientemente enviado al metro</p>
+        <p><b>Nuevo Ciclo de trabajo</b>: Introduzca un nuevo valor del ciclo de trabajo, entre el 5 y el 98, a continuación, toque el botón Configurar</p>
+        <p><b>Set</b>: Envía el valor Nuevo Ciclo de servicio al medidor</p>
+
+        <p><b>fila Freq</b>: Introduzca ?? valores de estos campos</p>
+        <p><b>5\%% fila</b>: Introduzca ?? valores de estos campos</p>
+        <p><b>98\%% fila </b>: Introduzca ?? valores de estos campos.</p>
+        <p><b>fila Valor Delta</b>: Estos valores son el 5\%% valor- el  98\%% valor de la misma columna</p>
+
+        <p><b>C/.93</b>: El valor de Delta 0 posición dividida por 0,93</p>
+        <p><b>FDK Escala</b>: La Escala FDK calculado a partir de los valores anteriores</p>
+        <p><b>Factor CCNM</b>: El factor calculado a partir de las pruebas de campo </p>
+        <p><b>final FDK Escala</b>: La Escala FDK con el Factor CCNM aplica a él</p>
+
+        <p><b>Inicio lectura</b>: Toque este botón para indicar al metro para empezar a enviar datos de gravedad en intervalos de un segundo. Los únicos datos del medidor que se muestra es el campo Frecuencia Beam. La lectura se dará por terminado cuando salga de esta ficha.</p>
+        <p><b>Borrar todo</b>: Toque este botón para borrar todos los campos de esta pantalla</p>
+        <p><b>Aceptar </b>: Toque este botón para guardar la Escala de Evaluación y todos los demás campos de la base de datos de la aplicación. La Escala de Evaluación se puede ver en la pantalla Parámetros del medidor. Todos los demás campos se recordará la próxima vez que se muestre esta pantalla.</p>]]>
+    </string>
+        <string name="station_name">Nombre de la estación</string>
+    <!--<string name="dial">Marcar</string>-->
+    <string name="duty_cycle_title">Ciclo De Trabajo</string>
+    <string name="elapsed_time_title">Tiempo Transcurrido</string>
+    <string name="app_name">UltraGrav2</string>
+    <string name="title_activity_dashboard">UltraGrav2</string>
+    <string name="title_activity_dial_reading">Ingrese lectura en el dial</string>
+    <string name="title_activity_note">Observación Nota</string>
+    <string name="title_activity_station_list">Estaciones</string>
+    <string name="title_activity_observation">Observación</string>
+    <string name="title_activity_single_observation">Individuo Observation</string>
+    <string name="title_activity_continuous_observation">Continua Observation</string>
+    <string name="title_activity_station_details">Detalles de la estación</string>
+    <string name="title_activity_options">Opciones</string>
+    <string name="title_activity_private">Privado</string>
+    <string name="title_activity_continous_setup">Parámetros de observación continua</string>
+    <string name="title_activity_settings">Ajustes</string>
+    <string name="title_activity_setup">Preparar</string>
+    <string name="title_activity_select_file">Seleccione un archivo</string>
+    <string name="title_activity_select_or_create_file">Seleccionar o crear un archivo</string>
+    <string name="title_activity_help">Ayuda</string>
+    <string name="title_activity_station_edit">Estación de Edición</string>
+    <string name="title_activity_station_create">Estación Crear</string>
+    <string name="title_activity_station_series_edit">Serie Editar</string>
+    <string name="company_name">ZLS Corp.</string>
+    <string name="zls_logo">ZLS Logo</string>
+    <string name="company_loc1">Desarrollado y fabricado en</string>
+    <string name="company_loc2">Austin, Texas, USA</string>
+    <string name="meter_type_calibrated">Calibrado Meter, S/N %1$s</string>
+    <string name="meter_type_noncalibrated">No Calibrada Meter, S/N %1$s</string>
+    <string name="temp_title">Temperatura:</string>
+    <string name="battery_title">Batería:</string>
+    <string name="single_obs">Observación Individual</string>
+    <string name="continuous_obs">Observación Continua</string>
+    <string name="settings">Ajustes</string>
+    <string name="meter_setup">Configuración del medidor</string>
+    <string name="options">Opciones</string>
+    <string name="help">Ayuda</string>
+    <string name="about">Sobre</string>
+    <string name="version_number">Número de Versión</string>
+    <string name="exit">Salida</string>
+    <string name="dial_reading_instr">Por favor, actualice el dial de lectura, si es necesario, a continuación, pulse el botón Aceptar. El valor debe estar entre 250 y 6850, y un múltiplo de 50 para los puntos de calibrado.\nToque en la casilla de abajo si desea utilizar puntos no calibrados.</string>
+    <string name="note">Nota</string>
+    <string name="cancel">Cancelar</string>
+    <string name="clear">Claro</string>
+    <string name="enter">Entrar</string>
+    <string name="next">Siguiente</string>
+    <string name="dial_reading">Marcar la Lectura</string>
+    <string name="save">Guardar</string>
+    <string name="edit">Editar</string>
+    <string name="delete">Borrar</string>
+    <string name="ok">Okay</string>
+    <string name="more">Más</string>
+    <string name="accept">Aceptar</string>
+    <!-- <string name="new_station">New Station</string> -->
+    <!-- <string name="new_series">New Series</string> -->
+    <string name="new_text">Nuevo</string>
+    <string name="create">Crear</string>
+    <string name="continue_text">Continuar</string>
+    <string name="station_instr_for_obs">Seleccione una estación para la observación. Puede seleccionar o editar una estación existente o crear una nueva.</string>
+    <string name="station_instr_settings">Seleccione una estación existente para editarlo o borrarlo, o crear una nueva.</string>
+    <string name="done">Hecho</string>
+    <string name="yes">Sí</string>
+    <string name="no">No</string>
+    <string name="none">Ninguno</string>
+    <string name="disk_space_warning_title">Poco espacio en disco</string>
+    <string name="disk_space_warning_message">La memoria interna del dispositivo está %.1f%% llena. Puede dar lugar a la pérdida de datos.</string>
+    <string name="activity_fatal_setup_title">Alerta - No se puede cargar</string>
+    <string name="activity_fatal_setup_message">Un error desconocido ha impedido que esta pantalla de carga.</string>
+    <string name="can_not_read_app_version_title">Alerta - No se puede leer Versión de la aplicación</string>
+    <string name="can_not_read_app_version_message">Can not read the app version number.</string>
+    <string name="set_duty_cycle_success">El ciclo de trabajo se ha fijado</string>
+    <string name="get_duty_cycle_failed_title">Alerta - Obtener Ciclo de error de lectura</string>
+    <string name="get_duty_cycle_failed_message">Se ha producido un error al obtener el ciclo de trabajo del metro.</string>
+    <string name="set_duty_cycle_failed_title">Ciclo de Trabajo Conjunto Falló</string>
+    <string name="set_duty_cycle_failed_message">Se ha producido un error al establecer el ciclo de trabajo.</string>
+    <string name="activity_fatal_persist_title">No se puede guardar</string>
+    <string name="activity_fatal_persist_message">Un error desconocido ha impedido que esta pantalla de ahorro.</string>
+    <string name="invalidStringNotEmpty">No debe estar vacío</string>
+    <string name="invalidStringWithMaxLength">Debe tener entre 1 y %1$d caracteres</string>
+    <string name="invalidInteger">Debe ser un entero</string>
+    <string name="invalidIntegerRange">Debe ser un entero entre %1$d y %2$d</string>
+    <string name="invalidIntegerRangeAndMultiple">Debe ser un número entero entre %1$d y %2$d y un múltiplo de %3$d</string>
+    <string name="invalidDecimal">Debe ser un decimal</string>
+    <string name="invalidDecimalRange">Debe ser un decimal entre %1$f y %2$f</string>
+    <string name="invalidDateRange">Debe ser un entero entre %1$d y %2$d</string>
+    <string name="invalid_fields_title">Alerta - Datos no válidos</string>
+    <string name="invalid_fields_message">Al menos un campo tiene datos no válidos. Por favor, introduzca un valor válido y vuelva a intentarlo.</string>
+    <string name="unable_to_validate_field">Alerta - No se puede validar Campo</string>
+    <string name="unable_to_validate_message">No se puede validar un campo.</string>
+
+    <!-- Station List -->
+    <string name="create_station_for_series">Añadir a la estación de la serie</string>
+    <string name="edit_series">Editar Series</string>
+    <string name="read_stations_from_file">Leer Estaciones\nDe Archivo</string>
+    <string name="write_stations_to_file">Escribe Estaciones\nen archivo</string>
+    <string name="station_file_read_error_title">Alerta - File Station Error de lectura</string>
+    <string name="station_file_read_error_message">Se produjo un error al intentar leer el archivo de las estaciones.</string>
+    <string name="station_file_update_error_title">Alerta - File Station Error de actualización</string>
+    <string name="station_file_update_error_message">Se produjo un error al intentar actualizar el archivo de las estaciones.</string>
+    <string name="station_file_create_error_title">Alerta - File Station Crear Error</string>
+    <string name="station_file_create_error_message">Se produjo un error al intentar crear la Estación.</string>
+    <string name="station_file_delete_error_title">Alerta - estación de eliminación de archivos de error</string>
+    <string name="station_file_delete_error_message">Se produjo un error al intentar eliminar la Estación.</string>
+
+    <!-- Meter Service -->
+    <string name="meterCommandTimeout">El metro no ha respondido en el tiempo de espera.</string>
+    <string name="meterCommandUnknownError">Se ha producido un error de comunicación desconocido.</string>
+    <string name="malformed_response">Respuesta con formato incorrecto</string>
+    <string name="transmit_failed">Transmitir Error</string>
+    <string name="unexpected_response">Respuesta inesperada</string>
+    <string name="unknown_response">Desconocido Respuesta</string>
+    <string name="meter_not_responding_title">Alerta - Meter no responde</string>
+    <string name="meter_not_responding_message">El metro no está respondiendo. Verifique que el medidor está encendido y que el cable serie está conectado o que la conexión Bluetooth está activa.</string>
+    <string name="meter_already_connected">El metro ya está conectado.</string>
+    <string name="reconnecting_to_device">Volver a conectar a metro.</string>
+    <string name="ended_unrequested_reading">Terminó una observación no solicitado.</string>
+    <string name="failed_to_end_unrequested_reading">Error al terminar una observación no solicitado.</string>
+    <string name="failed_to_end_reading_title">Alerta - No se ha podido terminar la lectura</string>
+    <string name="failed_to_end_reading_message">Hubo un problema al intentar poner fin a la lectura.</string>
+    <string name="failed_to_start_reading_title">Alerta - No se pudo empezar a leer</string>
+    <string name="failed_to_start_reading_message">Se ha producido un error al iniciar la lectura.</string>
+    <string name="interrupted_reading_title">Alerta - Lectura Interrupted</string>
+    <string name="interrupted_reading_message">Hubo una interrupción inesperada en las lecturas.</string>
+    <string name="obs_processing_error">Hubo una interrupción inesperada en las lecturas.</string>
+
+    <!-- Observation Strings -->
+    <string name="meter_out_of_level_warning">El metro está fuera de nivel.</string>
+    <string name="observation_timed_out_title">Alerta - La observación ha expirado</string>
+    <string name="observation_timed_out_message">La observación ha caducado. Compruebe que los datos son buenos.</string>
+    <string name="bad_temperature">Mala Temperatura</string>
+    <string name="elapsed_time">Tiempo transcurrido (Segunda)</string>
+    <string name="duty_cycle">Ciclo de servicio (%)</string>
+    <string name="obs_gravity">La gravedad observada</string>
+    <string name="standard_dev">Desviación Estándar</string>
+    <string name="beam_error">Viga de error</string>
+    <string name="feedback_correction">Corrección de la retroalimentación</string>
+    <string name="earthtide">Tierra Marea (ET)</string>
+    <string name="earthtide_correction">Corrección Tierra Marea (ET-COR)</string>
+    <string name="level_correction">Corrección del nivel</string>
+    <string name="temp_correction">Temperatura corrección</string>
+    <string name="data_output_rate">Velocidad de Datos de salida</string>
+    <string name="filter_time_constant">Filtra Constante de tiempo</string>
+    <string name="time">Tiempo</string>
+    <string name="filter_10">10 Filtro Muestra</string>
+    <string name="filter_15">15 Filtro Muestra</string>
+    <string name="ended_reading_success">La lectura de composición</string>
+    <string name="observation_ended">Observación terminó</string>
+    <string name="observation_in_progress">Observation In Progress</string>
+    <string name="observation_saved">Observation Saved</string>
+    <string name="press_done">Pulse Hecho</string>
+    <string name="station_series_name">Nombre de la serie</string>
+
+    <!-- Edit Station Strings -->
+    <string name="station_id">ID de la estación</string>
+    <string name="observer_id">Observador ID</string>
+    <string name="latitude">Latitud\nN(+)/S(-)</string>
+    <string name="longitude">Longitud\nE(+)/W(-)</string>
+    <string name="elevation">Elevación\n(metros)</string>
+    <string name="meter_height">Medidor de Altura (metros)</string>
+    <string name="obtain_gps">Obtener Lat/Long de GPS</string>
+    <string name="enable_earthtide">Habilitar Tierra Marea</string>
+    <string name="autoincrement_station_id">Auto-incremento ID de la estación</string>
+    <string name="series_start_no">Serie Número de inicio</string>
+    <string name="copy_station_info">Copiar Información de la estación</string>
+    <string name="default_name">Defecto</string>
+    <string name="gps_disabled_title">Alerta - GPS está Desactivado</string>
+    <string name="gps_disabled_message">Mostrar menú de configuración de la ubicación?</string>
+    <string name="bad_gps_location_title">Alerta - No GPS Localización</string>
+    <string name="bad_gps_location_message">El GPS no es capaz de proporcionar la localización.</string>
+    <string name="austin">Austin</string>
+    <string name="belton">Belton</string>
+    <string name="ccnm">CCNM</string>
+    <string name="zls">ZLS</string>
+
+    <!-- Settings -->
+    <!-- Settings Tabs -->
+    <string name="system">Parámetros \ndel Sistema</string>
+    <string name="meter">Metro\nParámetros</string>
+    <string name="level">Nivel\nParámetros</string>
+    <string name="stations">Estaciones</string>
+
+    <!-- System Parameters -->
+    <string name="new_dial_reading">Nueva marcación de línea</string>
+    <string name="dial_reading_instructions">El valor de lectura de marcación debe ser entre 250 y 6850, y un múltiplo de 50 para los puntos de calibrado. Utilice la casilla para permitir el uso de puntos no calibrados.</string>
+    <string name="use_noncalibrated_points">Utilice puntos no calibrados</string>
+    <string name="feedback_gain">Feedback Gain</string>
+    <string name="feedback_limits">(0.2 a 2.0)</string>
+    <string name="observation_precision">Precisión Observación</string>
+    <string name="obs_precision_limits">(0.003 a 0.010)</string>
+    <string name="enable_station_select">Activar Selección de estación</string>
+    <string name="temperature_units">Unidades de temperatura</string>
+    <string name="degrees_celsius">\u2103</string>
+    <string name="degrees_fahrenheit">\u2109</string>
+    <string name="generic_error_title">Error inesperado</string>
+    <string name="generic_error_message">Se ha producido un error inesperado. Por favor llame ZLS Soporte Técnico y enviarles el archivo errors.log.</string>
+
+    <!-- Meter Parameters -->
+    <string name="reading_line">Línea de lectura</string>
+    <string name="beam_scale">haz Escala</string>
+    <string name="feedback_scale">Feedback Escala</string>
+    <string name="restore_factory_params">Restaurar parámetros de fábrica</string>
+    <string name="factory_params_restored">Los parámetros de fábrica han sido restaurados</string>
+
+    <!-- Meter Params Alerts -->
+    <!-- <string name="backup_failed_title">Backup Failed</string> -->
+    <!--
+     	<string name="backup_failed_message">The backup operation failed for some arbitrary reason. Your guess is 
+        as good as ours.</string>
+    -->
+    <!-- <string name="backup_successful_title">Alert - Backup Successful</string> -->
+    <!-- <string name="backup_successful_message">The backup operation was successful.</string> -->
+
+
+    <!-- Level Corrections Params -->
+    <string name="long_level_0">Largo Nivel 0</string>
+    <string name="long_level_a">Largo Nivel A</string>
+    <string name="long_level_b">Largo Nivel B</string>
+    <string name="long_level_c">Largo Nivel C</string>
+    <string name="cross_level_0">Nivel Cruz 0</string>
+    <string name="cross_level_a">Nivel Cruz A</string>
+    <string name="cross_level_b">Nivel Cruz B</string>
+    <string name="cross_level_c">Nivel Cruz C</string>
+    <string name="level_correction_params_file_open_error_title">Corrección del nivel de Parámetros Abrir archivo de error</string>
+    <string name="level_correction_params_file_open_error_message">Taquí un error al abrir el archivo de Parámetros Nivel de corrección.</string>
+    <string name="level_correction_params_file_update_error_title">Corrección del nivel de Parámetros de actualización de archivos de error</string>
+    <string name="level_correction_params_file_update_error_message">Hubo un error al actualizar el archivo de Parámetros Nivel de corrección.</string>
+
+    <!-- Station Series Alert -->
+    <!-- <string name="station_alert_title">Alert - Series Station</string> -->
+    <!--
+         <string name="station_alert_message">You have chosen a series station. Do you want to continue 
+             adding stations to those already created or rerun the series?</string>
+    -->
+    <!-- <string name="rerun">Rerun</string> -->
+
+
+    <!-- Observation Alerts -->
+    <string name="no_meter_connected_title">Alerta - Sin medidor conectado</string>
+    <string name="no_meter_connected_message">La aplicación no está conectado a un metro. Conecte a un metro para continuar.</string>
+    <string name="clamp_alert_title">Alerta - Sujetar la Viga</string>
+    <string name="clamp_alert_message">Fije la viga antes de mover el metro.</string>
+    <string name="data_not_saved_alert_title">Alerta - Datos válidos no se guardan</string>
+    <string name="data_not_saved_alert_message">Datos válidos no se ha guardado. ¿Quieres guardar ahora?</string>
+    <string name="duty_cycle_range_alert_title">Alerta - Rango Comentarios</string>
+    <string name="duty_cycle_low_calibrated_message">La regeneración es actualmente 5% o inferior, que es su límite inferior. Mueva el dial para su próximo punto calibrado inferior.</string>
+    <string name="duty_cycle_low_non_calibrated_message">La regeneración es actualmente 5% o inferior, que es su límite inferior. Mueva el dial inferior.</string>
+    <string name="duty_cycle_high_calibrated_message">La retroalimentación se encuentra actualmente en el 98% o superior, que es su límite superior. Mueva el dial para su próximo punto calibrado superior.</string>
+    <string name="duty_cycle_high_non_calibrated_message">La regeneración es actualmente del 98% o superior, que es su límite superior. Mueva el dial superior.</string>
+    <string name="before_next_reading_alert_title">Alerta - Antes Siguiente Reading</string>
+    <string name="before_next_reading_alert_message">
+<![CDATA[Antes de tomar la siguiente lectura,<br/>&#8226; 
+Fije la viga,<br/>&#8226; Ocupar su siguiente estación,<br/>&#8226; Nivelar el metro,<br/>&#8226; Desembridar la viga,<br/>&#8226; Pulse Continuar cuando esté listo.]]>
+    </string>
+    <string name="configuration_load_failed_title">Alerta - Falta de configuración</string>
+    <string name="configuration_load_failed_message">Los datos de configuración no ha podido cargar.</string>
+    <string name="dont_show_this_warning_again">No vuelva a mostrar esta advertencia durante esta lectura.</string>
+
+    <!-- Station Info Alerts -->
+    <string name="delete_station_title">Eliminar estación</string>
+    <string name="delete_station_message">Estás a punto de eliminar la estación de% 1 $ s. Esto no se puede deshacer. ¿Quieres continuar?</string>
+
+    <!-- Continuous Observation Params -->
+    <string name="continuous_observation_prompt">Introduzca Parámetros Modo Filtrar continuas. Para satisfacer el criterio de Nyquist y prevenir aliasing, elija valores tales que la velocidad de salida de datos es al menos el doble del tiempo filtro constante.</string>
+    <string name="data_output_rate_prompt">Velocidad de datos de salida (segundos,> = 1)</string>
+    <string name="filter_time_constant_prompt">Filtra Constante de tiempo (segundos,> = 1)</string>
+
+    <!-- Communications -->
+    <string name="meter_connecting">Conexión a Meter</string>
+    <string name="meter_connected">Conectado a Meter</string>
+    <string name="meter_disconnected">No hay conexion a Meter</string>
+    <string name="meter_comm_failed">No se pudo establecer la conexión con el metro</string>
+    <string name="meter_connection">Meter Conexión</string>
+    <string name="scan_new_meter_connection">Busque nuevo medidor Conexión</string>
+    <string name="bluetooth_scan">Bluetooth</string>
+    <string name="usb_scan">USB</string>
+    <string name="connection_type">Tipo de conexión</string>
+    <string name="device_name">Nombre del dispositivo</string>
+    <string name="connection_status">Estado de la conexión</string>
+    <string name="connected">Conectado</string>
+    <string name="disconnected">desconectado</string>
+    <string name="attempting_to_reconnect">El intento de volver a conectar</string>
+    <string name="select_device">Seleccione un dispositivo</string>
+    <string name="paired">emparejado</string>
+    <string name="not_paired">no Vinculados</string>
+    <string name="no_bluetooth_support_title">Alerta - Soporte No Bluetooth</string>
+    <string name="no_bluetooth_support_message">Este dispositivo no admite Bluetooth</string>
+    <string name="enable_bluetooth_title">Bluetooth no está habilitado</string>
+    <string name="enable_bluetooth_message">Bluetooth no está actualmente habilitado. Activar Bluetooth desde Ajustes.</string>
+    <string name="bluetooth_adapter_error_title">Adaptador Bluetooth Error</string>
+    <string name="bluetooth_adapter_error_message">Hay un error con el adaptador Bluetooth de este dispositivo.</string>
+    <string name="usb_cable_attached">El cable USB se conecta.</string>
+    <string name="usb_cable_detached">Se retiró el cable USB.</string>
+    <string name="error_opening_usb_cable">Error al abrir el cable USB.</string>
+    <string name="connected_to_usb_cable">Conectado al cable USB.</string>
+    <string name="usb_cable_not_connected">Cable USB no está conectado</string>
+    <string name="communication_type_error_title">Tipo de error de comunicación</string>
+    <string name="communication_type_error_message">Se ha seleccionado un desconocido tipo de comunicación. Seleccione Bluetooth o USB.</string>
+    <string name="communication_params_file_open_error_title">Comunicación Parámetros Abrir archivo de error</string>
+    <string name="communication_params_file_open_error_message">Hubo un error al abrir el archivo de Comunicación Parámetros.</string>
+    <string name="communication_params_file_update_error_title">Alerta - Comunicación Parámetros Error de actualización</string>
+    <string name="communication_params_file_update_error_message">Hubo un error al actualizar el archivo de Comunicación Parámetros.</string>
+
+    <!-- Options -->
+    <!-- Options Tabs -->
+    <string name="output_data_tab">Datos de Observación de salida</string>
+    <string name="view_data_tab">Vista\nDatos de Observación</string>
+    <string name="earthtide_tab">Tierra Marea</string>
+
+    <!-- Output Observations -->
+    <!-- Output Observations TextViews -->
+    <string name="data_file_sizes">Tamaños de archivos de datos (registros)</string>
+    <string name="single">Solo</string>
+    <string name="continuous">Continuo</string>
+    <string name="record_count">Recuento de registros</string>
+    <!-- Output Observations Buttons -->
+    <string name="save_single_mode">Archivo Modo Guardar datos Individual</string>
+    <string name="save_continuous_mode_short">Guardar Corto continuo Archivo modo de datos</string>
+    <string name="save_continuous_mode_long">Guardar largo continuo Archivo modo de datos</string>
+    <string name="delete_single_mode">Eliminar archivo solo modo de Datos</string>
+    <string name="delete_continuous_mode">Eliminar Modo continua de datos de archivos</string>
+    <!-- Output Observations Alerts -->
+    <string name="delete_single_mode_title">Alerta - Eliminar archivo solo modo de Datos</string>
+    <string name="delete_single_mode_file_message">Estás a punto de eliminar el archivo de datos de Observación individual. Se perderán todos los datos. Esta operación no se puede deshacer.</string>
+    <string name="delete_continuous_mode_title">Alerta - Eliminar en modo continuo de archivos de datos</string>
+    <string name="delete_continuous_mode_file_message">Estás a punto de eliminar el archivo de datos continua observación. Se perderán todos los datos. Esta operación no se puede deshacer.</string>
+    <string name="no_single_obs_to_save_title">Alerta - No Observaciones individuales para ahorrar</string>
+    <string name="no_single_obs_to_save_message">No hay observaciones individuales de ahorrar.</string>
+    <string name="no_continuous_obs_to_save_title">Alerta - Las observaciones continuas para ahorrar</string>
+    <string name="no_continuous_obs_to_save_message">No hay observaciones continuas de ahorrar.</string>
+    <string name="no_single_obs_to_delete_title">Alerta - No Observaciones individuales para borrar</string>
+    <string name="no_single_obs_to_delete_message">No hay observaciones individuales que desea eliminar.</string>
+    <string name="no_continuous_obs_to_delete_title">Alerta - No hay observaciones continuas para borrar</string>
+    <string name="no_continuous_obs_to_delete_message">No hay observaciones continuas para eliminar.</string>
+
+    <!-- View Observations -->
+    <!-- View Observations Buttons -->
+    <string name="view_single_mode">Modo de vista único archivo de datos</string>
+    <string name="view_continuous_mode_short">Vista Corto continua de archivos Modo de datos </string>
+    <string name="view_continuous_mode_long">Vea largo continuo de archivos Modo de datos </string>
+    <!-- View Observations Alerts -->
+    <string name="no_single_obs_to_view_title">Alerta - No Observaciones Modo de pantalla para ver</string>
+    <string name="no_single_obs_to_view_message">No hay observaciones monomodo para ver. </string>
+    <string name="no_cont_obs_to_view_title">Alerta - No Observaciones modo continuo a Ver</string>
+    <string name="no_cont_obs_to_view_message">No hay observaciones modo continuo para ver.</string>
+    <string name="obs_counts_not_valid_title">Alerta - Condes de observación no son válidos </string>
+    <string name="obs_counts_not_valid_message">El único y cuenta con la observación continua no están disponibles.</string>
+
+    <!-- Earthtide -->
+    <string name="calculate">Calcular</string>
+    <string name="save_data">Guardar datos</string>
+    <string name="year">Año</string>
+    <string name="month">El mes</string>
+    <string name="day">Día</string>
+
+    <!-- ZLS Private -->
+    <string name="calculate_feedback_scale">Calcular Feedback Escala</string>
+    <string name="enter_password">Introducir contraseña</string>
+    <string name="incorrect_password_title">Alerta - Contraseña incorrecta</string>
+    <string name="incorrect_password_message">contraseña incorrecta. Intentar de nuevo.</string>
+    <string name="serial_number">Número de serie</string>
+    <string name="gain">Ganancia</string>
+    <string name="stop_boost">Detener Boost</string>
+    <string name="boost_factor">Boost Factor</string>
+    <string name="temp_0">Temperatura 0</string>
+    <string name="temp_a">Factor de Temperatura A</string>
+    <string name="temp_b">Factor de Temperatura B</string>
+    <string name="temp_c">Factor de Temperatura C</string>
+    <string name="calibrated">Calibrado</string>
+    <string name="plates_reversed">Placas Invertida</string>
+    <string name="save_frequencies">Guardar frecuencias</string>
+    <string name="test_mode">Modo de prueba</string>
+    <string name="load_calibration_table">Abla de Calibración de Carga</string>
+    <string name="beam_k">Transferir K</string>
+    <string name="ccjr_beam_k">CCJR haz K</string>
+    <string name="confirm_clear_all_alert_title">Alerta - Confirmar Borrar todos los datos</string>
+    <string name="confirm_clear_all_alert_message">¿Está usted, como, totalmente seguro de que desea borrar todos estos datos? No Para llevar espaldas!</string>
+    <string name="create_factory_params">Crear Fábrica Parámetros Archivo </string>
+    <string name="factory_parameter_file_created">archivo de parámetros de fábrica creada.</string>
+    <string name="factory_params_file_open_error_title">Se ha producido un error al abrir el archivo de fábrica Parámetros.</string>
+    <string name="factory_params_file_open_error_message">Se ha producido un error al crear el archivo de fábrica Parámetros.</string>
+    <string name="factory_params_file_create_error_title">Alerta - Parámetro de fábrica Valor Error</string>
+    <string name="factory_params_file_create_error_message">Se ha producido un error al crear el archivo de fábrica Parámetros.</string>
+    <string name="factory_param_null_error_title">Alerta - Parámetro de fábrica Valor Error</string>
+    <string name="factory_param_null_error_message">OUno de los valores de los parámetros de fábrica no es válida. Por favor, compruebe todos los valores y vuelva a intentarlo.</string>
+    <string name="factory_params_file_does_not_exist_title">Alerta - Fábrica Parámetros El archivo no existe</string>
+    <string name="factory_params_file_does_not_exist_message">El archivo de fábrica Parámetros no existe.</string>
+    <string name="feedback_scale_value_cleared">Puntuación Escala Valor Borrado</string>
+    <string name="feedback_scale_params_cleared">Puntuación Escala Parámetros Borrado</string>
+    <string name="feedback_scale_value_saved">Puntuación Escala Valor guardado</string>
+    <string name="feedback_scale_params_saved">Puntuación Escala Parámetros Guardados</string>
+    <string name="feedback_scale_params_file_open_error_title">Puntuación Escala Parámetros Abrir archivo Error</string>
+    <string name="feedback_scale_params_file_open_error_message">Se ha producido un error al abrir el archivo Parámetros Feedback Escala.</string>
+    <string name="feedback_scale_params_file_read_error_title">Puntuación Escala Parámetros de archivos de lectura Error </string>
+    <string name="feedback_scale_params_file_read_error_message">Se ha producido un error al leer el archivo Parámetros Feedback Escala.</string>
+    <string name="feedback_scale_params_file_update_error_title">Puntuación Escala Parámetros Actualizar archivo Error</string>
+    <string name="feedback_scale_params_file_update_error_message">Hubo un error al actualizar el archivo Parámetros Feedback Escala.</string>
+    <string name="bad_gain_value_title">Bad Ganancia Valor</string>
+    <string name="bad_gain_value_message">El valor de ganancia debe ser un número.</string>
+    <string name="system_params_file_open_error_title">Sistema Parámetros Abrir archivo Error</string>
+    <string name="system_params_file_open_error_message">Se ha producido un error al abrir el archivo de sistema Parámetros.</string>
+    <string name="system_params_file_update_error_title">Sistema Parámetros Actualizar archivo Error</string>
+    <string name="system_params_file_update_error_message">Se ha producido un error al actualizar el archivo del sistema Parámetros.</string>
+    <string name="calibration_import_complete">importación de calibración completa.</string>
+    <string name="calibration_import_expected_count">archivo de importación de calibración no contiene los 133 valores esperados.</string>
+    <string name="calibration_table_import_error_title">Alerta - Calibración Tabla Error de importación</string>
+    <string name="no_calib_Table_title">tabla de calibración no cargado</string>
+    <string name="calib_table_db_read_error_title"> Alerta - Calibración Tabla error de lectura</string>
+    <string name="calib_table_db_read_error_message"> Se produjo un error al intentar leer la tabla de calibración.</string>
+    <string name="calib_table_size_error_title">Alerta - Calibración Tamaño de la tabla de errores</string>
+    <string name="calib_table_size_error_message">Hay un error con el tamaño de la tabla de calibración.</string>
+
+    <!-- Meter Setup -->
+    <!-- Meter Setup Tabs -->
+    <string name="read_meter_tab">Leer Medidor /\nAjuste Ciclo de Trabajo</string>
+    <string name="set_stops_reading_line">Establecer Paradas /\nLínea de Lectura</string>
+    <string name="calculate_beam_scale">Calcular haz Escala</string>
+    <string name="beam_scale_saved">Transferir Escala Valor guardado</string>
+    <string name="beam_scale_save_error_title">Transferir Escala Guardar Error</string>
+    <string name="params_file_open_error_title">Parámetros Archivo Abrir Error</string>
+    <string name="params_file_open_error_message">Se ha producido un error al abrir un archivo de parámetros.</string>
+    <string name="params_file_update_error_title">Parámetros Actualizar archivo Error</string>
+    <string name="params_file_update_error_message">Se ha producido un error al actualizar el sistema o el nivel de corrección, archivo Parámetros del medidor.</string>
+    <string name="meter_params_file_open_error_title">Meter Parámetros Abrir archivo Error</string>
+    <string name="meter_params_file_open_error_message">Se ha producido un error al abrir el archivo Meter Parámetros.</string>
+    <string name="meter_params_file_update_error_title">Meter Parámetros Actualizar archivo Error</string>
+    <string name="meter_params_file_update_error_message">THubo un error al actualizar el archivo Meter Parámetros.</string>
+    <string name="cross_level_frequency">Cruz Nivel Frecuencia</string>
+    <string name="long_level_frequency">Nivel Frecuencia largo</string>
+    <string name="temperature_frequency">Temperatura Frecuencia</string>
+    <string name="current_duty_cycle">Ciclo de trabajo actual (%)</string>
+    <string name="new_duty_cycle_instr">Introduzca un nuevo valor de ciclo de trabajo, entre los valores de 5 y 98.</string>
+    <string name="set">Ajuste</string>
+    <string name="start_reading">Empezar a leer</string>
+    <string name="duty_cycle_presets">Preestablecidos Ciclo de trabajo </string>
+    <string name="current_duty_cycle_prompt">Ciclo de trabajo actual (%)</string>
+    <string name="new_duty_cycle_prompt">Nuevo Ciclo de Trabajo (%)</string>
+    <string name="beam_frequency">Transferir Frecuencia</string>
+    <string name="max_stop">Detener máxima</string>
+    <string name="min_stop">Detener mínimo</string>
+    <string name="duty_value_preset_10_percent">10%</string>
+    <string name="duty_value_preset_50_percent">50%</string>
+    <string name="duty_value_preset_90_percent">90%</string>
+    <string name="base_dial_reading">Base lectura en el dial</string>
+    <string name="base_dr_minus_250">Base DR -.250 mGal</string>
+    <string name="base_dr_plus_250">Base DR +.250 mGal</string>
+    <string name="minus_250_beam_freq">0.250 haz Freq</string>
+    <string name="plus_250_beam_freq">+0.250 haz Freq</string>
+    <string name="base_dr_minus_500">Base DR -.500 mGal</string>
+    <string name="base_dr_plus_500">Base DR +.500 mGal</string>
+    <string name="minus_500_beam_freq">- 0.500 haz Freq</string>
+    <string name="plus_500_beam_freq">+ 0.500 haz Freq</string>
+    <string name="delta_freq">Delta Freq</string>
+    <string name="stops_accept_button_prompt">Pulse el botón para guardar los valores máximos y mínimos de las paradas y la Lectura Línea Aceptar. </string>
+    <string name="beam_scale_accept_button_prompt">Pulse el botón para guardar el valor de la viga Escala Aceptar. </string>
+    <string name="feedback_accept_button_prompt">Pulse el botón Aceptar para guardar la Escala Comentarios y todos los demás valores.</string>
+    <string name="stops_reading_line_saved"> Estaciones y Línea Lectura valores guardados </string>
+    <string name="duty_value_preset_5_percent">5%</string>
+    <string name="duty_value_preset_98_percent">98%</string>
+    <string name="freq">Freq</string>
+    <string name="delta">Delta</string>
+    <string name="c_93">C/.93</string>
+    <string name="ccnm_factor">CCNM Factor</string>
+    <string name="final_fdk_scale">Final de Evaluación Escala </string>
+    <string name="clear_all">Borrar todo</string>
+
+    <!-- File operations -->
+    <string name="directory_up">Arriba</string>
+    <string name="create_new_file">Crear nuevo archivo</string>
+   	<!--<string name="std_dev">(STD_DEV)</string>-->
+	<!--<string name="beam_err">(BEAM ERROR)</string>-->
+    <!-- File operation alerts -->
+    <string name="file_write_failed_title">Alerta - Error al escribir en el archivo </string>
+    <string name="file_write_failed_message">Error al escribir en el archivo seleccionado. </string>
+    <string name="path_not_file_title"> Alerta - Seleccionado Ruta no es un archivo</string>
+    <string name="path_not_file_message">La ruta que ha seleccionado no es un archivo.</string>
+    <string name="path_insufficient_write_permissions_title">Alerta - Sin Permiso de escritura </string>
+    <string name="path_insufficient_write_permissions_message">Usted no tiene permiso para escribir en la ruta seleccionada. </string>
+    <string name="allow_file_overwrite_title">Alerta - Verificar Archivo Sobrescribir</string>
+    <string name="allow_file_overwrite_message">¿Está seguro que desea sobrescribir el archivo existente en el trazado seleccionado?</string>
+    <string name="no_file_write_permissions">Permisos insuficientes para escribir en el archivo. Trate otro camino.</string>
+    <string name="no_file_read_permissions">Permisos insuficientes para leer el archivo. Trate otro camino.</string>
+    <string name="file_read_failed">Error al leer el archivo en la línea %1$d.</string>
+    <string name="file_write_complete">Escribir archivo completo.</string>
+    <string name="file_write_cancelled">Escritura de archivos cancelada.</string>
+    <string name="file_read_complete">Archivo leer completa.</string>
+    <string name="single_obs_delete_complete"> Los datos individuales de observación eliminar completa. </string>
+    <string name="continuous_obs_delete_complete">Datos de observación continuos eliminar completa.</string>
+    <string name="single_obs_delete_error_title">Individual Observación eliminación de archivos de error </string>
+    <string name="single_obs_delete_error_message">Se produjo un error al intentar eliminar el archivo de datos de Observación individual.</string>
+    <string name="continuous_obs_delete_error_title">Continuo Observación eliminación de archivos de error</string>
+    <string name="continuous_obs_delete_error_message">Se produjo un error al intentar eliminar el archivo de datos continua observación.</string>
+    <string name="observation_count_read_error_title">Record Observación Conde error de lectura</string>
+    <string name="observation_count_read_error_message">Se produjo un error al intentar obtener el número de registros de observación.</string>
+    <string name="observation_file_read_error_title">Observación del archivo Error de lectura</string>
+    <string name="observation_file_read_error_message">Se produjo un error al intentar leer el archivo de Observación.</string>
+    <string name="observation_file_write_error_title">Observación Write File Error</string>
+    <string name="observation_file_write_error_message">Se produjo un error al intentar escribir en el fichero de Observación.</string>
+    <string name="did_not_create_observation_object_message">Se produjo un error al intentar crear el objeto de observación.</string>
+    <string name="did_not_create_observation_record_message">Se produjo un error al intentar crear el registro de observación DB.</string>
+    <string name="sd_card_error_title">SD Card Error</string>
+    <string name="sd_card_error_message">Se ha producido un error en la tarjeta SD al intentar abrir el archivo de registro de errores.</string>
+    <string name="error_log_file_error_title">Alerta - Ingresar Error de archivo</string>
+    <string name="error_log_file_error_message">Se produjo un error al intentar crear o abrir el archivo de registro de errores.</string>
+    <string name="enter_file_name">Ingrese Nombre de archivo</string>
+    <string name="file_name">Nombre de archivo </string>
+    <string name="out_of_range">¡Fuera de rango!</string>
+    <string name="near_end">Near End</string>
+    <string name="of_range">de gama!</string>
+    <string name="dial">marcar</string>
+    
+
+</resources>

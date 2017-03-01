@@ -1,0 +1,987 @@
+<resources>
+
+    <!-- Help Text -->
+    <string name="cant_find_help_text">There is no help for this topic.</string>
+
+    <!--   Activities Help Text -->
+    <!--     Activities W/O Fragments -->
+    
+    <string name="DashboardActivity"><![CDATA[<p><b>UltraGrav2 Help</b><br>
+        Select an observation procedure or other option by tapping one of the buttons on the main 
+        screen.</p>
+        <p><b>Single Observation</b>: Performs a single observation at a site. See below for Single Mode 
+        help.</p>
+        <p><b>Continuous Observation</b>: Performs observations with filtering continuously for earth tide 
+        observations. See below for Continuous Mode help.</p>
+        <p><b>Settings</b>: Consists of the following tabs - System, Meter and Level parameters, and Stations. 
+        See each screen for it\'s respective help.</p>
+        <p><b>Setup</b>: Consists of the following tabs - Read Meter/Set Duty Cycle, Set Stops/Reading Line, 
+        Calculate Beam Scale. See each screen for it\'s respective help.</p>
+        <p><b>Options</b>: Consists of the following tabs - Output Observation data, View Observation data, 
+        Earth tide. See each screen for it\'s respective help.</p>
+        <p><b>Exit</b>: Terminates UltraGrav2.</p>
+
+        <p><u>Error Log File</u>: The application\'s error log file is located on the SD card, in following location:<br>
+        <i>&lt;sdcard&gt;/Android/data/com.zlscorp.ultrgrav/files/errors.log</i>.</p>
+
+        <p><b>Single Observation Mode Help</b><br>
+        The Single Observation Mode makes a single observation at a station. The following is a description 
+        of the fields on the Single Observation Mode screen.</p> 
+        <p><u>Elapsed Time</u>: Elapsed time in Seconds.</p>
+        <p><u>Duty Cycle</u>: The current feedback force in \%% duty cycle. Zero and 100\%% represent the 
+        minimum and maximum feedback force.</p>
+        <p><u>Dial Reading</u>: The actual dial reading uncorrected for scale factor.</p>
+        <p><u>Observed Gravity</u>: This equals the Corrected Dial + Feedback Correction + Level Correction +
+        Temperature Correction + Earth Tide Correction (when enabled).</p>
+        <p><u>Standard Deviation</u>: The standard deviation (SD) of the current observation. An observation 
+        is made at five second intervals.</p> 
+        <p><u>Beam Error</u>: The displacement of the gravimeter beam from Null in mGal. This field is updated 
+        at 5 second intervals.</p>
+        <p><u>Feedback Correction</u>: The magnitude of the feedback force in mGal.</p>
+        <p><u>Earth Tide Correction</u>: The magnitude of the Earth Tide Correction in mGal.</p>
+        <p><u>Level Correction</u>: The magnitude of the correction for leveling errors in mGal.</p>
+        <p><u>Temp. Correction</u>: The magnitude of the temperature correction in mGal.</p>
+        <p><u>Time</u>: Time of a valid observation.</p>
+        <p><u>Warning messages</u>:<br>
+        The meter is off level: This indicates that the meter is further off level than the 
+        electronics can accommodate for.</p>
+        <p>Bad Temperature xxx: This indicates that the meter is out of its allowable temperature range.</p>
+
+        <p>A valid observation is obtained when the Standard Deviation and Beam Error are both equal 
+        to or less than the precision set in System Parameters. If the desired precision is not achieved 
+        within 180 sec, a valid observation is forced.  The usual reason for a time-out is that the site 
+        is too noisy to obtain the desired precision. You can either decrease the precision (larger number) 
+        or decrease the feedback gain (smaller number) in the system parameters settings. Other methods to 
+        cope with a noisy site are detailed in the manual.</p>
+
+        <p>Factors affecting Single Observation Mode:<br>
+        1) The Precision setting in System Parameters. The higher the precision (smaller number) the 
+        longer will be required to obtain a valid observation.</p>
+        <p>2) The Feedback Gain setting in System Parameters. A lower gain results in greater beam noise, 
+        smoother Feedback Correction, and increased  time constant of the feedback loop. This setting is 
+        a compromise and its use requires experience.</p>
+        <p>3) If Latitude and Longitude are BOTH zero or blank the Earth Tide Correction will be zero. 
+        A zero Latitude will disable the calculated dial preset in the Hunt procedure.</p>
+        <p>4) Enable Earth Tide checkbox in Station Parameters, when checked, causes the Earth Tide 
+        Correction to be included in OBSG (observed gravity).</p>
+        <p>5) The Android system clock must be set to GMT for a correct Earth Tide calculation.</p>
+        
+        <p><b>Continuous Observation Mode Help</b><br>
+        Continuous Observation Mode makes continuous observations at a station for the purpose of observing 
+        earth tides or secular studies. The following is a description of the fields on the Continuous 
+        Observation Mode screen.</p>
+        <p><u>Elapsed Time</u>: Elapsed time in Seconds.</p>
+        <p><u>Duty Cycle</u>: The current feedback force in \%% duty cycle. Zero and 100\%% represent the 
+        minimum and maximum feedback force.</p>
+        <p><u>Dial Reading</u>: The actual dial reading uncorrected for scale factor.</p>
+        <p><u>Observed Gravity</u>: This equals the Corrected Dial + Filtered Feedback Correction + Level 
+        Correction + Temperature Correction.</p>
+        <p><u>Feedback Correction</u>: The magnitude of the feedback force in mGal.</p>
+        <p><u>Earth Tide</u>: The magnitude of the Earth Tide in mGal.</p>
+        <p><u>Level Correction</u>: The magnitude of the correction for level errors in mGal.</p>
+        <p><u>Temp Correction</u>: The magnitude of the temperature correction in mGal.</p>
+        <p><u>Data Output Rate</u>: Displays the value entered in the Continuous Observation Setup screen.</p>
+        <p><u>Filter Time Constant</u>: Displays the value entered in the Continuous Observation Setup screen.</p>
+        <p><u>Time</u>: Time of an observation.</p>
+
+        <p>Observations are made continuously at one sec intervals, and the screen and data file are updated 
+        at intervals specified in the Data Output Rate, which is set in the Continuous Observation Parameters 
+        screen. The data is also filtered with a cascaded 3 stage filter, whose time constant is also set 
+        in the Continuous Observation Parameters screen.</p>
+
+        <p>Factors affecting Continuous Observation Mode:<br>
+        1) Data Output Rate and Filter Time Constant in Continuous Observation Parameters. These must be 
+        chosen to satisfy the Nyquist Criterion to prevent aliasing.  Choose values such that Data Output Rate 
+        is at least twice the Filter Time Constant. The Continuous Observation Parameter screen 
+        is presented before initiating the Continuous Observation procedure.</p>
+        <p>2) The Feedback Gain setting in System Parameters. A lower gain results in greater beam noise, 
+        smoother Feedback Correction, and increased time constant of the feedback loop. This setting is a 
+        compromise and its use requires experience. Decreasing the feedback gain has an effect similar to 
+        increasing the filter time constant.</p>
+        <p>3) If Latitude and Longitude are BOTH zero or blank the Earth Tide Correction will be zero.</p>
+        <p>4) The Android system clock must be set to GMT for correct Earth Tide Calculations.</p>]]></string>
+
+    <string name="DialReadingActivity"><![CDATA[<p><b>Dial Reading Help</b></p>
+        <p>Follow the instructions on the Dial Reading screen.</p>]]></string>
+
+    <string name="ContinousSetupActivity"><![CDATA[<p><b>Continuous Observation Setup Help</b></p>
+        <p><u>Data Output Rate</u>: Sets the rate at which data are archived and the screen is updated.</p>
+        <p><u>Filter Time Constant</u>: Sets the time constant of a three stage RC filter in seconds.</p>
+        <p>Data Output Rate and Filter Time Constant must be chosen to satisfy the Nyquist Criterion 
+        to prevent aliasing.  Choose values such that the Data Output Rate is at least twice the Filter Time Constant.
+        </p>]]></string>
+        
+    <string name="NoteActivity"><![CDATA[<p><b>Note Help</b></p>
+        <p>Enter your observation notes on this screen. They will be included with the observation data 
+        when it is exported to the SD card.</p>]]></string>
+
+    <string name="StationDetailsActivity"><![CDATA[<p><b>Station Details</b></p>
+        <p>This screen permits editing or deleting the seleted station. To edit the station data, tap on 
+        the Pencil icon in the top right corner of the screen. To delete it, tap on the Trash can icon</p>
+        <p><u>Station ID</u>: Name of the station.</p> 
+        <p><u>Observer ID</u>: Name of the observer or any other information you wish to be included with 
+        the data.</p>
+        <p><u>Latitude</u>: Decimal degrees, positive North. Leave blank or zero if unavailable.</p>
+        <p><u>Longitude</u>: Decimal degrees, positive East. Leave blank or zero if unavailable.</p>
+        <p><u>Elevation</u>: Elevation of the station, in meters. Leave blank or zero if unavailable.</p>
+        <p><u>Meter Height</u>: Height of the gravimeter above the station, in meters. Leave blank or zero if unavailable.</p>
+        <p><u>Enable Earth Tide</u>: Indicates whether Earth Tide corrections are enabled for this station. 
+        When they are enabled, they will be added to the Observed Gravity reading during Single 
+        Observations.</p>]]></string>
+    
+    <!--     Activities W/ Fragments -->
+    <string name="FileSelectActivity"><![CDATA[<p>File Select</p><p></p>]]></string>
+    <string name="StationListActivity"><![CDATA[<p>Stations</p><p></p>]]></string>
+    
+    <!--   Fragments Help Text -->
+    <string name="FileSelectFragment"><![CDATA[<p><b>File Select Help</b></p>
+        <p>Select a file for the curent operation. If you are not in the correct directory, use the Up button 
+        to go up in the directory tree, or tap on a directory name to go down into it. When you find the file 
+        you are looking for, tap on it.</p>
+        <p>If you are creating a new file, tap on the Create New File button.</p>]]></string>
+
+    <!--     Settings Fragments -->
+    <string name="SystemParamsFragment"><![CDATA[<p><b>System Parameters Help</b></p>
+        <p><u>Use non-calibrated points</u>: When this checkbox is checked, the dial value may be set to 
+        a non-calibrated point, meaning other than a multiple of 50 units. When it is unchecked, only 
+        multiples of 50 units may be used.</p>
+        <p><u>New Dial Reading</u>: Permits synchronizing the gravimeter dial reading and this application. 
+        Only integer values between 250 and 6850 are accepted.</p>
+        <p><u>Feed Back Gain</u>: Permits adjusting the sensitivity of the feedback. Lowering the gain 
+        increases accuracy at the expense of reading time and vice versa.</p>
+        <p><u>Observation Precision</u>: Adjusts the desired precision at which a reading will be accepted. 
+        A lower precision decreases reading time and vice versa.</p>
+        <p><u>Enable Station Select</u>: When this checkbox is checked, the user is able to select a station 
+        for an observation. When it is unchecked, the /"default/" station parameters are used. Leaving 
+        this selection un-checked will simplify observations by eliminating the station select screen.</p>
+        <p><u>Meter Connection</u>: Displays connection type, device name and connection status.</p>]]></string>
+        
+    <string name="MeterParamsFragment"><![CDATA[<p><b>Meter Parameters Help</b></p>
+        <p><u>Reading Line</u>: The dial reading value at which the beam is null when the duty cycle is set 
+        to 50%.</p>
+        <p><u>Beam Scale</u>: This is a scaling factor used to convert the beam position to mGal.</p>
+        <p><u>Feedback Scale</u>: This is a scaling factor used to convert the feedback signal to mGal.</p>
+        <p><u>Minimum Stop</u>: The dial setting at which the beam is on the bottom stop.</p>
+        <p><u>Maximum Stop</u>: The dial setting at which the beam is on the top stop.</p>
+        <p>These parameters need to be verified and updated from time to time. Instructions for doing so are 
+        detailed in the manual.</p>]]></string>
+        
+    <string name="LevelParamsFragment"><![CDATA[<p><b>Level Parameters Help</b></p><p>These are the parameters 
+        required to model the level correction. They may be determined and updated at any time. See the manual for details.</p>]]></string>
+
+    <string name="StationListFragment"><![CDATA[<p><b>Stations Help</b></p><p>This screen permits adding, 
+        or selecting a particular station whose parameters will be used for the observation.</p>
+        <p>The Default station is used in all cases when the Enable Station Select checkbox in the System 
+        Parameters screen is unchecked. This station may be edited but it may not be deleted.</p>]]></string>
+
+    <string name="StationEditFragment"><![CDATA[<p><b>Station Edit Help</b></p>
+        <p><u>Station ID</u>: Name of the station.</p> 
+        <p><u>Observer ID</u>: Name of the observer or any other information you wish to be included with 
+        the data.</p>
+        <p><u>Latitude</u>: Decimal degrees, positive North. Leave Blank or zero if unavailable.</p>
+        <p><u>Longitude</u>: Decimal degrees, positive East. Leave blank or zero if unavailable.</p>
+        <p><u>Elevation</u>: Elevation of the station, in meters. Leave blank or zero if unavailable.</p>
+        <p><u>Meter Height</u>: Height of the gravimeter above the station, in meters.</p>
+        <p><u>Enable Earth Tide (Checkbox)</u>: When checked the value of the Earth Tide correction (Longman) 
+        will be added to observed gravity. This applies to single observation mode only. If BOTH latitude 
+        and longitude are zero or blank no Earth Tide will be calculated. Note that both Latitude and Longitude 
+        must be zero to indicate that no coordinates are available.</p>
+        <p><u>Obtain Lat/Long from GPS (Button)</u>: Retrieves the latitude and longitude data from the Android 
+        device\'s internal GPS receiver.</p>]]></string>
+        
+    <!--     Setup Fragments -->
+    <string name="ReadMeterFragment"><![CDATA[<p><b>Read Meter and Set Duty Cycle Help</b></p>
+        <p>This screen allows you to set the feedback force to a fixed value and displays the various 
+        outputs from the gravity sensor. This is useful for certain calibration procedures. You will 
+        see the effect of a new duty cycle value only after you have started a reading. You can send 
+        new duty cycle values to the meter as needed.</p>
+
+        <p><b>New Duty Cycle</b>: Enter a new duty cycle value, between 5 and 98, then tap the Set button.</p>
+        <p><b>Set</b>: Sends the New Duty Cycle value to the meter.</p>
+        <p><b>Start Reading</b>: This button tells the meter to start sending gravity data in one second 
+        intervals. This data is displayed in the fields at the top of the screen. The reading will be 
+        terminated when you leave this tab.</p>]]></string>
+        
+    
+<!--     >>Further instructions to be supplied by Keisuke.<< </p> -->
+    <string name="StopsReadingLineFragment"><![CDATA[<p><b>Set Stops and Reading Line Help</b></p>
+        <p>This screen allows you to determine the meter\'s maximum and minimum stops and reading line.        
+         Refer to Chapter Five, Adjusting Beam Stops in the manual. </p>
+
+        <p><b>10\%%</b>: Sets the meter\'s duty cycle to 10\%%.</p>
+        <p><b>50\%%</b>: Sets the meter\'s duty cycle to 50\%%.</p>
+        <p><b>90\%%</b>: Sets the meter\'s duty cycle to 90\%%.</p>
+        <p><b>New Duty Cycle</b>: Enter a new duty cycle value, between 5 and 98, then tap the Set button.</p>
+        <p><b>Set</b>: Sends the New Duty Cycle value to the meter.</p>
+        <p><b>Start Reading</b>: This button tells the meter to start sending gravity data in one second 
+        intervals, which will be displayed in the Beam Frequency field. The reading will be 
+        terminated when you leave this tab.</p>
+        <p><b>Accept</b>: Stores the Maximum and Minimum Stops and Reading Line values in the application 
+        database. They can be viewed in the Meter Parameters screen.</p>]]></string>
+        
+    <string name="CalculateBeamScaleFragment"><![CDATA[<p><b>Calculate Beam Scale Help</b></p>
+        <p>This screen allows you to determine the meter\'s beam scale value.         
+        See Chapter Five, Calculate Beam Scale Factor in the manual. </p>
+
+        <p><b>50\%%</b>: Sets the meter\'s duty cycle to 50\%%.</p>
+        <p><b>Base Dial Reading</b>: .</p>
+        <p><b>Base DR -0.250 mGal</b>: .</p>
+        <p><b>Base DR +0.250 mGal</b>: .</p>
+        <p><b>-0.250 Beam Freq</b>: .</p>
+        <p><b>+0.250 Beam Freq</b>: .</p>
+        <p><b>Delta Freq</b>: .</p>
+        <p><b>Beam Scale</b>: The calculated beam scale value.</p>
+        <p><b>Start Reading</b>: This button tells the meter to start sending gravity data in one second 
+        intervals, which will be displayed in the Beam Frequency field. The reading will be 
+        terminated when you leave this tab.</p>
+        <p><b>Accept</b>: Stores the Beam Scale value in the application database. It can be viewed in 
+        the Meter Parameters screen.</p>]]></string>
+    
+    <!--     Options Fragments -->
+    <string name="OutputObsDataFragment"><![CDATA[<p><b>Output Observation Data Help</b></p>
+        <p>This screen allows you to manage the observation data. Data may be saved on the Android device\'s 
+        internal SD card for uploading to a computer using the Save buttons, or deleted from the application\'s 
+        internal database with the Delete buttons.</p>
+        <p>The data is sent in CSV (comma separated values) format. This format is suitable for direct input 
+        into spread sheets and other programs. The data is not automatically deleted after an upload; you must 
+        use the delete buttons to delete unwanted data. New data is always appended to the end of existing 
+        data. The number of records stored in the application\'s internal database is displayed at the top of 
+        the screen.</p>
+        <p><b>Single Mode Data File</b>: Single Mode observation data records consist of 20 fields. They are 
+        saved in the following order: Station ID, ObserverID, Meter Serial Number, Date, Time, Observed gravity, 
+        Dial Reading, Feedback Correction, Earth Tide Correction, Level Correction, Temperature Correction, 
+        Beam Error, Meter Height, Elevation, Latitude, Longitude, Elapsed Time, Standard Deviation, Temperature 
+        Frequency, Note.</p>
+        <p><b>Continuous Mode Data File</b>: Continuous Mode observation data can be saved as either 
+        short or long records. Short records consist of 9 fields. They are saved in the following order: Date, 
+        Time, Observed Gravity, Dial Reading, Feedback Correction, Earth Tide Value, Level Correction, 
+        Temperature Correction and Note.</p>
+        <p>Long records consist of 23 fields. They are saved in the following order: Date, Time, Observed Gravity, Dial, 
+        Feedback Correction, Earth Tide Correction, Level Correction, Temperature Correction, Station ID, 
+        Observer ID, Meter Serial Number, Height, Elevation, Latitude, Longitude, Elapsed Time, Data Output 
+        Rate, Filter Time Constant, Temperature Frequency, Beam Frequency, Cross Level Frequency, Long Level 
+        Frequency, Note.</p>
+        <p>The units for the data are shown in the table below.</p>
+        <p><table>
+             <tr> 
+               <td style="width:100px"><b>Field</b></td>
+               <td style="width:200px"><b>Units</b></td>
+             </tr>
+             <tr>
+               <td>Gravity</td>
+               <td>mGals</td>
+             </tr>
+             <tr>
+               <td>Elevation</td>
+               <td>meters</td>
+             </tr>
+             <tr>
+               <td>Height</td>
+               <td>meters</td>
+             </tr>
+             <tr>
+               <td>Latitude</td>
+               <td>degrees (decimal) positive North</td>
+             </tr>
+             <tr>
+               <td>Longitude</td>
+               <td>degrees (decimal) positive East</td>
+             </tr>
+             <tr>
+               <td>Date</td>
+               <td>yyyy/mm/ss</td>
+             </tr>
+             <tr>
+               <td>Time</td>
+               <td>hh:mm:ss</td>
+             </tr>
+           </table></p>]]></string>
+    
+    <string name="ViewObsDataFragment"><![CDATA[<p><b>View Observation Data Help</b></p>
+        <p>This screen allows you to view the observation data stored in the application\'s internal SD card.
+        Tap one of the three buttons to view the data. The screen scolls both horizonally and vertically to 
+        allow viewing of all the data. Large data files may take some time to load. The Output Observations 
+        tab displays the number of Single and Continuous Mode records stored in the device.</p>
+
+        <p><b>View Single Mode Data File</b>: Displays the single mode observation data.</p>
+        <p><b>View Short Continuous Mode Data File</b>: Displays the short records of continuous mode 
+        observation data.</p>
+        <p><b>View Long Continuous Mode Data File</b>: Displays the long records of continuous mode 
+        observation data.</p>]]></string>
+        
+    <string name="EarthtideFragment"><![CDATA[<p><b>Earth Tide Help</b></p>
+        <p>The Earth Tide screen allows you to calculate and display earth tide data for a given day, 
+        in 10 minute increments. The current date, latitude and longitude are automatically 
+        filled in. You can enter a different date, latitude or longitude if you so choose.</p>
+        <p><b>Year</b>: Enter the 4 digit year, such as 2014.</p>
+        <p><b>Month</b>: Enter a number from 1 - 12.</p>
+        <p><b>Day</b>: Enter a number from 1 - 31 (depending on the month and year).</p>
+        <p><b>Latitude</b>: Enter the latitude value, in decimal, with north being positive.</p>
+        <p><b>Longitude</b>: Enter the longitude value, in decimal, with east being positive.</p>
+        <p><b>Elevation</b>: Enter the location\'s elevation, in meters.</p>
+        <p><b>Calculate</b>: Calculates and displays the earth tide data.</p>
+        <p><b>Obtain Lat/Long from GPS</b>: Retrieves latitude and longitude values from the Android 
+        device\'s internal GPS.</p>
+        <p><b>Save Data</b>: Not currently implemented.</p>]]></string>
+    
+    <!--     Private Fragments -->
+    <string name="PrivateParamsFragment"><![CDATA[<p><b>Private Parameters Help</b></p>
+        <p><b>Calibrated</b>: Check this box if the meter is calibrated.</p>
+        <p><b>Plates Reversed</b>: Check this box if the plates are reversed.</p>
+        <p><b>Save Frequencies</b>: Check this box if you want the beam, levels and temperature 
+        frequencies saved with the other observation data in the Output Observation screen.</p>
+        <p><b>Test Mode</b>: Check this box to display the following fields 
+        during single and continuous mode observations: Beam Frequency, Cross Level Frequency, 
+        Long Level Frequency, Temperature Frequency, Temp 0 and Temp B Factor.</p>
+        <p><b>Load Calibration Table</b>: Loads a calibration table.</p>
+        <p><b>Create Factory Params File</b>: Creates a factory parameters file. This file can be used 
+        to restore from if a customer makes changes to one or more factory parameters and later wants to
+        return to the factory parameters. This file is not visible to anyone; it can only be created and 
+        restored from. The file stores the following parameters: Feedback Gain, Observation Precision, 
+        Data Output Rate, Filter Time Constant, Reading Line, Beam Scale, Feedback Scale, Minimum Stop, 
+        Maximum Stop, Long Level0, Long LevelA, Long LevelB, Long LevelC, Cross Level0, Cross LevelA, 
+        Cross LevelB, Cross LevelC.</p>
+        <p><b>Cancel</b>: Exits this screen without saving any changes.</p>]]></string>
+
+    <string name="CCJRCalculateBeamScaleFragment"><![CDATA[<p><b>Calculate Beam Scale Help</b></p>
+        <p>This screen allows you to determine and save the meter\'s beam scale value. </p>
+
+        <p><b>50\%%</b>: Sets the meter\'s duty cycle to 50\%%.</p>
+        <p><b>Base Dial Reading</b>: .</p>
+        <p><b>Base DR -0.500 mGal</b>: .</p>
+        <p><b>Base DR +0.500 mGal</b>: .</p>
+        <p><b>-0.500 Beam Freq</b>: .</p>
+        <p><b>+0.500 Beam Freq</b>: .</p>
+        <p><b>Delta Freq</b>: .</p>
+        <p><b>Beam Scale</b>: The calculated beam scale value.</p>
+        <p><b>Start Reading</b>: This button tells the meter to start sending gravity data in one second 
+        intervals, which will be displayed in the Beam Frequency field. The reading will be 
+        terminated when you leave this tab.</p>
+        <p><b>Accept</b>: Stores the Beam Scale value in the application database. It can be viewed in 
+        the Meter Parameters screen.</p>]]></string>
+    
+    <string name="CalculateFeedbackScaleFragment"><![CDATA[<p><b>Calculate Feedback Scale Help</b></p>
+        <p>This screen allows you to determine and save the meter\'s feedback scale. <br></p>
+
+        <p><b>10\%%</b>: Sets the meter\'s duty cycle to 10\%%.</p>
+        <p><b>50\%%</b>: Sets the meter\'s duty cycle to 50\%%.</p>
+        <p><b>90\%%</b>: Sets the meter\'s duty cycle to 90\%%.</p>
+        <p><b>Current Duty Cycle</b>: The duty cycle value most recently sent to the meter.</p>
+        <p><b>New Duty Cycle</b>: Enter a new duty cycle value, between 5 and 98, then tap the Set button.</p>
+        <p><b>Set</b>: Sends the New Duty Cycle value to the meter.</p>
+
+        <p><b>Freq row</b>: Enter ?? values in these fields.</p>
+        <p><b>5\%% row</b>: Enter ?? values in these fields.</p>
+        <p><b>98\%% row</b>: Enter ?? values in these fields.</p>
+        <p><b>Delta value row</b>: These values are the 5\%% value - the 98\%% value from the same column.</p>
+
+        <p><b>C/.93</b>: The 0 position Delta value divided by .93.</p>
+        <p><b>FDK Scale</b>: The FDK Scale calculated from the above values.</p>
+        <p><b>CCNM Factor</b>: The factor calculated from field tests.</p>
+        <p><b>Final FDK Scale</b>: The FDK Scale with the CCNM Factor applied to it.</p>
+
+        <p><b>Start Reading</b>: Tap this button to tell the meter to start sending gravity data in one 
+        second intervals. The only data from the meter which will be displayed is the Beam Frequency 
+        field. The reading will be terminated when you leave this tab.</p>
+        <p><b>Clear All</b>: Tap this button to clear all the fields on this screen.</p>
+        <p><b>Accept</b>: Tap this button to store the Feedback Scale and all the other fields in the 
+        application database. The Feedback Scale can be viewed in the Meter Parameters screen. All the 
+        other fields will be recalled the next time this screen is displayed.</p>]]></string>
+        
+    <string name="app_name">UltraGrav2</string>
+    <string name="title_activity_dashboard">UltraGrav2</string>
+    <string name="title_activity_dial_reading">Enter Dial Reading</string>
+    <string name="title_activity_note">Observation Note</string>
+    <string name="title_activity_station_list">Stations</string>
+    <string name="title_activity_observation">Observation</string>
+    <string name="title_activity_single_observation">Single Observation</string>
+    <string name="title_activity_continuous_observation">Continuous Observation</string>
+    <string name="title_activity_station_details">Station Details</string>
+    <string name="title_activity_options">Options</string>
+    <string name="title_activity_private">Private</string>
+    <string name="title_activity_continous_setup">Continuous Observation Parameters</string>
+    <string name="title_activity_settings">Settings</string>
+    <string name="title_activity_setup">Setup</string>
+    <string name="title_activity_select_file">Select a File</string>
+    <string name="title_activity_select_or_create_file">Select or Create a File</string>
+    <string name="title_activity_help">Help</string>
+    <string name="title_activity_station_edit">Station Edit</string>
+    <string name="title_activity_station_create">Station Create</string>
+    <string name="title_activity_station_series_edit">Series Edit</string>
+   
+    <string name="company_name">ZLS Corp.</string>
+    <string name="zls_logo">ZLS Logo</string>
+    <string name="company_loc1">Developed and Manufactured in</string>
+    <string name="company_loc2">Austin, Texas, USA</string>
+    <string name="meter_type_calibrated">Calibrated Meter, S/N %1$s</string>
+    <string name="meter_type_noncalibrated">Non-calibrated Meter, S/N %1$s</string>
+    <string name="temp_title">Temp:</string>
+    <string name="battery_title">Battery:</string>
+    <string name="single_obs">Single\nObservation</string>
+    <string name="continuous_obs">Continuous\nObservation</string>
+    <string name="settings">Settings</string>
+    <string name="meter_setup">Meter Setup</string>
+    <string name="options">Options</string>
+    <string name="help">Help</string>
+    <string name="about">About</string>
+    <string name="version_number">Version Number</string>
+    <string name="exit">Exit</string>
+    <string name="dial_reading_instr">Please update the Dial Reading if necessary, then tap the Accept 
+        button. The value must be between 250 and 6850, and a multiple of 50 for calibrated points.\nTap 
+        the checkbox below if you want to use non-calibrated points.</string>
+
+    <string name="note">Note</string>
+    <string name="cancel">Cancel</string>
+    <string name="clear">Clear</string>
+    <string name="enter">Enter</string>
+    <string name="next">Next</string>
+    <string name="save">Save</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
+    <string name="ok">OK</string>
+    <string name="more">More</string>
+    <string name="accept">Accept</string>
+<!--     <string name="new_station">New Station</string> -->
+<!--     <string name="new_series">New Series</string> -->
+    <string name="new_text">New</string>
+    <string name="create">Create</string>
+    <string name="continue_text">Continue</string>
+    <string name="station_instr_for_obs">Select a station for the observation. You can select or edit an 
+        existing station or create a new one.</string>
+    <string name="station_instr_settings">Select an existing station to edit or delete it, or create a new 
+        one.</string>
+    <string name="done">Done</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="none">None</string>
+    <string name="disk_space_warning_title">Low Disk Space</string>
+    <string name="disk_space_warning_message">The device internal memory is %.1f%% full. Data 
+        loss may result.</string>
+    
+    <string name="activity_fatal_setup_title">Alert - Unable To Load</string>
+    <string name="activity_fatal_setup_message">An unknown error has prevented this screen from 
+        loading.</string>
+    
+    <string name="can_not_read_app_version_title">Alert - Unable To read App Version</string>
+    <string name="can_not_read_app_version_message">Can not read the app version number.</string>
+    
+    <string name="set_duty_cycle_success">Duty cycle has been set</string>
+    
+    <string name="get_duty_cycle_failed_title">Alert - Get Duty Cycle Read Error</string>
+    <string name="get_duty_cycle_failed_message">An error was encountered while getting the duty cycle 
+        from the meter.</string>
+    
+    <string name="set_duty_cycle_failed_title">Set Duty Cycle Failed</string>
+    <string name="set_duty_cycle_failed_message">An error was encountered while setting the duty cycle.</string>
+    
+    <string name="activity_fatal_persist_title">Unable To Save</string>
+    <string name="activity_fatal_persist_message">An unknown error has prevented this screen from 
+        saving.</string>
+    
+    <string name="invalidStringNotEmpty">Must not be empty</string>
+    <string name="invalidStringWithMaxLength">Must have between 1 and %1$d characters</string>
+    <string name="invalidInteger">Must be an integer</string>
+    <string name="invalidIntegerRange">Must be an integer between %1$d and %2$d</string>
+    <string name="invalidIntegerRangeAndMultiple">Must be an integer between %1$d and %2$d and a multiple 
+        of %3$d</string>
+    <string name="invalidDecimal">Must be a decimal</string>
+    <string name="invalidDecimalRange">Must be a decimal between %1$f and %2$f</string>
+    <string name="invalidDateRange">Must be an integer between %1$d and %2$d</string>
+    <string name="invalid_fields_title">Alert - Invalid Data</string>
+    <string name="invalid_fields_message">At least one field has invalid data. Please enter a valid value 
+        and try again.</string>
+    <string name="unable_to_validate_field">Alert - Unable to Validate Field</string>
+    <string name="unable_to_validate_message">Unable to validate a field.</string>
+    
+    <!-- Station List -->
+    <string name="create_station_for_series">Add Station to Series</string>
+    <string name="edit_series">Edit Series</string>
+    <string name="read_stations_from_file">Read Stations\nFrom File</string>
+    <string name="write_stations_to_file">Write Stations\nTo File</string>
+    <string name="station_file_read_error_title">Alert - Station File Read Error</string>
+    <string name="station_file_read_error_message">There was an error while attempting to read the 
+        Stations file.</string>
+    <string name="station_file_update_error_title">Alert - Station File Update Error</string>
+    <string name="station_file_update_error_message">There was an error while attempting to update the 
+        Stations file.</string>
+    <string name="station_file_create_error_title">Alert - Station File Create Error</string>
+    <string name="station_file_create_error_message">There was an error while attempting to create the 
+        Station.</string>
+    <string name="station_file_delete_error_title">Alert - Station File Delete Error</string>
+    <string name="station_file_delete_error_message">There was an error while attempting to delete the 
+        Station.</string>
+    
+    <!-- Meter Service -->
+    <string name="meterCommandTimeout">The meter has not responded within the timeout.</string>
+    <string name="meterCommandUnknownError">An unknown communication error has occurred.</string>
+    <string name="malformed_response">Malformed Response</string>
+    <string name="transmit_failed">Transmit Failed</string>
+    <string name="unexpected_response">Unexpected Response</string>
+    <string name="unknown_response">Unknown Response</string>
+    <string name="meter_not_responding_title">Alert - Meter Not Responding</string>
+    <string name="meter_not_responding_message">The meter is not responding. Verify that the meter is 
+        turned on and that the serial cable is plugged in or that the Bluetooth connection is active.</string>
+    <string name="meter_already_connected">The meter is already connected.</string>
+    <string name="reconnecting_to_device">Reconnecting to meter.</string>
+    <string name="ended_unrequested_reading">Ended an unrequested observation.</string>
+    <string name="failed_to_end_unrequested_reading">Failed to end an unrequested observation.</string>
+    <string name="failed_to_end_reading_title">Alert - Failed to end the reading</string>
+    <string name="failed_to_end_reading_message">There was a problem when attempting to end the reading.</string>
+
+    <string name="failed_to_start_reading_title">Alert - Failed to Start Reading</string>
+    <string name="failed_to_start_reading_message">An error was encountered when starting the 
+        reading.</string>
+
+    <string name="interrupted_reading_title">Alert - Interrupted Reading</string>
+    <string name="interrupted_reading_message">There was an unexpected interruption in the readings.</string>
+
+    <string name="obs_processing_error">An error occurred while processing the meter observation data.</string>
+    
+    <!-- Observation Strings -->
+    <string name="meter_out_of_level_warning">The meter is out of level.</string>
+    <string name="observation_timed_out_title">Alert - The Observation Has Timed Out</string>
+    <string name="observation_timed_out_message">The observation has timed out. Verify that the data 
+        is good.</string>
+    <string name="bad_temperature">Bad Temperature</string>
+    <string name="elapsed_time">Elapsed Time (Sec)</string>
+    <string name="duty_cycle">Duty Cycle (%)</string>
+    <string name="dial_reading">Dial Reading</string>
+    <string name="obs_gravity">Observed Gravity</string>
+    <string name="standard_dev">Standard Deviation</string>
+    <string name="beam_error">Beam Error</string>
+    <string name="feedback_correction">Feedback Correction</string>
+    <string name="earthtide">Earth Tide (ET)</string>
+    <string name="earthtide_correction">Earth Tide Correction (ET-COR)</string>
+    <string name="level_correction">Level Correction</string>
+    <string name="temp_correction">Temp. Correction</string>
+    <string name="data_output_rate">Data Output Rate</string>
+    <string name="filter_time_constant">Filter Time Constant</string>
+    <string name="time">Time</string>
+    <string name="filter_10">10 Sample Filter</string>
+    <string name="filter_15">15 Sample Filter</string>
+    <string name="ended_reading_success">Reading Ended</string>
+    <string name="observation_ended">Observation Ended</string>
+    <string name="observation_in_progress">Observation In Progress</string>
+    <string name="observation_saved">Observation Saved</string>
+    <string name="press_done">Press Done</string>
+    
+    
+    <string name="station_series_name">Series Name</string>
+
+    <!-- Edit Station Strings -->
+    <string name="station_id">Station ID</string>
+    <string name="observer_id">Observer ID</string>
+    <string name="latitude">Latitude\nN(+)/S(-)</string>
+    <string name="longitude">Longitude\nE(+)/W(-)</string>
+    <string name="elevation">Elevation\n(meters)</string>
+    <string name="meter_height">Meter Height (meters)</string>
+    <string name="obtain_gps">Obtain Lat/Long from GPS</string>
+    <string name="enable_earthtide">Enable Earth Tide</string>
+    <string name="autoincrement_station_id">Auto-increment Station ID</string>
+    <string name="series_start_no">Series Start No.</string>
+    <string name="copy_station_info">Copy Station Information</string>
+    <string name="default_name">Default</string>
+    <string name="gps_disabled_title">Alert - GPS is Disabled</string>
+    <string name="gps_disabled_message">Show location settings menu?</string>
+    <string name="bad_gps_location_title">Alert - No GPS Location</string>
+    <string name="bad_gps_location_message">The GPS is unable to provide location.</string>
+    <string name="austin">Austin</string>
+    <string name="belton">Belton</string>
+    <string name="ccnm">CCNM</string>
+    <string name="zls">ZLS</string>
+        
+    <!-- Settings -->
+    <!--   Settings Tabs -->
+    <string name="system">System\nParameters</string>
+    <string name="meter">Meter\nParameters</string>
+    <string name="level">Level\nParameters</string>
+    <string name="stations">Stations</string>
+    
+    <!--  System Parameters -->
+    <string name="new_dial_reading">New Dial Reading</string>
+    <string name="dial_reading_instructions">The Dial Reading value must be between 250 and 6850, and 
+        a multiple of 50 for calibrated points. Use the checkbox to allow the use of non-calibrated 
+        points.</string>
+    <string name="use_noncalibrated_points">Use non-calibrated points</string>
+    <string name="feedback_gain">Feedback Gain</string>
+    <string name="feedback_limits">(0.2 to 2.0)</string>
+    <string name="observation_precision">Observation Precision</string>
+    <string name="obs_precision_limits">(0.003 to 0.010)</string>
+    <string name="enable_station_select">Enable Station Select</string>
+    <string name="temperature_units">Temperature Units</string>
+    <string name="degrees_celsius">\u2103</string>
+    <string name="degrees_fahrenheit">\u2109</string>
+    <string name="generic_error_title">Unexpected Error</string>
+    <string name="generic_error_message">An unexpected error has occurred. Please call ZLS Tech Support 
+        and send them the Errors.log file.</string>
+    
+    <!--   Meter Parameters -->
+    <string name="reading_line">Reading Line</string>
+    <string name="beam_scale">Beam Scale</string>
+    <string name="feedback_scale">Feedback Scale</string>
+    <string name="restore_factory_params">Restore Factory Parameters</string>
+    <string name="factory_params_restored">The factory parameters have been restored</string>
+    
+	<!-- Meter Params Alerts -->
+<!-- 	<string name="backup_failed_title">Backup Failed</string> -->
+<!-- 	<string name="backup_failed_message">The backup operation failed for some arbitrary reason. Your guess is 
+        as good as ours.</string> -->
+<!-- 	<string name="backup_successful_title">Alert - Backup Successful</string> -->
+<!-- 	<string name="backup_successful_message">The backup operation was successful.</string> -->
+	
+    <!--   Level Corrections Params -->
+    <string name="long_level_0">Long Level 0</string>
+    <string name="long_level_a">Long Level A</string>
+    <string name="long_level_b">Long Level B</string>
+    <string name="long_level_c">Long Level C</string>
+    <string name="cross_level_0">Cross Level 0</string>
+    <string name="cross_level_a">Cross Level A</string>
+    <string name="cross_level_b">Cross Level B</string>
+    <string name="cross_level_c">Cross Level C</string>
+    <string name="level_correction_params_file_open_error_title">Level Correction Params File Open 
+        Error</string>
+    <string name="level_correction_params_file_open_error_message">There was an error opening the Level 
+        Correction Params file.</string>
+    <string name="level_correction_params_file_update_error_title">Level Correction Params File Update 
+        Error</string>
+    <string name="level_correction_params_file_update_error_message">There was an error updating the Level 
+        Correction Params file.</string>
+    
+    <!-- Station Series Alert -->
+<!--     <string name="station_alert_title">Alert - Series Station</string> -->
+<!--     <string name="station_alert_message">You have chosen a series station. Do you want to continue 
+             adding stations to those already created or rerun the series?</string> -->
+<!--     <string name="rerun">Rerun</string> -->
+
+    <!-- Observation Alerts -->
+    <string name="no_meter_connected_title">Alert - No Meter Connected</string>
+    <string name="no_meter_connected_message">The app is not connected to a meter. Connect to a meter to 
+        continue.</string>
+    <string name="clamp_alert_title">Alert - Clamp the Beam</string>
+    <string name="clamp_alert_message">Clamp the beam before moving the meter.</string>
+    <string name="data_not_saved_alert_title">Alert - Valid Data Not Saved</string>
+    <string name="data_not_saved_alert_message">Valid data has not been saved. Do you want to save it now?</string>
+    <string name="duty_cycle_range_alert_title">Alert - Feedback Range</string>
+    <string name="duty_cycle_low_calibrated_message">The feedback is currently 5% or lower, which is 
+        its lower limit. Move the dial to its next lower calibrated point.</string>
+    <string name="duty_cycle_low_non_calibrated_message">The feedback is currently 5% or lower, which is  
+        its lower limit. Move the dial lower.</string>
+    <string name="duty_cycle_high_calibrated_message">The feedback is currently at 98% or higher, which is  
+        its upper limit. Move the dial to its next higher calibrated point.</string>
+    <string name="duty_cycle_high_non_calibrated_message">The feedback is currently 98% or higher, which is  
+        its upper limit. Move the dial higher.</string>
+    <string name="before_next_reading_alert_title">Alert - Before Next Reading</string>
+    <string name="before_next_reading_alert_message"><![CDATA[Before taking the next reading,<br/>&#8226; Clamp 
+        the beam,<br/>&#8226; Occupy your next station,<br/>&#8226; Level the meter,<br/>&#8226; Unclamp the 
+        beam,<br/>&#8226; Press Continue when ready.]]></string>
+    <string name="configuration_load_failed_title">Alert - Configuration Failure</string>
+    <string name="configuration_load_failed_message">The configuration data has failed to load.</string>
+    <string name="dont_show_this_warning_again">Don\'t show this warning again during this reading.</string>
+
+	<!-- Station Info Alerts -->
+	<string name="delete_station_title">Delete Station</string>
+	<string name="delete_station_message">You are about to delete the station %1$s. This can not be 
+        undone. Do you want to proceed?</string>
+	
+	<!-- Continuous Observation Params -->
+	<string name="continuous_observation_prompt">Enter Continuous Mode Filter Parameters. To satisfy the 
+        Nyquist Criterion and prevent aliasing, choose values such that the Data Output Rate is at least 
+        twice the Filter Time Constant.</string>
+	<string name="data_output_rate_prompt">Data Output Rate (Seconds, >=1)</string>
+	<string name="filter_time_constant_prompt">Filter Time Constant (Seconds, >=1)</string>
+	
+    <!-- Communications -->
+    <string name="meter_connecting">Connecting to Meter</string>
+    <string name="meter_connected">Connected to Meter</string>
+    <string name="meter_disconnected">Not Connected to Meter</string>
+    <string name="meter_comm_failed">Failed to Establish Connection with Meter</string>
+    <string name="meter_connection">Meter Connection</string>
+    <string name="scan_new_meter_connection">Scan For New Meter Connection</string>
+    <string name="bluetooth_scan">Bluetooth</string>
+    <string name="usb_scan">USB</string>
+    <string name="connection_type">Connection Type</string>
+    <string name="device_name">Device Name</string>
+    <string name="connection_status">Connection Status</string>
+    <string name="connected">Connected</string>
+    <string name="disconnected">Disconnected</string>
+    <string name="attempting_to_reconnect">Attempting to reconnect</string>
+    <string name="select_device">Select a Device</string>
+    <string name="paired">Paired</string>
+    <string name="not_paired">Not Paired</string>
+    <string name="no_bluetooth_support_title">Alert - No Bluetooth Support</string>
+    <string name="no_bluetooth_support_message">This device does not support Bluetooth</string>
+    <string name="enable_bluetooth_title">Bluetooth is not Enabled</string>
+    <string name="enable_bluetooth_message">Bluetooth is not currently enabled. Enable Bluetooth from 
+        Settings.</string>
+    <string name="bluetooth_adapter_error_title">Bluetooth Adapter Error</string>
+    <string name="bluetooth_adapter_error_message">There is an error with this device\'s bluetooth 
+        adapter.</string>
+    <string name="usb_cable_attached">The USB cable was connected.</string>
+    <string name="usb_cable_detached">The USB cable was removed.</string>
+    <string name="error_opening_usb_cable">Error opening USB cable.</string>
+    <string name="connected_to_usb_cable">Connected to USB cable.</string>
+    <string name="usb_cable_not_connected">USB cable not connected</string>
+    <string name="communication_type_error_title">Communication Type Error</string>
+    <string name="communication_type_error_message">An unknown Communication Type was selected. 
+        Select either Bluetooth or USB.</string>
+    <string name="communication_params_file_open_error_title">Communication Params File Open Error</string>
+    <string name="communication_params_file_open_error_message">There was an error opening the 
+        Communication Params file.</string>
+    <string name="communication_params_file_update_error_title">Alert - Communication Params Update 
+        Error</string>
+    <string name="communication_params_file_update_error_message">There was an error updating the 
+        Communication Params file.</string>
+    
+    <!-- Options -->
+    <!--   Options Tabs -->
+    <string name="output_data_tab">Output Observation Data</string>
+    <string name="view_data_tab">View\nObservation Data</string>
+    <string name="earthtide_tab">Earth Tide Correction</string>
+    <string name="station_name">Station Name</string>
+    <!--<string name="dial">Dial</string>-->
+    <string name="duty_cycle_title">Duty Cycle</string>
+    <string name="elapsed_time_title">Elapsed Time</string>
+	
+    <!--   Output Observations -->
+    <!--     Output Observations TextViews -->
+    <string name="data_file_sizes">Data File Sizes (Records)</string>
+    <string name="single">Single</string>
+    <string name="continuous">Continuous</string>
+    <string name="record_count">Record Count</string>
+    <!--     Output Observations Buttons -->
+    <string name="save_single_mode">Save Single Mode Data File</string>
+    <string name="save_continuous_mode_short">Save Short Continuous Mode Data File</string>
+    <string name="save_continuous_mode_long">Save Long Continuous Mode Data File</string>
+    <string name="delete_single_mode">Delete Single Mode Data File</string>
+    <string name="delete_continuous_mode">Delete Continuous Mode Data File</string>
+    <!--     Output Observations Alerts -->
+    <string name="delete_single_mode_title">Alert - Delete Single Mode Data File</string>
+    <string name="delete_single_mode_file_message">You are about to delete the Single Observation data file. 
+        All data will be lost. This operation cannot be undone.</string>
+    <string name="delete_continuous_mode_title">Alert - Delete Continuous Mode Data File</string>
+    <string name="delete_continuous_mode_file_message">You are about to delete the Continuous Observation 
+        data file. All data will be lost. This operation cannot be undone.</string>
+    <string name="no_single_obs_to_save_title">Alert - No Single Observations To Save</string>
+    <string name="no_single_obs_to_save_message">There are no single observations to save.</string>
+    <string name="no_continuous_obs_to_save_title">Alert - Continuous Observations To Save</string>
+    <string name="no_continuous_obs_to_save_message">There are no continuous observations to save.</string>
+    <string name="no_single_obs_to_delete_title">Alert - No Single Observations To Delete</string>
+    <string name="no_single_obs_to_delete_message">There are no single observations to delete.</string>
+    <string name="no_continuous_obs_to_delete_title">Alert - No Continuous Observations To Delete</string>
+    <string name="no_continuous_obs_to_delete_message">There are no continuous observations to delete.</string>
+    
+    <!--   View Observations -->
+    <!--     View Observations Buttons -->
+    <string name="view_single_mode">View Single Mode Data File</string>
+    <string name="view_continuous_mode_short">View Short Continuous Mode Data File</string>
+    <string name="view_continuous_mode_long">View Long Continuous Mode Data File</string>
+    <!--     View Observations Alerts -->
+    <string name="no_single_obs_to_view_title">Alert - No Single Mode Observations to View</string>
+    <string name="no_single_obs_to_view_message">There are no single mode observations to view.</string>
+    <string name="no_cont_obs_to_view_title">Alert - No Continuous Mode Observations to View</string>
+    <string name="no_cont_obs_to_view_message">There are no continuous mode observations to view.</string>
+    <string name="obs_counts_not_valid_title">Alert - Observation Counts are not Valid</string>
+    <string name="obs_counts_not_valid_message">The Single and Continuous Observation counts are 
+        unavailable.</string>
+
+    <!--   Earthtide -->
+    <string name="calculate">Calculate</string>
+    <string name="save_data">Save Data</string>
+    <string name="year">Year</string>
+    <string name="month">Month</string>
+    <string name="day">Day</string>
+    
+    <!-- ZLS Private -->
+    <string name="calculate_feedback_scale">Calculate Feedback Scale</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="incorrect_password_title">Alert - Incorrect Password</string>
+    <string name="incorrect_password_message">Incorrect Password. Try Again.</string>
+    <string name="serial_number">Serial Number</string>
+    <string name="gain">Gain</string>
+    <string name="stop_boost">Stop Boost</string>
+    <string name="boost_factor">Boost Factor</string>
+    <string name="temp_0">Temperature 0</string>
+    <string name="temp_a">Temperature A Factor</string>
+    <string name="temp_b">Temperature B Factor</string>
+    <string name="temp_c">Temperature C Factor</string>
+    <string name="calibrated">Calibrated</string>
+    <string name="plates_reversed">Plates Reversed</string>
+    <string name="save_frequencies">Save Frequencies</string>
+    <string name="test_mode">Test Mode</string>
+    <string name="load_calibration_table">Load Calibration Table</string>
+    <string name="beam_k">Beam K</string>
+    <string name="ccjr_beam_k">CCJR Beam K</string>
+    <string name="confirm_clear_all_alert_title">Alert - Confirm Clear All Data</string>
+    <string name="confirm_clear_all_alert_message">Are you, like, totally sure you want to clear all this 
+        data? No take backs!</string>
+    <string name="create_factory_params">Create Factory Params File</string>
+    <string name="factory_parameter_file_created">Factory parameter file created.</string>
+    <string name="factory_params_file_open_error_title">Factory Params File Open Error</string>
+    <string name="factory_params_file_open_error_message">There was an error opening the Factory Params 
+        file.</string>
+    <string name="factory_params_file_create_error_title">Factory Params File Create Error</string>
+    <string name="factory_params_file_create_error_message">There was an error creating the Factory Params 
+        file.</string>
+    <string name="factory_param_null_error_title">Alert - Factory Parameter Value Error</string>
+    <string name="factory_param_null_error_message">One of the factory parameter values is not valid. Please 
+        verify all the values and try again.</string>
+    <string name="factory_params_file_does_not_exist_title">Alert - Factory Params File Does Not Exist</string>
+    <string name="factory_params_file_does_not_exist_message">The Factory Params file does not exist.</string>
+    <string name="feedback_scale_value_cleared">Feedback Scale Value Cleared</string>
+    <string name="feedback_scale_params_cleared">Feedback Scale Params Cleared</string>
+    <string name="feedback_scale_value_saved">Feedback Scale Value Saved</string>
+    <string name="feedback_scale_params_saved">Feedback Scale Params Saved</string>
+    <string name="feedback_scale_params_file_open_error_title">Feedback Scale Params File Open Error</string>
+    <string name="feedback_scale_params_file_open_error_message">There was an error opening the Feedback Scale 
+        Params file.</string>
+    <string name="feedback_scale_params_file_read_error_title">Feedback Scale Params File Read Error</string>
+    <string name="feedback_scale_params_file_read_error_message">There was an error reading the Feedback Scale 
+        Params file.</string>
+    <string name="feedback_scale_params_file_update_error_title">Feedback Scale Params File Update Error</string>
+    <string name="feedback_scale_params_file_update_error_message">There was an error updating the Feedback 
+        Scale Params file.</string>
+    <string name="bad_gain_value_title">Bad Gain Value</string>
+    <string name="bad_gain_value_message">The Gain value must be a number.</string>
+    <string name="system_params_file_open_error_title">System Params File Open Error</string>
+    <string name="system_params_file_open_error_message">There was an error opening the System Params 
+        file.</string>
+    <string name="system_params_file_update_error_title">System Params File Update Error</string>
+    <string name="system_params_file_update_error_message">There was an error updating the System Params 
+        file.</string>
+
+    <string name="calibration_import_complete">Calibration import complete.</string>
+    <string name="calibration_import_expected_count">Calibration import file does not contain the 
+        expected 133 values.</string>
+    <string name="calibration_table_import_error_title">Alert - Calibration Table Import Error</string>
+    <string name="no_calib_Table_title">Calibration Table Not Loaded</string>
+    <string name="calib_table_db_read_error_title">Alert - Calibration Table Read Error</string>
+    <string name="calib_table_db_read_error_message">There was an error when trying to read the 
+        calibration table.</string>
+    <string name="calib_table_size_error_title">Alert - Calibration Table Size Error</string>
+    <string name="calib_table_size_error_message">There is an error with the size of the 
+        calibration table.</string>
+    
+    <!-- Meter Setup -->
+    <!--   Meter Setup Tabs -->
+    <string name="read_meter_tab">Read Meter /\nSet Duty Cycle</string>
+    <string name="set_stops_reading_line">Set Stops /\nReading Line</string>
+    <string name="calculate_beam_scale">Calculate Beam Scale</string>
+    <string name="beam_scale_saved">Beam Scale Value Saved</string>
+    <string name="beam_scale_save_error_title">Beam Scale Save Error</string>
+    <string name="params_file_open_error_title">Params File Open Error</string>
+    <string name="params_file_open_error_message">There was an error opening a parameter file.</string>
+    <string name="params_file_update_error_title">Params File Update Error</string>
+    <string name="params_file_update_error_message">There was an error updating either the Meter, System or 
+        Level Correction Params file.</string>
+    <string name="meter_params_file_open_error_title">Meter Params File Open Error</string>
+    <string name="meter_params_file_open_error_message">There was an error opening the Meter Params file.</string>
+    <string name="meter_params_file_update_error_title">Meter Params File Update Error</string>
+    <string name="meter_params_file_update_error_message">There was an error updating the Meter Params 
+        file.</string>
+    
+    <string name="cross_level_frequency">Cross Level Frequency</string>
+    <string name="long_level_frequency">Long Level Frequency</string>
+    <string name="temperature_frequency">Temperature Frequency</string>
+    <string name="current_duty_cycle">Current Duty Cycle (%)</string>
+    <string name="new_duty_cycle_instr">Enter a new Duty Cycle value, between the values 5 and 98.</string>
+    <string name="set">Set</string>
+    <string name="start_reading">Start Reading</string>
+
+    <string name="duty_cycle_presets">Duty Cycle Presets</string>
+    <string name="current_duty_cycle_prompt">Current Duty Cycle (%)</string>
+    <string name="new_duty_cycle_prompt">New Duty Cycle (%)</string>
+    <string name="beam_frequency">Beam Frequency</string>
+    <string name="max_stop">Maximum Stop</string>
+    <string name="min_stop">Minimum Stop</string>
+    <string name="duty_value_preset_10_percent">10%</string>
+    <string name="duty_value_preset_50_percent">50%</string>
+    <string name="duty_value_preset_90_percent">90%</string>
+    <string name="base_dial_reading">Base Dial Reading</string>
+    <string name="base_dr_minus_250">Base DR -.250 mGal</string>
+    <string name="base_dr_plus_250">Base DR +.250 mGal</string>
+    <string name="minus_250_beam_freq">-0.250 Beam Freq</string>
+    <string name="plus_250_beam_freq">+0.250 Beam Freq</string>
+    <string name="base_dr_minus_500">Base DR -.500 mGal</string>
+    <string name="base_dr_plus_500">Base DR +.500 mGal</string>
+    <string name="minus_500_beam_freq">-0.500 Beam Freq</string>
+    <string name="plus_500_beam_freq">+0.500 Beam Freq</string>
+    <string name="delta_freq">Delta Freq</string>
+    <string name="std_dev" translatable="false">(STD_DEV)</string>
+	<string name="beam_err" translatable="false">(BEAM ERROR)</string>
+    <string name="stops_accept_button_prompt">Tap the Accept button to save the Maximum and Minimum Stops 
+        and Reading Line values.</string>
+    <string name="beam_scale_accept_button_prompt">Tap the Accept button to save the Beam Scale value.</string>
+    <string name="feedback_accept_button_prompt">Tap the Accept button to save the Feedback Scale and all 
+        other values.</string>
+    <string name="stops_reading_line_saved">Stops and Reading Line Values Saved</string>
+    
+    <string name="duty_value_preset_5_percent">5%</string>
+    <string name="duty_value_preset_98_percent">98%</string>
+    <string name="freq">Freq</string>
+    <string name="delta">Delta</string>
+    <string name="c_93">C/.93</string>
+    <string name="ccnm_factor">CCNM Factor</string>
+    <string name="final_fdk_scale">Final Feedback Scale</string>
+    <string name="clear_all">Clear All</string>
+    
+    <!-- File operations -->
+    <string name="directory_up">Up</string>
+    <string name="create_new_file">Create new file</string>
+
+    <!-- File operation alerts -->
+    <string name="file_write_failed_title">Alert - Failed to Write to File</string>
+    <string name="file_write_failed_message">Failed to write to the selected file.</string>
+    <string name="path_not_file_title">Alert - Selected Path is not a File</string>
+    <string name="path_not_file_message">The path you selected is not a file.</string>
+    <string name="path_insufficient_write_permissions_title">Alert - No Write Permission</string>
+    <string name="path_insufficient_write_permissions_message">You do not have permission to write at the 
+        selected path.</string>
+    <string name="allow_file_overwrite_title">Alert - Verify File Overwrite</string>
+    <string name="allow_file_overwrite_message">Are you sure you want to overwrite the existing file at the 
+        selected path?</string>
+    <string name="no_file_write_permissions">Insufficient permissions to write to file. Try another path.</string>
+    <string name="no_file_read_permissions">Insufficient permissions to read the file. Try another path.</string>
+    <string name="file_read_failed">Failed to read from file at line %1$d.</string>
+    <string name="file_write_complete">File write complete.</string>
+    <string name="file_write_cancelled">File write cancelled.</string>
+    <string name="file_read_complete">File read complete.</string>
+    <string name="single_obs_delete_complete">Single observation data delete complete.</string>
+    <string name="continuous_obs_delete_complete">Continuous observation data delete complete.</string>
+    <string name="single_obs_delete_error_title">Single Observation File Delete Error</string>
+    <string name="single_obs_delete_error_message">There was an error while attempting to delete the Single 
+        Observation data file.</string>
+    <string name="continuous_obs_delete_error_title">Continuous Observation File Delete Error</string>
+    <string name="continuous_obs_delete_error_message">There was an error while attempting to delete the 
+        Continuous Observation data file.</string>
+    <string name="observation_count_read_error_title">Observation Record Count Read Error</string>
+    <string name="observation_count_read_error_message">There was an error while attempting to 
+        obtain the Observation record count.</string>
+    <string name="observation_file_read_error_title">Observation File Read Error</string>
+    <string name="observation_file_read_error_message">There was an error while attempting to 
+        read the Observation file.</string>
+    <string name="observation_file_write_error_title">Observation File Write Error</string>
+    <string name="observation_file_write_error_message">There was an error while attempting to 
+        write to the Observation file.</string>
+
+    <string name="did_not_create_observation_object_message">There was an error while attempting 
+        to create the observation object.</string>
+    <string name="did_not_create_observation_record_message">There was an error while attempting 
+        to create the observation DB record.</string>
+
+    <string name="sd_card_error_title">SD Card Error</string>
+    <string name="sd_card_error_message">There was an error with the SD card while trying to open 
+        the error log file.</string>
+    <string name="error_log_file_error_title">Alert - Error Log File Error</string>
+    <string name="error_log_file_error_message">There was an error while trying to create or open 
+        the error log file.</string>
+    
+    <string name="enter_file_name">Enter File Name</string>
+    <string name="file_name">File Name</string>
+    <string name="langua" translatable="false">English</string>
+    <string name="out_of_range">Out of Range!</string>
+    <string name="near_end">Near End</string>
+    <string name="of_range">of Range!</string>
+    <string name="dial">Dial</string>
+
+
+</resources>

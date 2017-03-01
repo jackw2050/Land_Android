@@ -1,0 +1,184 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:fadeScrollbars="false" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/dummyLinearLayout"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:layout_width="0px"
+                android:layout_height="0px"
+                android:orientation="horizontal" />
+            
+            <TextView
+                android:id="@+id/longLevel0Prompt"
+                style="@style/SettingsTextView"
+                android:layout_width="175dp"
+                android:gravity="center_vertical"
+                android:paddingTop="15dp"
+                android:text="@string/long_level_0" />
+
+            <EditText
+                android:id="@+id/longLevel0Text"
+                style="@style/SettingsEditText"
+                android:layout_alignBaseline="@id/longLevel0Prompt"
+                android:layout_alignTop="@id/longLevel0Prompt"
+                android:layout_toRightOf="@id/longLevel0Prompt" />
+            <TextView
+                android:id="@+id/longLevelAPrompt"
+                style="@style/SettingsTextView"
+                android:layout_width="175dp"
+                android:layout_below="@id/longLevel0Prompt"
+                android:gravity="center_vertical"
+                android:paddingTop="20dp"
+                android:text="@string/long_level_a" />
+
+            <com.zlscorp.ultragrav.activity.widget.NumberPadEditText
+                android:id="@+id/longLevelAText"
+                style="@style/SettingsEditText"
+                android:layout_alignBaseline="@id/longLevelAPrompt"
+                android:layout_alignTop="@id/longLevelAPrompt"
+                android:layout_toRightOf="@id/longLevelAPrompt" />
+
+            <TextView
+                android:id="@+id/longLevelBPrompt"
+                style="@style/SettingsTextView"
+                android:layout_width="175dp"
+                android:layout_below="@id/longLevelAPrompt"
+                android:gravity="center_vertical"
+                android:paddingTop="20dp"
+                android:text="@string/long_level_b" />
+
+            <com.zlscorp.ultragrav.activity.widget.NumberPadEditText
+                android:id="@+id/longLevelBText"
+                style="@style/SettingsEditText"
+                android:layout_alignBaseline="@id/longLevelBPrompt"
+                android:layout_alignTop="@id/longLevelBPrompt"
+                android:layout_toRightOf="@id/longLevelBPrompt" />
+
+            <TextView
+                android:id="@+id/longLevelCPrompt"
+                style="@style/SettingsTextView"
+                android:layout_width="175dp"
+                android:layout_below="@id/longLevelBPrompt"
+                android:gravity="center_vertical"
+                android:paddingTop="20dp"
+                android:text="@string/long_level_c" />
+
+            <com.zlscorp.ultragrav.activity.widget.NumberPadEditText
+                android:id="@+id/longLevelCText"
+                style="@style/SettingsEditText"
+                android:layout_alignBaseline="@id/longLevelCPrompt"
+                android:layout_alignTop="@id/longLevelCPrompt"
+                android:layout_toRightOf="@id/longLevelCPrompt" />
+
+            <TextView
+                android:id="@+id/crossLevel0Prompt"
+                style="@style/SettingsTextView"
+                android:layout_width="175dp"
+                android:layout_below="@id/longLevelCPrompt"
+                android:gravity="center_vertical"
+                android:paddingTop="20dp"
+                android:text="@string/cross_level_0" />
+
+            <EditText
+                android:id="@+id/crossLevel0Text"
+                style="@style/SettingsEditText"
+                android:layout_alignBaseline="@id/crossLevel0Prompt"
+                android:layout_alignTop="@id/crossLevel0Prompt"
+                android:layout_toRightOf="@id/crossLevel0Prompt" />
+
+            <TextView
+                android:id="@+id/crossLevelAPrompt"
+                style="@style/SettingsTextView"
+                android:layout_width="175dp"
+                android:layout_below="@id/crossLevel0Prompt"
+                android:gravity="center_vertical"
+                android:paddingTop="20dp"
+                android:text="@string/cross_level_a" />
+
+            <com.zlscorp.ultragrav.activity.widget.NumberPadEditText
+                android:id="@+id/crossLevelAText"
+                style="@style/SettingsEditText"
+                android:layout_alignBaseline="@id/crossLevelAPrompt"
+                android:layout_alignTop="@id/crossLevelAPrompt"
+                android:layout_toRightOf="@id/crossLevelAPrompt" />
+
+            <TextView
+                android:id="@+id/crossLevelBPrompt"
+                style="@style/SettingsTextView"
+                android:layout_width="175dp"
+                android:layout_below="@id/crossLevelAPrompt"
+                android:gravity="center_vertical"
+                android:paddingTop="20dp"
+                android:text="@string/cross_level_b" />
+
+            <com.zlscorp.ultragrav.activity.widget.NumberPadEditText
+                android:id="@+id/crossLevelBText"
+                style="@style/SettingsEditText"
+                android:layout_alignBaseline="@id/crossLevelBPrompt"
+                android:layout_alignTop="@id/crossLevelBPrompt"
+                android:layout_toRightOf="@id/crossLevelBPrompt" />
+
+            <TextView
+                android:id="@+id/crossLevelCPrompt"
+                style="@style/SettingsTextView"
+                android:layout_width="175dp"
+                android:layout_below="@id/crossLevelBPrompt"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:text="@string/cross_level_c" />
+
+            <com.zlscorp.ultragrav.activity.widget.NumberPadEditText
+                android:id="@+id/crossLevelCText"
+                style="@style/SettingsEditText"
+                android:layout_alignBaseline="@id/crossLevelCPrompt"
+                android:layout_alignTop="@id/crossLevelCPrompt"
+                android:layout_toRightOf="@id/crossLevelCPrompt" />
+        </RelativeLayout>
+
+    </ScrollView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/cancelButton"
+            style="@style/AppButton2"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="@string/cancel" />
+<!--  This Save button is just for spacing. It is not visible on screen.-->
+        <Button
+            android:id="@+id/saveButton"
+            style="@style/AppButton2"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="@string/save" />
+    </LinearLayout>
+
+</LinearLayout>

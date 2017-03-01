@@ -1,0 +1,238 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:fadeScrollbars="false" >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/dummyLinearLayout"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:layout_width="0px"
+                android:layout_height="0px"
+                android:orientation="horizontal" />
+            <TextView
+                android:id="@+id/meterSerialPrompt"
+                style="@style/SettingsTextView"
+                android:layout_width="260dp"
+                android:gravity="center_vertical"
+                android:paddingTop="15dp"
+                android:text="@string/serial_number" />
+            <EditText
+                android:id="@+id/meterSerialText"
+                style="@style/SettingsEditText"
+                android:layout_alignBaseline="@id/meterSerialPrompt"
+                android:layout_alignTop="@id/meterSerialPrompt"
+                android:layout_toRightOf="@id/meterSerialPrompt"
+                android:inputType="text" />
+            <TextView
+                android:id="@+id/gainPrompt"
+                style="@style/SettingsTextView"
+                android:layout_width="260dp"
+                android:layout_below="@id/meterSerialPrompt"
+                android:gravity="center_vertical"
+                android:paddingTop="20dp"
+                android:text="@string/gain" />
+            <com.zlscorp.ultragrav.activity.widget.NumberPadEditText
+                android:id="@+id/gainText"
+                style="@style/SettingsEditText"
+                android:layout_alignBaseline="@id/gainPrompt"
+                android:layout_alignTop="@id/gainPrompt"
+                android:layout_toRightOf="@id/gainPrompt" />
+            <TextView
+                android:id="@+id/stopBoostPrompt"
+                style="@style/SettingsTextView"
+                android:layout_width="260dp"
+                android:layout_below="@id/gainPrompt"
+                android:gravity="center_vertical"
+                android:paddingTop="20dp"
+                android:text="@string/stop_boost" />
+            <EditText
+                android:id="@+id/stopBoostText"
+                style="@style/SettingsEditText"
+                android:layout_alignBaseline="@id/stopBoostPrompt"
+                android:layout_alignTop="@id/stopBoostPrompt"
+                android:layout_toRightOf="@id/stopBoostPrompt" />
+            <TextView
+                android:id="@+id/boostFactorPrompt"
+                style="@style/SettingsTextView"
+                android:layout_width="260dp"
+                android:layout_below="@id/stopBoostPrompt"
+                android:gravity="center_vertical"
+                android:paddingTop="20dp"
+                android:text="@string/boost_factor" />
+            <EditText
+                android:id="@+id/boostFactorText"
+                style="@style/SettingsEditText"
+                android:layout_alignBaseline="@id/boostFactorPrompt"
+                android:layout_alignTop="@id/boostFactorPrompt"
+                android:layout_toRightOf="@id/boostFactorPrompt" />
+            <TextView
+                android:id="@+id/temp0Prompt"
+                style="@style/SettingsTextView"
+                android:layout_width="260dp"
+                android:layout_below="@id/boostFactorPrompt"
+                android:gravity="center_vertical"
+                android:paddingTop="20dp"
+                android:text="@string/temp_0" />
+            <EditText
+                android:id="@+id/temp0Text"
+                style="@style/SettingsEditText"
+                android:layout_alignBaseline="@id/temp0Prompt"
+                android:layout_alignTop="@id/temp0Prompt"
+                android:layout_toRightOf="@id/temp0Prompt" />
+            <TextView
+                android:id="@+id/tempAPrompt"
+                style="@style/SettingsTextView"
+                android:layout_width="260dp"
+                android:layout_below="@id/temp0Prompt"
+                android:gravity="center_vertical"
+                android:paddingTop="20dp"
+                android:text="@string/temp_a" />
+            <EditText
+                android:id="@+id/tempAText"
+                style="@style/SettingsEditText"
+                android:layout_alignBaseline="@id/tempAPrompt"
+                android:layout_alignTop="@id/tempAPrompt"
+                android:layout_toRightOf="@id/tempAPrompt" />
+            <TextView
+                android:id="@+id/tempBPrompt"
+                style="@style/SettingsTextView"
+                android:layout_width="260dp"
+                android:layout_below="@id/tempAPrompt"
+                android:gravity="center_vertical"
+                android:paddingTop="20dp"
+                android:text="@string/temp_b" />
+            <EditText
+                android:id="@+id/tempBText"
+                style="@style/SettingsEditText"
+                android:layout_alignBaseline="@id/tempBPrompt"
+                android:layout_alignTop="@id/tempBPrompt"
+                android:layout_toRightOf="@id/tempBPrompt" />
+            <TextView
+                android:id="@+id/tempCPrompt"
+                style="@style/SettingsTextView"
+                android:layout_width="260dp"
+                android:layout_below="@id/tempBPrompt"
+                android:gravity="center_vertical"
+                android:paddingTop="20dp"
+                android:text="@string/temp_c" />
+            <EditText
+                android:id="@+id/tempCText"
+                style="@style/SettingsEditText"
+                android:layout_alignBaseline="@id/tempCPrompt"
+                android:layout_alignTop="@id/tempCPrompt"
+                android:layout_toRightOf="@id/tempCPrompt" />
+            <TextView
+                android:id="@+id/calibratedPrompt"
+                style="@style/SettingsTextView"
+                android:layout_width="260dp"
+                android:layout_below="@+id/tempCText"
+                android:layout_marginTop="20dp"
+                android:text="@string/calibrated" />
+            <CheckBox
+                android:id="@+id/calibratedCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/calibratedPrompt"
+                android:layout_toRightOf="@+id/calibratedPrompt" />
+            <TextView
+                android:id="@+id/platesReversedPrompt"
+                style="@style/SettingsTextView"
+                android:layout_width="260dp"
+                android:layout_below="@id/calibratedPrompt"
+                android:layout_marginTop="15dp"
+                android:text="@string/plates_reversed" />
+            <CheckBox
+                android:id="@+id/platesReversedCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/platesReversedPrompt"
+                android:layout_toRightOf="@+id/platesReversedPrompt" />
+            <TextView
+                android:id="@+id/saveFrequencies"
+                style="@style/SettingsTextView"
+                android:layout_width="260dp"
+                android:layout_below="@id/platesReversedPrompt"
+                android:layout_marginTop="15dp"
+                android:text="@string/save_frequencies" />
+            <CheckBox
+                android:id="@+id/saveFrequenciesCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/saveFrequencies"
+                android:layout_toRightOf="@+id/saveFrequencies" />
+            <TextView
+                android:id="@+id/testMode"
+                style="@style/SettingsTextView"
+                android:layout_width="260dp"
+                android:layout_below="@id/saveFrequencies"
+                android:layout_marginTop="15dp"
+                android:text="@string/test_mode" />
+            <CheckBox
+                android:id="@+id/testModeCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/testMode"
+                android:layout_toRightOf="@+id/testMode" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/testMode"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/loadCalibrationTableButton"
+                    style="@style/AppButton2"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:paddingLeft="30dp"
+                    android:paddingRight="30dp"
+                    android:maxLines ="2" 
+                    android:text="@string/load_calibration_table" />
+                <Button
+                    android:id="@+id/createFactoryParamsButton"
+                    style="@style/AppButton2"
+                    android:layout_marginRight="10dp"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:text="@string/create_factory_params" />
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/cancelButton"
+            style="@style/AppButton2"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="@string/cancel" />
+        <!-- This Save button is just for spacing. It is not visible on screen. -->
+        <Button
+            android:id="@+id/saveButton"
+            style="@style/AppButton2"
+            android:layout_marginRight="10dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="@string/save" />
+    </LinearLayout>
+</LinearLayout>

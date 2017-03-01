@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="roboguice_modules" translatable="false">
+        <item>com.zlscorp.ultragrav.MyModule</item>
+    </string-array>
+</resources>

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/keypad_scientific_notation"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/keypad_top_row"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/field_name"
+            style="@style/NumberPadTopRow"
+            android:layout_alignParentLeft="true" />
+
+        <TextView
+            android:id="@+id/keypad_output"
+            style="@style/NumberPadTopRow"
+            android:layout_alignParentRight="true" />
+    </RelativeLayout>
+
+    <TableLayout
+        android:id="@+id/keypad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:stretchColumns="*">
+
+        <TableRow>
+
+            <Button
+                android:id="@+id/keypad_1"
+                style="@style/NumberPadButtonLeft"
+                android:text="1" />
+
+            <Button
+                android:id="@+id/keypad_2"
+                style="@style/NumberPadButtonMiddle"
+                android:text="2" />
+
+            <Button
+                android:id="@+id/keypad_3"
+                style="@style/NumberPadButtonRight"
+                android:text="3" />
+        </TableRow>
+
+        <TableRow>
+
+            <Button
+                android:id="@+id/keypad_4"
+                style="@style/NumberPadButtonLeft"
+                android:text="4" />
+
+            <Button
+                android:id="@+id/keypad_5"
+                style="@style/NumberPadButtonMiddle"
+                android:text="5" />
+
+            <Button
+                android:id="@+id/keypad_6"
+                style="@style/NumberPadButtonRight"
+                android:text="6" />
+        </TableRow>
+
+        <TableRow>
+
+            <Button
+                android:id="@+id/keypad_7"
+                style="@style/NumberPadButtonLeft"
+                android:text="7" />
+
+            <Button
+                android:id="@+id/keypad_8"
+                style="@style/NumberPadButtonMiddle"
+                android:text="8" />
+
+            <Button
+                android:id="@+id/keypad_9"
+                style="@style/NumberPadButtonRight"
+                android:text="9" />
+        </TableRow>
+
+        <TableRow>
+
+            <Button
+                android:id="@+id/keypad_decimal"
+                style="@style/NumberPadButtonLeft"
+                android:text="." />
+
+            <Button
+                android:id="@+id/keypad_0"
+                style="@style/NumberPadButtonMiddle"
+                android:text="0" />
+
+            <Button
+                android:id="@+id/keypad_E"
+                style="@style/NumberPadButtonRight"
+                android:text="E" />
+        </TableRow>
+
+        <TableRow>
+
+            <Button
+                android:id="@+id/keypad_plus"
+                style="@style/NumberPadButtonLeft"
+                android:text="+" />
+
+            <Button
+                android:id="@+id/keypad_minus"
+                style="@style/NumberPadButtonMiddle"
+                android:text="-" />
+
+            <Button
+                android:id="@+id/keypad_backspace"
+                style="@style/NumberPadButtonRight"
+                android:text="←" />
+        </TableRow>
+    </TableLayout>
+    <LinearLayout
+        android:id="@+id/keypad_buttons"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/keypad_cancel"
+            style="@style/NumPadBottomRowButtonLeft"
+            android:text="@string/cancel"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/keypad_clear"
+            style="@style/NumPadBottomRowButtonMiddle"
+            android:layout_marginLeft="2dp"
+            android:text="@string/clear"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/keypad_enter"
+            style="@style/NumPadBottomRowButtonMiddle"
+            android:layout_marginLeft="2dp"
+            android:text="@string/enter"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/keypad_next"
+            style="@style/NumPadBottomRowButtonRight"
+            android:layout_marginLeft="2dp"
+            android:layout_weight="1.2"
+            android:text="@string/next"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+</LinearLayout>

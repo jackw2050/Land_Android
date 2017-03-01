@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:baselineAligned="false" >
+
+        <LinearLayout style="@style/EarthtideInputLayout" >
+
+            <TextView
+                style="@style/EarthtideText"
+                android:text="@string/year" />
+
+            <EditText
+                android:id="@+id/yearText"
+                style="@style/EarthtideInput"
+                android:inputType="textPersonName"
+                android:nextFocusDown="@+id/monthText" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/EarthtideInputLayout" >
+
+            <TextView
+                style="@style/EarthtideText"
+                android:text="@string/month" />
+
+            <EditText
+                android:id="@+id/monthText"
+                style="@style/EarthtideInput"
+                android:nextFocusDown="@+id/dayText" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/EarthtideInputLayout" >
+
+            <TextView
+                style="@style/EarthtideText"
+                android:text="@string/day" />
+
+            <EditText
+                android:id="@+id/dayText"
+                style="@style/EarthtideInput"
+                android:nextFocusDown="@+id/latitudeText" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:baselineAligned="false" >
+
+        <LinearLayout style="@style/EarthtideInputLayout" >
+
+            <TextView
+                style="@style/EarthtideText"
+                android:text="@string/latitude" />
+
+            <EditText
+                android:id="@+id/latitudeText"
+                style="@style/EarthtideInput"
+                android:inputType="numberSigned|numberDecimal"
+                android:nextFocusDown="@+id/longitudeText" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/EarthtideInputLayout" >
+
+            <TextView
+                style="@style/EarthtideText"
+                android:text="@string/longitude" />
+
+            <EditText
+                android:id="@+id/longitudeText"
+                style="@style/EarthtideInput"
+                android:inputType="numberSigned|numberDecimal"
+                android:nextFocusDown="@+id/elevationText" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/EarthtideInputLayout" >
+
+            <TextView
+                style="@style/EarthtideText"
+                android:text="@string/elevation" />
+
+            <EditText
+                android:id="@+id/elevationText"
+                style="@style/EarthtideInput" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/dummyLinearLayout"
+            android:layout_width="0px"
+            android:layout_height="0px"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="horizontal" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="100"
+        android:fadeScrollbars="false" >
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="5dp"
+            android:fadeScrollbars="false" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:baselineAligned="false" >
+
+                <TextView
+                    android:id="@+id/earthtideSampleText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="top|left"
+                    android:lines="26"
+                    android:padding="@dimen/padding_medium"
+                    android:typeface="monospace" />
+            </LinearLayout>
+        </HorizontalScrollView>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" >
+
+        <!--
+             Old button code
+            android:id="@+id/acceptButton"
+            style="@style/DashButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:enabled="false"
+            android:onClick="onAcceptButtonClicked"
+            android:text="@string/accept"
+        -->
+
+        <Button
+            android:id="@+id/calculateButton"
+            style="@style/AppButton2"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="5dp"
+            android:lines="2"
+            android:text="@string/calculate" />
+
+        <Button
+            android:id="@+id/gpsButton"
+            style="@style/AppButton2"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="5dp"
+            android:text="@string/obtain_gps" />
+
+        <Button
+            android:id="@+id/saveEarthtideDataButton"
+            style="@style/AppButton2"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="5dp"
+            android:lines="2"
+            android:text="@string/save_data" />
+    </LinearLayout>
+
+</LinearLayout>

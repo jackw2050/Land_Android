@@ -1,0 +1,6 @@
+
+    <resources>
+<!--         <color name="invalidInputBackground">#88FF0000</color> -->
+        <color name="orange">#cc5500</color>
+        <color name="black">#000000</color>
+    </resources>
